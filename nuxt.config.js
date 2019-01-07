@@ -2,7 +2,6 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
   /*
   ** Headers of the page
   */
@@ -24,17 +23,26 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [],
+  css: ['~/css/styles.css'],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+
+  plugins: ['~/plugins/components.js'],
 
   /*
   ** Nuxt.js modules
   */
-  modules: [],
+  modules: [
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'EncrplQK9R5bUJhdvuCvswtt',
+        cacheProvider: 'memory'
+      }
+    ]
+  ],
 
   /*
   ** Build configuration

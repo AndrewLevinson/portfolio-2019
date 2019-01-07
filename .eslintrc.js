@@ -14,16 +14,9 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-
-    'vue/max-attributes-per-line': [
-      0,
-      {
-        singleline: 4,
-        multiline: {
-          max: 1,
-          allowFirstLine: false
-        }
-      }
-    ]
+    'vue/max-attributes-per-line': 0,
+    'vue/html-self-closing': 0,
+    'vue/require-prop-types': 0,
+    'vue/mustache-interpolation-spacing': 0
   }
 }
