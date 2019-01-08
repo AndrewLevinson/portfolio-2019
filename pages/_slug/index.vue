@@ -1,24 +1,17 @@
 <template>
   <section>
-    <Header/>
-    <transition name="fade">
-      <component
-        v-if="story.content.component"
-        :key="story.content._uid"
-        :blok="story.content"
-        :is="story.content.component"
-      ></component>
-    </transition>
+    <component
+      v-if="story.content.component"
+      :key="story.content._uid"
+      :blok="story.content"
+      :is="story.content.component"
+    ></component>
   </section>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-
 export default {
-  components: {
-    Header
-  },
+  layout: 'blog',
   data() {
     return { story: { content: {} } }
   },

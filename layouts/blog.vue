@@ -1,8 +1,24 @@
 <template>
   <div>
-    <nuxt/>
+    <Heading/>
+    <transition name="fade">
+      <nuxt/>
+    </transition>
   </div>
 </template>
+
+
+
+<script>
+import Heading from '@/components/Heading.vue'
+
+export default {
+  components: {
+    Heading
+  }
+}
+</script>
+
 
 <style>
 html {

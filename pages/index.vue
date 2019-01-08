@@ -1,17 +1,12 @@
 <template>
   <section>
-    <Header/>
     <nuxt-link to="/home">go to blog home</nuxt-link>
   </section>
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-
 export default {
-  components: {
-    Header
-  }
+  layout: 'blog'
 }
 </script>
 
