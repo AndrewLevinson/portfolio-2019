@@ -11,11 +11,11 @@ html {
 }
 
 body {
-  font-size: 1.7em;
   /* currently ems cause chrome bug misinterpreting rems on body element */
+  font-size: 1.7em;
   line-height: 1.5;
-  font-weight: 300;
-  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-family: 'Lato', serif;
   color: #3b3b3d;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -37,11 +37,10 @@ h3,
 h4,
 h5,
 h6 {
-  /* margin-top: 0; */
+  margin-top: 0;
   margin-bottom: 2.2rem;
   font-weight: 900;
-  /* font-family: "IBM Plex Mono", monospace; */
-  /* color: #3d3d3d; */
+  font-family: 'Playfair Display', serif;
 }
 
 h1 {

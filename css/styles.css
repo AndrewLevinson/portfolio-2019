@@ -7,7 +7,7 @@
 }
 
 html {
-  /* background-color: #222; */
+  background-color: #fff;
 }
 
 body {
@@ -31,6 +31,11 @@ a {
 a:hover {
   text-decoration: underline;
   font-weight: 600;
+}
+
+a.span-active {
+  /* color: #77b6eb; */
+  font-weight: 800;
 }
 
 .fade-enter-active,

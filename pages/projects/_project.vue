@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <h2>My Projectsssss</h2>
+  <section id="main-content-area">
+    <h2>{{ story.content.maincontent[0]["headline"] }}</h2>
     <component
       v-if="story.content.component"
       :key="story.content._uid"

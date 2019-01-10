@@ -5,7 +5,9 @@
       <div class="img-holder">
         <img :src="blok.avatar_pic" width="100%" alt="pic of me playing guitar">
       </div>
-      <div class="about-text" v-html="$md.render(blok.about_me_desc)"></div>
+      <div class="about-text" v-html="$md.render(blok.about_me_desc)">
+        <p>Stuff</p>
+      </div>
     </div>
   </section>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="teaser">
-    <h3 :id="blok.name" class="section-title">{{blok.headline}}</h3>
+    <h3 :id="blok.id" class="section-title">{{blok.headline}}</h3>
   </div>
 </template>
 

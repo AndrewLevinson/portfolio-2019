@@ -1,6 +1,6 @@
 <template>
   <section id="main-content-area">
-    <h2 id="work">My Work</h2>
+    <h2>My Work</h2>
     <component
       v-if="story.content.component"
       :key="story.content._uid"

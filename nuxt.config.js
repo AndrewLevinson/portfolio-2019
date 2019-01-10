@@ -6,13 +6,23 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Andrew Levinson | Design & Data',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+    script: [
+      {
+        src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js',
+        type: 'text/javascript'
+      },
+      {
+        src: 'smooth.js',
+        type: 'text/javascript'
+      }
+    ]
   },
 
   /*

@@ -5,29 +5,34 @@
         <img src="../assets/logo.png" alt="andrew_l" width="160">
       </nuxt-link>
       <p>My name is Andrew and I like to visualize data and design digital products.</p>
-      <ul>
-        <li>
-          <a href="#">My Work</a>
-        </li>
-        <li>
-          –
-          <a href="#data_viz">Data Visualization</a>
-        </li>
-        <li>
-          –
-          <a href="#product">Product Design</a>
-        </li>
-        <li>
-          –
-          <a href="#other">Other Work</a>
-        </li>
-        <li>
-          <a href="#">Blog</a>
-        </li>
-        <li>
-          <a href="#about">About Me</a>
-        </li>
-      </ul>
+      <div id="sidebar">
+        <div id="span-anchor"></div>
+        <span>
+          <ul>
+            <li>
+              <a href="#work">My Work</a>
+            </li>
+            <li>
+              –
+              <a href="#data_viz">Data Visualization</a>
+            </li>
+            <li>
+              –
+              <a href="#product">Product Design</a>
+            </li>
+            <li>
+              –
+              <a href="#other">Other Work</a>
+            </li>
+            <li>
+              <a href="#work">Blog</a>
+            </li>
+            <li>
+              <a href="#about">About Me</a>
+            </li>
+          </ul>
+        </span>
+      </div>
     </section>
   </nav>
 </template>
