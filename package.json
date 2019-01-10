@@ -13,13 +13,16 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/markdownit": "^1.2.3",
     "cross-env": "^5.2.0",
     "markdown-it": "^8.4.2",
     "nuxt": "^2.0.0",
+    "raw-loader": "^1.0.0",
     "storyblok-nuxt": "^1.0.1",
     "webpack": "^4.28.3"
   },
   "devDependencies": {
+    "@nuxtjs/markdownit-loader": "^1.1.1",
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",
     "eslint-config-prettier": "^3.1.0",

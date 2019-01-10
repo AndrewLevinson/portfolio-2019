@@ -12,7 +12,7 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
   },
 
   /*
@@ -23,7 +23,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~/css/styles.css'],
+  css: ['~/css/normalize.css', '~/css/typography.css', '~/css/styles.css'],
 
   /*
   ** Plugins to load before mounting the App
@@ -41,9 +41,15 @@ module.exports = {
         accessToken: 'EncrplQK9R5bUJhdvuCvswtt',
         cacheProvider: 'memory'
       }
-    ]
+    ],
+    ['@nuxtjs/markdownit']
   ],
-
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    injected: true
+  },
   /*
   ** Build configuration
   */

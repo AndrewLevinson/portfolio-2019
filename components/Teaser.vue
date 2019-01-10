@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="teaser">
-    <h1>{{blok.headline}}</h1>
+    <h3 :id="blok.name" class="section-title">{{blok.headline}}</h3>
   </div>
 </template>
 
@@ -9,3 +9,17 @@ export default {
   props: ['blok']
 }
 </script>
+
+<style scoped>
+.teaser {
+  margin-left: 10px;
+  padding-top: 2rem;
+  /* position: sticky;
+  top: 10px; */
+}
+.section-title {
+  text-align: left;
+  border-bottom: 1px dashed #222;
+  margin-bottom: 0;
+}
+</style>

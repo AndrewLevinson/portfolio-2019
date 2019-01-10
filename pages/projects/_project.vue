@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h2>My Projectsssss</h2>
     <component
       v-if="story.content.component"
       :key="story.content._uid"
@@ -11,7 +12,7 @@
 
 <script>
 export default {
-  layout: 'blog',
+  layout: 'main',
   data() {
     return { story: { content: {} } }
   },
@@ -30,13 +31,14 @@ export default {
     // Check if we are in the editor mode
     let version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
-
+    console.log()
     // Load the JSON from the API
     return context.app.$storyapi
-      .get(`cdn/stories/${context.params.slug}`, {
+      .get(`cdn/stories/projects/${context.params.project}`, {
         version: version
       })
       .then(res => {
+        console.log(res.data.story.content)
         return res.data
       })
       .catch(res => {
