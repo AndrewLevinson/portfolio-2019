@@ -1,8 +1,7 @@
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Web Font Imports */
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,900');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,300,400,400i,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,600,700|Playfair+Display:400,400i,700,900');
 /* NOTE
 html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
