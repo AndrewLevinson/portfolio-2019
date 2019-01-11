@@ -15,8 +15,19 @@ body {
   /* color: #fff; */
 }
 
+.main-layout {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* padding-top: 5rem; */
+  /* width: 95%; */
+  margin: 0 auto;
+}
+
 #main-content-area {
-  width: 80vw;
+  width: calc(100vw - 90px);
+  margin-left: 90px;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 #main-content-area h2 {
@@ -31,6 +42,12 @@ a {
 a:hover {
   text-decoration: underline;
   font-weight: 600;
+  opacity: 1;
+}
+
+a:focus,
+button:focus {
+  outline-color: coral;
 }
 
 a.span-active {
@@ -38,13 +55,27 @@ a.span-active {
   font-weight: 800;
 }
 
-.fade-enter-active,
-.fade-leave-active {
+/* layout transition */
+/* .layout-leave,
+.layout-leave-active {
+  transition: opacity 0.5s;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+} */
+
+/* page transition */
+.page-enter-active,
+.page-leave-active {
   transition: all 0.3s ease;
 }
 
-.fade-enter,
-.fade-leave-to {
+.page-enter,
+.page-leave-to {
   opacity: 0;
   transform: translateX(100%);
 }

@@ -13,6 +13,7 @@
 <script>
 export default {
   layout: 'main',
+  scrollToTop: true,
   data() {
     return { story: { content: {} } }
   },

@@ -1,10 +1,10 @@
 <template>
-  <div class="main-layout">
-    <Sidebar/>
-    <transition name="fade">
+  <transition name="page">
+    <div class="main-layout">
+      <Sidebar/>
       <nuxt/>
-    </transition>
-  </div>
+    </div>
+  </transition>
 </template>
 
 
@@ -19,13 +19,5 @@ export default {
 }
 </script>
 
-
 <style>
-.main-layout {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 5rem;
-  width: 95%;
-  margin: 0 auto;
-}
 </style>

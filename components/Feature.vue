@@ -64,7 +64,7 @@ img {
 p {
   padding: 0.5rem;
   font-weight: bold;
-  color: #222;
+  color: #3b3b3d;
 }
 
 .details {
