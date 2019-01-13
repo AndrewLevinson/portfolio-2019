@@ -88,27 +88,27 @@ export default {
   text-align: left;
   align-self: center;
   margin: 0 auto;
-  width: 45%;
+  width: 50%;
 }
 
 /* button */
 button {
-  text-align: center;
   align-self: flex-start;
   padding: 0.75rem;
-  margin: 0 auto;
-  margin-top: -8rem;
+  /* margin-top: -8rem; */
   border-radius: 6px;
+  text-align: center;
   background: transparent;
-  border-color: coral;
-  color: coral;
+  border-color: var(--btn-color);
+  color: var(--btn-color);
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 button:hover {
-  background: coral;
+  background: var(--btn-color);
   border-color: #fff;
   color: #fff;
   transition: 0.3s all ease-in-out;

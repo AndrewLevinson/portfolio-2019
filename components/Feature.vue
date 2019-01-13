@@ -1,21 +1,35 @@
 <template>
-  <div v-editable="blok" class="feature">
-    <nuxt-link :to="projectPath">
-      <img :src="blok.image" :alt="blok.name">
-      <div class="feature-specs">
-        <p>{{ blok.name }}</p>
-        <p class="details">
-          <span>{{ blok.release }}</span> |
-          <span>{{ blok.duration }}</span>
-        </p>
+  <transition name="fuzzy">
+    <div v-editable="blok" v-show="blok.cat == category || category == `all`" class="feature">
+      <nuxt-link :to="projectPath">
+        <img :src="blok.image" :alt="blok.name">
+        <div class="feature-specs">
+          <div class="time-tags-wrapper">
+            <div class="tags-wrapper">
+              <span>{{ blok.cat }}</span>
+              <span v-if="blok.isPaid" class="paid">Paid $</span>
+              <span v-else class="unpaid">Unpaid</span>
+            </div>
+            <div class="time-details">
+              <span>{{ blok.release }}</span>
+              <span>{{ blok.duration }}</span>
+            </div>
+          </div>
+          <p class="name">{{ blok.name }}</p>
+          <p class="description">{{ blok.description }}</p>
+        </div>
+      </nuxt-link>
+      <div class="view-project">
+        <p>View project</p>
+        <p>→</p>
       </div>
-    </nuxt-link>
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>
 export default {
-  props: ['blok'],
+  props: ['blok', 'category', 'paid'],
   computed: {
     projectPath: function() {
       return `/projects/${this.blok.path}`
@@ -28,12 +42,13 @@ export default {
 .feature {
   text-align: left;
   box-shadow: 0px 1px 10px 0px #ccc;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   margin: 16px;
   margin-left: 10px;
   padding: 0rem;
   border-radius: 4px;
   transition: 0.3s all ease-in-out;
+  background-color: #fff;
 }
 
 .feature:hover {
@@ -45,37 +60,96 @@ export default {
 img {
   max-width: 100%;
   border-radius: 4px 4px 0 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .feature-specs {
-  /* display: flex;
-  justify-content: space-between;
-  vertical-align: baseline;
-  align-self: baseline; */
-  padding: 0.25rem;
-}
-
-/* .feature-specs > p:first-child:hover {
-  text-decoration: underline;
-  color: green;
-} */
-
-p {
-  padding: 0.5rem;
-  font-weight: bold;
+  padding: 1.25rem;
+  font-weight: 500;
   color: #3b3b3d;
+  line-height: 1.25;
 }
 
-.details {
+.description {
+  font-weight: 300;
   font-size: 85%;
-  margin-top: -1rem;
-  margin-bottom: 0.75rem;
-  opacity: 0.6;
-  text-align: left;
+  opacity: 0.85;
+  padding-top: 0.5rem;
+  /* padding-bottom: 2rem; */
+}
+
+.time-details > span {
+  font-size: 75%;
+  /* margin-top: -0.75rem; */
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.time-details {
+  text-align: right;
+}
+
+.time-tags-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.75rem;
+}
+
+.view-project {
+  display: flex;
+  justify-content: space-between;
+  color: var(--link-color);
+  padding: 1.25rem;
+  border-top: 1px solid var(--border-color);
+  opacity: 0.8;
+  font-weight: lighter;
+}
+
+.view-project:hover {
+  /* font-weight: bolder; */
+  letter-spacing: 0.05rem;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+
+.tags-wrapper span {
+  background-color: var(--btn-color);
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem 0.2rem 0.5rem;
+  font-size: 75%;
+  border-color: #fff;
+  margin-right: 0.25rem;
+}
+
+.paid {
+  background-color: #74e3af !important;
+}
+.unpaid {
+  background-color: #979797 !important;
 }
 
 a:hover {
   text-decoration: none;
+}
+
+.fuzzy-enter-active,
+.fuzzy-leave-active {
+  transition: all 0.4s ease-in-out;
+}
+
+.fuzzy-enter-active {
+  /* transform: translateX(calc(0% + 90px)); */
+  opacity: 0;
+}
+.fuzzy-leave-active {
+  /* transform: translateX(-100%); */
+}
+
+.fuzzy-enter,
+.fuzzy-leave-to {
+  opacity: 0;
+  /* transform: translateX(-100%); */
 }
 </style>

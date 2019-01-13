@@ -3,7 +3,7 @@
     <div :class="classyName" class="button-holder">
       <nuxt-link to="/">
         <div class="image-holder">
-          <img src="../assets/favicon.png" alt="andrew_l" width="100%">
+          <img src="/favicon.svg" alt="andrew_l" width="100%">
         </div>
       </nuxt-link>
       <button @click="show = !show">About Me</button>
@@ -70,7 +70,7 @@ export default {
   height: 100vh;
   width: 90px;
   background-color: #fff;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid var(--border-color);
   z-index: 3;
   display: flex;
 }
@@ -79,7 +79,7 @@ button {
   align-self: center;
   background: transparent;
   border: none;
-  color: coral;
+  color: var(--btn-color);
   padding: 0.5rem;
   transform: rotate(-90deg);
 }
@@ -98,18 +98,19 @@ button:hover {
   transform: rotate(0deg);
   border-radius: 100px;
   /* border-color: coral; */
-  border: 1px solid coral;
+  border: 1px solid var(--btn-color);
   padding: 0.75rem;
 }
 
 .close-btn:hover {
   color: #fff;
-  background-color: coral;
+  background-color: var(--btn-color);
   text-decoration: none;
 }
 
 .image-holder {
   position: fixed;
+  top: 10px;
   width: 90px;
 }
 
@@ -124,7 +125,7 @@ nav {
   z-index: 999;
   position: fixed;
   width: 50%;
-  min-width: 300px;
+  min-width: 320px;
   /* border-right: 1px solid #3d3d3d; */
 }
 
@@ -155,7 +156,7 @@ section {
   display: flex;
   text-align: left;
   background-color: #fff;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid var(--border-color);
   transform: translateX(calc(0% + 90px));
   box-shadow: 0px 1px 16px 0px #ccc;
   position: sticky;
@@ -198,7 +199,7 @@ footer {
   background-color: #fff;
   position: fixed;
   bottom: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border-color);
   z-index: 998;
 }
 
@@ -222,7 +223,7 @@ i {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .slide-enter-active {
@@ -234,7 +235,7 @@ i {
 
 .slide-enter,
 .slide-leave-to {
-  /* opacity: 0; */
+  opacity: 0.85;
   transform: translateX(-100%);
 }
 </style>

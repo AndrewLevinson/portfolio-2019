@@ -3,19 +3,29 @@
     <nav>
       <h1>My Work</h1>
       <div id="sidebar">
-        <span>
-          <ul>
-            <li>
-              <a href="#data_viz">Data Visualizations</a>
-            </li>
-            <li>
-              <a href="#product">Product Design</a>
-            </li>
-            <li>
-              <a href="#other">Other Work</a>
-            </li>
-          </ul>
-        </span>
+        <ul>
+          <li>
+            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">All Projects</a>
+          </li>
+          <li>
+            <a
+              :class="{ active : active_el == 2 }"
+              @click="cat = 'Data-Viz', activate(2)"
+            >Data Visualization</a>
+          </li>
+          <li>
+            <a
+              :class="{ active : active_el == 3 }"
+              @click="cat = 'Product Design', activate(3)"
+            >Product Design</a>
+          </li>
+          <li>
+            <a :class="{ active : active_el == 4 }" @click="cat = `Other`, activate(4)">Other Work</a>
+          </li>
+          <!-- <li>
+            <input type="checkbox" name="onlyPaid" @click="onlyPaid = !onlyPaid">Only Show Paid Work
+          </li>-->
+        </ul>
       </div>
     </nav>
     <div id="work">
@@ -23,6 +33,8 @@
         v-if="story.content.component"
         :key="story.content._uid"
         :blok="story.content"
+        :category="cat"
+        :paid="onlyPaid"
         :is="story.content.component"
       ></component>
     </div>
@@ -33,8 +45,9 @@
 export default {
   layout: 'main',
   data() {
-    return { story: { content: {} } }
+    return { story: { content: {} }, cat: 'all', onlyPaid: false, active_el: 1 }
   },
+
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
       if (event.action == 'input') {
@@ -45,6 +58,11 @@ export default {
         window.location.reload()
       }
     })
+  },
+  methods: {
+    activate: function(el) {
+      this.active_el = el
+    }
   },
   asyncData(context) {
     // Check if we are in the editor mode
@@ -72,28 +90,49 @@ export default {
 
 <style scoped>
 h1 {
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
+  margin-left: 10px;
   /* line-height: 0; */
 }
 nav {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   position: sticky;
   top: 0px;
   padding-top: 2rem;
-  margin-bottom: 5rem;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed coral;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 4;
-}
-ul {
-  list-style: none;
-  text-align: right;
-  /* margin-left: 10px; */
+  margin-bottom: 1.5rem;
   /* display: flex; */
   /* justify-content: space-between; */
-  /* min-width: 280px; */
-  /* max-width: 500px; */
+  background-color: rgba(255, 255, 255, 0.9);
+  /* z-index: 4; */
+  border-bottom: 1px solid rgba(119, 182, 235, 0.5);
+}
+ul {
+  margin-left: 10px;
+  list-style: none;
+  text-align: left;
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  min-width: 280px;
+  max-width: 600px;
+}
+
+/* button {
+  background-color: transparent;
+  border: none;
+  color: var(--btn-color);
+} */
+
+a:hover {
+  cursor: pointer;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: bolder;
+  border-bottom: 3px solid var(--link-color);
+  z-index: 999;
+  /* margin-bottom: 0.045rem; */
 }
 </style>
