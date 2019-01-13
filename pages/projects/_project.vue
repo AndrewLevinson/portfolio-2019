@@ -1,6 +1,6 @@
 <template>
   <section id="main-content-area">
-    <h2>{{ story.content.maincontent[0]["headline"] }}</h2>
+    <!-- <h2>{{ story.content.maincontent[0]["headline"] }}</h2> -->
     <component
       v-if="story.content.component"
       :key="story.content._uid"
@@ -32,7 +32,6 @@ export default {
     // Check if we are in the editor mode
     let version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
-    console.log()
     // Load the JSON from the API
     return context.app.$storyapi
       .get(`cdn/stories/projects/${context.params.project}`, {

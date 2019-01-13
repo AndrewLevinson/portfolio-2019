@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="teaser">
-    <!-- <h3 :id="blok.id" class="section-title">{{ blok.headline }}</h3> -->
+    <h3 class="section-title">{{ blok.headline }}</h3>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
 }
 .section-title {
   text-align: left;
-  border-bottom: 1px dashed #222;
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: 0;
 }
 </style>

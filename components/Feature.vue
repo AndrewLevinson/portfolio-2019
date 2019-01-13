@@ -103,7 +103,7 @@ img {
   padding: 1.25rem;
   border-top: 1px solid var(--border-color);
   opacity: 0.8;
-  font-weight: lighter;
+  font-weight: 500;
 }
 
 .view-project:hover {

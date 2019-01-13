@@ -102,11 +102,16 @@ nav {
   margin-bottom: 1.5rem;
   /* display: flex; */
   /* justify-content: space-between; */
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(251, 251, 251, 0.95);
   /* z-index: 4; */
   border-bottom: 1px solid rgba(119, 182, 235, 0.5);
 }
+
+a {
+  padding-bottom: 1.5rem;
+}
 ul {
+  padding-bottom: 1.5rem;
   margin-left: 10px;
   list-style: none;
   text-align: left;

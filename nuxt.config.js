@@ -9,6 +9,11 @@ export default {
 
 module.exports = {
   mode: 'universal',
+  generate: {
+    routes: function() {
+      return ['/work']
+    }
+  },
   /*
   ** Headers of the page
   */
