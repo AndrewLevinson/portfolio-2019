@@ -78,7 +78,7 @@ export default {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid var(--border-color);
-  z-index: 999;
+  z-index: 990;
   /* height: 100px; */
 }
 #breadcrumbs {
