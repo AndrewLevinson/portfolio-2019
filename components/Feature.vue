@@ -18,11 +18,11 @@
           <p class="name">{{ blok.name }}</p>
           <p class="description">{{ blok.description }}</p>
         </div>
+        <div class="view-project">
+          <p>View project</p>
+          <p>→</p>
+        </div>
       </nuxt-link>
-      <div class="view-project">
-        <p>View project</p>
-        <p>→</p>
-      </div>
     </div>
   </transition>
 </template>

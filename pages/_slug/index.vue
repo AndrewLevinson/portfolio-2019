@@ -10,13 +10,13 @@
           <li>
             <a
               :class="{ active : active_el == 2 }"
-              @click="cat = 'Data-Viz', activate(2)"
+              @click="cat = 'Data-Viz 📊', activate(2)"
             >Data Visualization</a>
           </li>
           <li>
             <a
               :class="{ active : active_el == 3 }"
-              @click="cat = 'Product Design', activate(3)"
+              @click="cat = 'Product Design 👨🏻‍💻', activate(3)"
             >Product Design</a>
           </li>
           <li>

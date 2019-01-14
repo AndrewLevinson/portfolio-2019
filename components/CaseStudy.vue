@@ -17,7 +17,8 @@
     <div class="content">
       <h5>{{ blok.summary }}</h5>
       <div class="markdown" v-html="$md.render(blok.content_intro)"></div>
-      <div class="solution-peek">
+      <div v-if="blok.solution_peek == ''"></div>
+      <div v-else class="solution-peek">
         <div class="peek">
           <div>
             <h5 class="blue">01</h5>
@@ -53,6 +54,15 @@
         </div>
       </div>
       <div class="markdown" v-html="$md.render(blok.content_2)"></div>
+      <div v-if="blok.name == 'Music'" class="iframe-holder">
+        <iframe
+          src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A5BYcVtabMy7tNii9fHcklK"
+          width="100%"
+          height="380px"
+          frameborder="0"
+          allowtransparency="true"
+        ></iframe>
+      </div>
     </div>
   </div>
 </template>
@@ -162,5 +172,13 @@ export default {
   margin-left: 1em;
   padding-left: 0px;
   list-style: circle outside;
+}
+
+.iframe-holder {
+  border-radius: 4px;
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 3rem;
 }
 </style>
