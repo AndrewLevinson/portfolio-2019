@@ -47,7 +47,6 @@ export default {
   data() {
     return { story: { content: {} }, cat: 'all', onlyPaid: false, active_el: 1 }
   },
-
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
       if (event.action == 'input') {

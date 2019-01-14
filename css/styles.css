@@ -17,13 +17,15 @@
 
 html {
   width: 100%;
+  /* height: 100%;
   position: fixed;
-  overflow: hidden;
+  overflow: hidden; */
   background-color: var(--main-bg-color);
 }
 
 body {
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   width: 100vw;
   height: 100vh;
@@ -67,6 +69,25 @@ button:focus {
 a.span-active {
   /* color: #77b6eb; */
   font-weight: 800;
+}
+
+blockquote {
+  background: #f7f7f7;
+  border-left: 10px solid #ccc;
+  margin: 2.5em 40px;
+  padding: 0.5em 10px;
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }
 
 /* layout transition */

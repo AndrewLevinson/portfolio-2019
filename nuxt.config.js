@@ -1,14 +1,39 @@
 const pkg = require('./package')
-export default {
-  router: {
-    scrollBehavior: function(to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
-  }
-}
 
 module.exports = {
   mode: 'universal',
+  router: {
+    scrollBehavior: async (to, from, savedPosition) => {
+      if (savedPosition) {
+        return savedPosition
+      }
+
+      const findEl = async (hash, x) => {
+        return (
+          document.querySelector(hash) ||
+          new Promise((resolve, reject) => {
+            if (x > 50) {
+              return resolve()
+            }
+            setTimeout(() => {
+              resolve(findEl(hash, ++x || 1))
+            }, 800)
+          })
+        )
+      }
+
+      if (to.hash) {
+        let el = await findEl(to.hash)
+        if ('scrollBehavior' in document.documentElement.style) {
+          return window.scrollTo({ top: el.offsetTop, behavior: 'smooth' })
+        } else {
+          return window.scrollTo(0, el.offsetTop)
+        }
+      }
+
+      return { x: 0, y: 0 }
+    }
+  },
   generate: {
     routes: function() {
       return ['/work']
@@ -38,23 +63,13 @@ module.exports = {
           'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU',
         crossorigin: 'anonymous'
       }
-    ],
-    script: [
-      {
-        src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js',
-        type: 'text/javascript'
-      },
-      {
-        src: 'smooth.js',
-        type: 'text/javascript'
-      }
     ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#77b6eb' },
 
   /*
   ** Global CSS
