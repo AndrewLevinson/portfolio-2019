@@ -1,6 +1,10 @@
 <template>
   <transition name="fuzzy">
-    <div v-editable="blok" v-show="blok.cat == category || category == `all`" class="feature">
+    <div
+      v-editable="blok"
+      v-show="blok.cat == category && !blok.isHidden || category == `all` && !blok.isHidden"
+      class="feature"
+    >
       <nuxt-link :to="projectPath">
         <img :src="blok.image" :alt="blok.name">
         <div class="feature-specs">

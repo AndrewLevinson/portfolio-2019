@@ -94,21 +94,18 @@ h1 {
   /* line-height: 0; */
 }
 nav {
-  /* margin-left: 10px; */
   position: sticky;
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  background-color: rgba(251, 251, 251, 0.95);
-  /* z-index: 4; */
+  background-color: rgba(245, 245, 245, 0.95);
   border-bottom: 1px solid rgba(119, 182, 235, 0.5);
 }
 
 a {
   padding-bottom: 1.5rem;
 }
+
 ul {
   padding-bottom: 1.5rem;
   margin-left: 10px;
@@ -137,6 +134,7 @@ a:hover {
   font-weight: bolder;
   border-bottom: 3px solid var(--link-color);
   z-index: 999;
+  transition: all 0.3s ease-in-out;
   /* margin-bottom: 0.045rem; */
 }
 </style>

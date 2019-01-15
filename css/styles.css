@@ -7,7 +7,7 @@
 }
 
 :root {
-  --main-bg-color: #f6f6f666;
+  --main-bg-color: rgba(245, 245, 245, 1);
   --primary-color: #77b6eb;
   --accent-color: #222;
   --btn-color: #77b6eb;

@@ -7,6 +7,7 @@ import Feature from '@/components/Feature.vue'
 import Heading from '@/components/Heading.vue'
 import About from '@/components/About.vue'
 import CaseStudy from '@/components/CaseStudy.vue'
+import VizProject from '@/components/VizProject.vue'
 
 Vue.component('project', Project)
 Vue.component('page', Page)
@@ -16,3 +17,4 @@ Vue.component('feature', Feature)
 Vue.component('heading', Heading)
 Vue.component('about', About)
 Vue.component('casestudy', CaseStudy)
+Vue.component('vizproject', VizProject)
