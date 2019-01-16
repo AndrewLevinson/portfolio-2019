@@ -93,6 +93,7 @@ export default {
 }
 #breadcrumbs {
   margin-left: 3rem;
+  margin-top: -5px;
   padding: 2rem 0 2rem 0;
 }
 #breadcrumbs li {
@@ -180,5 +181,36 @@ export default {
   width: 80%;
   margin: 0 auto;
   padding-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  .case-study {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+  #breadcrumbs {
+    margin-left: 2rem;
+  }
+  #breadcrumb-wrap {
+    top: 90px;
+  }
+  .content {
+    width: 85%;
+    margin-left: 7.5%;
+  }
+  .content > h5:first-child {
+    text-align: left;
+  }
+  .peek {
+    display: block;
+    margin-bottom: 6rem;
+  }
+  .content .image-holder img {
+    width: 100%;
+  }
+  .item {
+    /* padding-right: 0; */
+    width: 100%;
+  }
 }
 </style>

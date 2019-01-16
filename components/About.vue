@@ -44,7 +44,14 @@ ___
   /* flex-wrap: wrap-reverse; */
   /* margin-left: 10px; */
 }
-
+@media (max-width: 600px) {
+  .about {
+    margin-top: 1.5rem;
+  }
+  .about-me-content {
+    padding-bottom: 20rem;
+  }
+}
 .img-holder {
   max-width: 40%;
   float: left;

@@ -2,7 +2,7 @@
   <nav>
     <div :class="classyName" class="button-holder">
       <nuxt-link to="/">
-        <div class="image-holder">
+        <div class="logo-holder">
           <img src="/favicon.svg" alt="andrew_l" width="100%">
         </div>
       </nuxt-link>
@@ -93,32 +93,29 @@ button:hover {
 /* close x in top right of open panel */
 .close-btn {
   position: fixed;
+  background-color: #fff;
   top: 20px;
-  right: 10px;
+  right: 2rem;
   transform: rotate(0deg);
   border-radius: 100px;
   /* border-color: coral; */
   border: 1px solid var(--btn-color);
   padding: 0.75rem;
 }
-
 .close-btn:hover {
   color: #fff;
   background-color: var(--btn-color);
   text-decoration: none;
 }
 
-.image-holder {
+.logo-holder {
   position: fixed;
   top: 10px;
   width: 90px;
 }
 
-.image-holder img {
-  /* margin: 0 auto; */
-  /* text-align: center; */
+.logo-holder img {
   padding: 2rem;
-  /* max-width: 90px; */
 }
 nav {
   /* background-color: #fff; */
@@ -164,7 +161,6 @@ section {
 }
 
 section > div {
-  /* align-self: center; */
   padding-right: 3rem;
   padding-left: 3rem;
   overflow-y: auto;
@@ -227,7 +223,7 @@ i {
 }
 
 .slide-enter-active {
-  transform: translateX(calc(0% + 90px));
+  transform: translateX(calc(0% + 0px));
 }
 .slide-leave-active {
   transform: translateX(-100%);
@@ -237,5 +233,57 @@ i {
 .slide-leave-to {
   opacity: 0.85;
   transform: translateX(-100%);
+}
+
+@media (min-width: 600px) {
+  .slide-enter-active,
+  .slide-leave-active {
+    transition: all 0.4s ease-in-out;
+  }
+
+  .slide-enter-active {
+    transform: translateX(calc(0% + 90px));
+  }
+  .slide-leave-active {
+    transform: translateX(-100%);
+  }
+
+  .slide-enter,
+  .slide-leave-to {
+    opacity: 0.85;
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    width: 100vw;
+  }
+
+  .button-holder {
+    position: sticky;
+    height: 90px;
+    width: 100vw;
+    border-bottom: 1px solid var(--border-color);
+  }
+  button {
+    transform: rotate(0deg);
+    padding-top: 1.5rem;
+  }
+  .logo-holder {
+    position: static;
+  }
+
+  section {
+    transform: translateX(0%);
+  }
+  section > div {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  footer {
+    height: 22vh;
+  }
 }
 </style>

@@ -50,6 +50,19 @@ body {
   margin-left: 10px;
 }
 
+@media (max-width: 600px) {
+  #main-content-area {
+    width: 100%;
+    margin-left: 0px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 90px;
+  }
+  #main-content-area h1 {
+    margin-left: 0px;
+  }
+}
+
 a {
   text-decoration: none;
   color: var(--link-color);
@@ -67,7 +80,6 @@ button:focus {
 }
 
 a.span-active {
-  /* color: #77b6eb; */
   font-weight: 800;
 }
 
@@ -89,19 +101,6 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
-
-/* layout transition */
-/* .layout-leave,
-.layout-leave-active {
-  transition: opacity 0.5s;
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
-.layout-enter,
-.layout-leave-active {
-  opacity: 0;
-} */
 
 /* page transition */
 .page-enter-active,

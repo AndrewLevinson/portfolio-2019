@@ -37,7 +37,6 @@
         </div>
       </div>
     </div>
-    <!-- <hr> -->
   </div>
 </template>
 
@@ -91,20 +90,14 @@ export default {
   margin-bottom: -0.1rem;
 }
 
-hr {
-  opacity: 0.3;
-  /* margin: 3rem 0 3rem 0; */
-  width: 35%;
-  margin: 0 auto;
-}
-
 @media (max-width: 1025px) {
   .viz-project > .project-content {
     display: block;
   }
 
   .viz-content {
-    width: 100%;
+    width: 85%;
+    margin-left: 7.5%;
   }
 
   .viz-project #image-holder {

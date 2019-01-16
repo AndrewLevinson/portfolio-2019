@@ -98,8 +98,9 @@ nav {
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(245, 245, 245, 0.95);
+  background-color: rgba(245, 245, 245, 0.9);
   border-bottom: 1px solid rgba(119, 182, 235, 0.5);
+  z-index: 997;
 }
 
 a {
@@ -136,5 +137,14 @@ a:hover {
   z-index: 999;
   transition: all 0.3s ease-in-out;
   /* margin-bottom: 0.045rem; */
+}
+
+@media (max-width: 600px) {
+  nav {
+    top: 80px;
+  }
+  ul {
+    margin-left: 0px;
+  }
 }
 </style>
