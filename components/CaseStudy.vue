@@ -93,6 +93,7 @@ export default {
 }
 #breadcrumbs {
   margin-left: 3rem;
+  margin-right: 3rem;
   margin-top: -5px;
   padding: 2rem 0 2rem 0;
 }

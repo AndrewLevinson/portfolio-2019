@@ -30,7 +30,6 @@ module.exports = {
           return window.scrollTo(0, el.offsetTop)
         }
       }
-
       return { x: 0, y: 0 }
     }
   },
@@ -50,7 +49,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       {
         rel: 'stylesheet',
         href:

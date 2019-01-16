@@ -63,14 +63,20 @@
       and working freelance.
     </h6>
     <nuxt-link to="/work">
-      <button @click:submit.prevent="onSubmit">See my work →</button>
+      <button :class="classyName" @click:submit.prevent="onSubmit">See my work →</button>
     </nuxt-link>
   </section>
 </template>
 
 <script>
 export default {
-  layout: 'main'
+  layout: 'main',
+  data() {
+    return { classyName: '' }
+  },
+  mounted() {
+    this.classyName = 'appear'
+  }
 }
 </script>
 
@@ -95,6 +101,14 @@ button {
   font-weight: bold;
   text-transform: uppercase;
   line-height: 1;
+  opacity: 0;
+}
+
+.appear {
+  display: block;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  transition-delay: 1s;
 }
 
 button:hover {
@@ -102,9 +116,6 @@ button:hover {
   border-color: #fff;
   color: #fff;
   transition: 0.3s all ease-in-out;
-}
-
-.button-container:hover {
   text-decoration: none;
 }
 

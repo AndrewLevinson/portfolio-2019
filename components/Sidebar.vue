@@ -138,13 +138,13 @@ nav {
 
 @keyframes bounce-in {
   0% {
-    transform: translateX(0px);
+    width: 90px;
   }
   50% {
-    transform: translateX(16px);
+    width: 106px;
   }
   100% {
-    transform: translateX(0px);
+    width: 90px;
   }
 }
 
