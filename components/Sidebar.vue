@@ -133,7 +133,7 @@ nav {
 
 .bounce {
   animation: bounce-in 0.5s;
-  animation-delay: 2s;
+  animation-delay: 5s;
 }
 
 @keyframes bounce-in {
@@ -141,13 +141,26 @@ nav {
     width: 90px;
   }
   50% {
-    width: 106px;
+    width: 104px;
   }
   100% {
     width: 90px;
   }
 }
 
+@media (max-width: 600px) {
+  @keyframes bounce-in {
+    0% {
+      height: 90px;
+    }
+    50% {
+      height: 104px;
+    }
+    100% {
+      height: 90px;
+    }
+  }
+}
 section {
   height: 100vh;
   display: flex;

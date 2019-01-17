@@ -112,28 +112,24 @@ h6 {
   opacity: 0;
 }
 
-.appear h1 {
+.appear h1,
+.appear h4,
+.appear button,
+.appear h6 {
   opacity: 1;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
+}
 
+.appear h1 {
   transition-delay: 0s;
 }
 .appear h4 {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-
-  transition-delay: 1s;
+  transition-delay: 1.5s;
 }
 .appear button {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-
-  transition-delay: 2s;
+  transition-delay: 3s;
 }
 .appear h6 {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-
   transition-delay: 3s;
 }
 
