@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      aboutMD: `From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now I'm telling data-driven stories with code. There's clearly a war between [my left brain vs. my right brain](https://www.youtube.com/watch?v=0jBK4qDJ-OM). In my free time I like playing guitar, making weird music, and browsing [my favorite subreddit](https://www.reddit.com/r/dataisugly/) . I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea – so reach out and we can collaborate. ✌🏻 
+      aboutMD: `From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now **I'm telling data-driven stories with code**. There's clearly a war between [my left brain vs. my right brain](https://www.youtube.com/watch?v=0jBK4qDJ-OM). In my free time I like playing guitar, making weird music, and browsing [my favorite subreddit](https://www.reddit.com/r/dataisugly/) . I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea – so reach out and we can collaborate. ✌🏻 
       
 ##### —
 #### Reach Out

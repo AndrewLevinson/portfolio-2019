@@ -1,21 +1,11 @@
 <template>
-  <section class="intro-section">
+  <section :class="classyName" class="intro-section">
     <h1>Hey, it's Andrew</h1>
-    <h5>
-      I like to
-      <a href="home#data_viz">
-        visualize data
-        <sup>↡</sup>
-      </a>
-      and
-      <a href="home#product">
-        design digital products
-        <sup>↡</sup>.
-      </a>
-      But that doesn't really tell you who I am...
-      <br>
-    </h5>
-    <p>
+    <h4>
+      I like to visualize data
+      <sup>*</sup> and design digital products. But that doesn't really tell you who I am...
+    </h4>
+    <!-- <p>
       First I was born. Fast forward a few years and I'm making music and
       touring with my
       <a
@@ -49,10 +39,12 @@
         <sup>↡</sup>
       </a>.
     </p>
-    <br>
-    <h6>
-      <a style="font-weight:800">*</a> Currently attending Parsons School
-      of Design (2019) for
+    <br>-->
+    <nuxt-link to="/work">
+      <button @click:submit.prevent="onSubmit">See my work →</button>
+    </nuxt-link>
+    <h6 id="current-life">
+      <sup>*</sup> Currently attending Parsons School of Design (2019) for
       <a
         href="https://www.newschool.edu/parsons/ms-data-visualization/"
         target="_blank"
@@ -62,9 +54,6 @@
       </a>
       and working freelance.
     </h6>
-    <nuxt-link to="/work">
-      <button :class="classyName" @click:submit.prevent="onSubmit">See my work →</button>
-    </nuxt-link>
   </section>
 </template>
 
@@ -86,11 +75,13 @@ export default {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  /* opacity: 0; */
 }
 
 /* button */
 button {
-  align-self: flex-start;
+  margin-top: 2rem;
   padding: 0.75rem;
   border-radius: 6px;
   text-align: center;
@@ -100,15 +91,41 @@ button {
   cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
   line-height: 1;
+  /* opacity: 0; */
+}
+
+h1,
+h4,
+button,
+h6 {
   opacity: 0;
 }
 
-.appear {
-  display: block;
+.appear h1 {
   opacity: 1;
   transition: opacity 1s ease-in-out;
+
+  transition-delay: 0s;
+}
+.appear h4 {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+
   transition-delay: 1s;
+}
+.appear button {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+
+  transition-delay: 2s;
+}
+.appear h6 {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+
+  transition-delay: 3s;
 }
 
 button:hover {
@@ -117,6 +134,12 @@ button:hover {
   color: #fff;
   transition: 0.3s all ease-in-out;
   text-decoration: none;
+}
+
+#current-life {
+  position: fixed;
+  bottom: 30px;
+  padding-right: 2rem;
 }
 
 @media (max-width: 600px) {
