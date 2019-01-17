@@ -90,6 +90,13 @@ blockquote {
   padding: 0.5em 10px;
   quotes: '\201C' '\201D' '\2018' '\2019';
 }
+
+@media (max-width: 600px) {
+  blockquote {
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+}
 blockquote:before {
   color: #ccc;
   content: open-quote;

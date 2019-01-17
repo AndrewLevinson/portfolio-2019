@@ -22,6 +22,8 @@
           <p class="name">{{ blok.name }}</p>
           <p class="description">{{ blok.description }}</p>
         </div>
+      </nuxt-link>
+      <nuxt-link :to="projectPath">
         <div class="view-project">
           <p>View project</p>
           <p>→</p>
@@ -53,10 +55,13 @@ export default {
   border-radius: 4px;
   transition: 0.3s all ease-in-out;
   background-color: #fff;
+  position: relative;
+  top: 0;
 }
 
 .feature:hover {
   box-shadow: 0px 4px 17px 2px #ccc;
+  top: -3px;
   transition: 0.3s all ease-in-out;
   cursor: pointer;
 }
@@ -68,7 +73,7 @@ img {
 }
 
 .feature-specs {
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 70px 1.25rem;
   font-weight: 500;
   color: #3b3b3d;
   line-height: 1.25;
@@ -91,6 +96,7 @@ img {
 
 .time-details {
   text-align: right;
+  /* flex-wrap: wrap-reverse; */
 }
 
 .time-tags-wrapper {
@@ -98,6 +104,10 @@ img {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 1.75rem;
+}
+
+.tags-wrapper {
+  white-space: nowrap;
 }
 
 .view-project {
@@ -108,6 +118,10 @@ img {
   border-top: 1px solid var(--border-color);
   opacity: 0.8;
   font-weight: 500;
+  position: absolute;
+  bottom: 0;
+  height: 55px;
+  width: 100%;
 }
 
 .view-project:hover {

@@ -104,26 +104,19 @@ nav {
 }
 
 a {
+  display: inline-block;
   padding-bottom: 1.5rem;
 }
 
 ul {
-  padding-bottom: 1.5rem;
   margin-left: 10px;
   list-style: none;
   text-align: left;
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
-  min-width: 280px;
   max-width: 600px;
 }
-
-/* button {
-  background-color: transparent;
-  border: none;
-  color: var(--btn-color);
-} */
 
 a:hover {
   cursor: pointer;
@@ -136,7 +129,6 @@ a:hover {
   border-bottom: 3px solid var(--link-color);
   z-index: 999;
   transition: all 0.3s ease-in-out;
-  /* margin-bottom: 0.045rem; */
 }
 
 @media (max-width: 600px) {

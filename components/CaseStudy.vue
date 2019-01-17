@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="case-study">
+  <div v-editable="blok" :class="blok.name" class="case-study">
     <img id="hero-image" :src="blok.hero_img" alt="hero image" width="100%">
     <nav id="breadcrumb-wrap">
       <ul id="breadcrumbs">
@@ -62,6 +62,30 @@
           frameborder="0"
           allowtransparency="true"
         ></iframe>
+      </div>
+      <div class="solutions">
+        <h6>Solution Showcase</h6>
+        <h5>Final Designs</h5>
+        <p>You made it to the end! Below are the final completed designs in the form of images, gifs, and videos.</p>
+        <div v-if="blok.name == 'Unbreakable'" class="solution-vids">
+          <video
+            v-for="vid in blok.showcase"
+            :key="vid.name"
+            :src="vid.filename"
+            :name="vid.name"
+            controls="controls"
+            width="100%"
+          ></video>
+        </div>
+        <div v-else class="solution-imgs">
+          <img
+            v-for="pic in blok.showcase"
+            :key="pic.name"
+            :src="pic.filename"
+            :alt="pic.name"
+            width="100%"
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -133,7 +157,10 @@ export default {
 /* peek image */
 .content .image-holder img {
   margin-top: 3rem;
-  width: 325px;
+  width: 350px;
+}
+.Unbreakable .image-holder img {
+  max-width: 250px;
 }
 
 .markdown img {
@@ -184,6 +211,40 @@ export default {
   padding-top: 3rem;
 }
 
+.solution-vids {
+  text-align: center;
+  display: grid;
+  padding: 3rem 0 3rem 0;
+  margin: 0;
+  grid-row-gap: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+}
+.solution-vids video {
+  width: 85%;
+  max-width: 400px;
+}
+
+.solution-imgs {
+  padding-top: 3rem;
+  width: calc(100% + 0rem);
+  /* margin-left: -3rem; */
+}
+
+.solution-imgs img {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1025px) {
+  .peek {
+    display: block;
+    margin-bottom: 6rem;
+  }
+  .content .image-holder img {
+    width: 100%;
+    padding-left: 3rem;
+  }
+}
+
 @media (max-width: 600px) {
   .case-study {
     width: calc(100% + 4rem);
@@ -202,13 +263,7 @@ export default {
   .content > h5:first-child {
     text-align: left;
   }
-  .peek {
-    display: block;
-    margin-bottom: 6rem;
-  }
-  .content .image-holder img {
-    width: 100%;
-  }
+
   .item {
     /* padding-right: 0; */
     width: 100%;
