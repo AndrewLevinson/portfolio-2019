@@ -1,11 +1,12 @@
 <template>
-  <section :class="classyName" class="intro-section">
-    <h1>Hey, it's Andrew</h1>
-    <h4>
-      I like to visualize data
-      <sup>*</sup> and design digital products. But that doesn't really tell you who I am...
-    </h4>
-    <!-- <p>
+  <div id="intro-holder">
+    <section :class="classyName" class="intro-section">
+      <h1>Hey, it's Andrew</h1>
+      <h4>
+        I like to visualize data
+        <sup>*</sup> and design digital products. But that doesn't really tell you who I am...
+      </h4>
+      <!-- <p>
       First I was born. Fast forward a few years and I'm making music and
       touring with my
       <a
@@ -39,22 +40,23 @@
         <sup>↡</sup>
       </a>.
     </p>
-    <br>-->
-    <nuxt-link to="/work">
-      <button @click:submit.prevent="onSubmit">See my work →</button>
-    </nuxt-link>
-    <h6 id="current-life">
-      <sup>*</sup> Currently attending Parsons School of Design (2019) for
-      <a
-        href="https://www.newschool.edu/parsons/ms-data-visualization/"
-        target="_blank"
-      >
-        Data Visualization (MS)
-        <sup>⇗</sup>
-      </a>
-      and working freelance.
-    </h6>
-  </section>
+      <br>-->
+      <nuxt-link to="/work">
+        <button @click:submit.prevent="onSubmit">See my work →</button>
+      </nuxt-link>
+      <h6 id="current-life">
+        <sup>*</sup> Currently attending Parsons School of Design (2019) for
+        <a
+          href="https://www.newschool.edu/parsons/ms-data-visualization/"
+          target="_blank"
+        >
+          Data Visualization (MS)
+          <sup>⇗</sup>
+        </a>
+        and working freelance.
+      </h6>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -70,12 +72,19 @@ export default {
 </script>
 
 <style scoped>
+#intro-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .intro-section {
-  padding: 10rem 12rem 5rem 12rem;
-  width: 100%;
+  /* align-self: center; */
+  padding: 0rem 12rem 5rem 12rem;
+  /* width: 100%; */
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
   /* opacity: 0; */
 }
 
@@ -144,7 +153,7 @@ button:hover {
 
 @media (max-width: 600px) {
   .intro-section {
-    padding: 140px 2rem 5rem 2rem;
+    padding: 0 2rem 5rem 2rem;
     width: 100%;
     max-width: none;
   }
