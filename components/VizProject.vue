@@ -7,7 +7,7 @@
         </li>
         <li>⟶</li>
         <li>
-          <nuxt-link to="/Work">My Work</nuxt-link>
+          <nuxt-link to="/work">My Work</nuxt-link>
         </li>
         <li>⟶</li>
         <li id="current">{{ blok.name }}</li>

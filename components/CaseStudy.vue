@@ -8,7 +8,7 @@
         </li>
         <li>⟶</li>
         <li>
-          <nuxt-link to="/Work">My Work</nuxt-link>
+          <nuxt-link to="/work">My Work</nuxt-link>
         </li>
         <li>⟶</li>
         <li id="current">{{ blok.name }}</li>
@@ -63,7 +63,7 @@
           allowtransparency="true"
         ></iframe>
       </div>
-      <div class="solutions">
+      <div v-if="blok.name !== 'Business' && blok.name !== 'Music'" class="solutions">
         <h6>Solution Showcase</h6>
         <h5>Final Designs</h5>
         <p>You made it to the end! Below are the final completed designs in the form of images, gifs, and videos.</p>
