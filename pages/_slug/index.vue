@@ -90,7 +90,9 @@ export default {
 <style scoped>
 h1 {
   margin-bottom: 1.5rem;
-  margin-left: 10px;
+  /* margin-left: 10px; */
+  margin-left: calc(3rem + 10px);
+
   /* line-height: 0; */
 }
 nav {
@@ -98,8 +100,11 @@ nav {
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(245, 245, 245, 0.9);
-  border-bottom: 1px solid rgba(119, 182, 235, 0.5);
+  background-color: rgba(245, 245, 245, 0.95);
+  /* border-bottom: 1px solid rgba(119, 182, 235, 0.5); */
+  box-shadow: 0px 1px 10px 0px #ccc;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
   z-index: 997;
 }
 
@@ -109,13 +114,21 @@ a {
 }
 
 ul {
-  margin-left: 10px;
+  margin-left: calc(3rem + 10px);
   list-style: none;
   text-align: left;
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
   max-width: 600px;
+}
+
+li {
+  padding-right: 1.5rem;
+}
+
+li:last-child {
+  padding-right: 1rem;
 }
 
 a:hover {
@@ -128,15 +141,17 @@ a:hover {
   font-weight: bolder;
   border-bottom: 3px solid var(--link-color);
   z-index: 999;
-  transition: all 0.3s ease-in-out;
+  /* transition: all 0.3s ease-in-out; */
 }
 
 @media (max-width: 600px) {
   nav {
     top: 80px;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
   }
   ul {
-    margin-left: 0px;
+    margin-left: calc(2rem);
   }
 }
 </style>

@@ -11,7 +11,7 @@
 
     <transition name="slide">
       <section v-if="show">
-        <button class="close-btn" @click="show = !show">Close</button>
+        <!-- <button class="close-btn" @click="show = !show">Close</button> -->
         <div>
           <About/>
         </div>
@@ -121,8 +121,9 @@ nav {
   /* background-color: #fff; */
   z-index: 999;
   position: fixed;
-  width: 50%;
-  min-width: 320px;
+  width: 510px;
+  /* max-width: 510px; */
+  /* min-width: 510px; */
   /* border-right: 1px solid #3d3d3d; */
 }
 
@@ -271,6 +272,7 @@ i {
 @media (max-width: 600px) {
   nav {
     width: 100vw;
+    min-width: 0;
   }
 
   .button-holder {

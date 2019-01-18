@@ -70,6 +70,7 @@ export default {
 
 .viz-project #image-holder {
   width: 100%;
+  z-index: 100;
   /* padding-right: 1.5rem; */
   /* border-right: 1px solid var(--border-color); */
 }

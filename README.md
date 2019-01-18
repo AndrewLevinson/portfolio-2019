@@ -1,22 +1,26 @@
-# portfolio-2019
+# Portfolio Site
 
-> My priceless Nuxt.js project
+> My portolfio redesign for 2019 built with Nuxt.js at andrewlevinson.me that showcases my work in Data Visualization, Product Design, and other misc. projects.
+
+I also used the Storyblok headless CMS for my content and Netlify to deploy.
+
+---
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
-$ yarn install
+$ npm install
 
 # serve with hot reload at localhost:3000
-$ yarn run dev
+$ npm run dev
 
 # build for production and launch server
-$ yarn run build
-$ yarn start
+$ npm run build
+$ npm start
 
 # generate static project
-$ yarn run generate
+$ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

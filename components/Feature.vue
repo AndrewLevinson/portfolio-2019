@@ -25,7 +25,8 @@
       </nuxt-link>
       <nuxt-link :to="projectPath">
         <div class="view-project">
-          <p>View project</p>
+          <p v-if="blok.cat == 'Product Design 👨🏻‍💻'">View Case Study</p>
+          <p v-else>View Project Overview</p>
           <p>→</p>
         </div>
       </nuxt-link>
@@ -48,7 +49,7 @@ export default {
 .feature {
   text-align: left;
   box-shadow: 0px 1px 10px 0px #ccc;
-  /* border: 1px solid #ddd; */
+  border: 1px solid var(--border-color);
   margin: 16px;
   margin-left: 10px;
   padding: 0rem;

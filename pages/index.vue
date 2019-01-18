@@ -105,6 +105,14 @@ button {
   /* opacity: 0; */
 }
 
+button:hover {
+  background: var(--btn-color);
+  border-color: #fff;
+  color: #fff;
+  transition: 0.3s all ease-in-out;
+  text-decoration: none;
+}
+
 h1,
 h4,
 button,
@@ -131,14 +139,6 @@ h6 {
 }
 .appear h6 {
   transition-delay: 3s;
-}
-
-button:hover {
-  background: var(--btn-color);
-  border-color: #fff;
-  color: #fff;
-  transition: 0.3s all ease-in-out;
-  text-decoration: none;
 }
 
 #current-life {

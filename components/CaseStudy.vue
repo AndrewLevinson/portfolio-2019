@@ -13,6 +13,7 @@
         <li>⟶</li>
         <li id="current">{{ blok.name }}</li>
       </ul>
+      <!-- <nuxt-link :to="blok.name">Next⟶</nuxt-link> -->
     </nav>
     <div class="content">
       <h5>{{ blok.summary }}</h5>
@@ -136,6 +137,7 @@ export default {
 
 #hero-image {
   width: 100%;
+  z-index: 100;
   /* border-radius: 0 0 4px 4px; */
 }
 .content h5 {
@@ -144,6 +146,7 @@ export default {
 
 .content h6 {
   margin-bottom: -5.25rem;
+  padding-top: 3rem;
   opacity: 0.7;
 }
 

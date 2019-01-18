@@ -6,7 +6,9 @@
       :blok="story.content"
       :is="story.content.component"
     ></component>
-    <!-- <h2>{{ story.content.maincontent[0]["name"] }}</h2> -->
+    <nuxt-link to="#main-content-area">
+      <button>↟</button>
+    </nuxt-link>
   </section>
 </template>
 
@@ -37,7 +39,7 @@ export default {
         version: version
       })
       .then(res => {
-        console.log(res.data.story.content)
+        // console.log(res.data.story.content)
         return res.data
       })
       .catch(res => {
@@ -49,3 +51,30 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  background-color: #fff;
+  box-shadow: 0px 1px 10px 0px #ccc;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 100%;
+  /* padding: 2rem; */
+  height: 50px;
+  width: 50px;
+  line-height: 1;
+  font-size: 200%;
+}
+
+button:hover {
+  bottom: 43px;
+  box-shadow: 0px 4px 17px 2px #ccc;
+  background-color: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+</style>
