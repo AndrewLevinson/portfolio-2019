@@ -1,6 +1,6 @@
 <template>
   <section id="main-content-area">
-    <nav>
+    <nav id="drop" @scroll="handleScroll">
       <h1>My Work</h1>
       <div id="sidebar">
         <ul>
@@ -45,8 +45,15 @@
 export default {
   layout: 'main',
   data() {
-    return { story: { content: {} }, cat: 'all', onlyPaid: false, active_el: 1 }
+    return {
+      story: { content: {} },
+      cat: 'all',
+      onlyPaid: false,
+      active_el: 1,
+      scrolled: false
+    }
   },
+
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
       if (event.action == 'input') {
@@ -57,12 +64,28 @@ export default {
         window.location.reload()
       }
     })
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  // created() {
+  //   window.addEventListener('scroll', this.handleSCroll)
+  // },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleSCroll)
   },
   methods: {
     activate: function(el) {
       this.active_el = el
+    },
+    handleScroll() {
+      let header = document.getElementById('drop')
+      if (window.scrollY > 0 && !header.className.includes('drop')) {
+        header.classList.add('drop')
+      } else if (window.scrollY < 0) {
+        header.classList.remove('drop')
+      }
     }
   },
+
   asyncData(context) {
     // Check if we are in the editor mode
     let version =
@@ -101,11 +124,18 @@ nav {
   padding-top: 2rem;
   margin-bottom: 1.5rem;
   background-color: rgba(245, 245, 245, 0.95);
-  /* border-bottom: 1px solid rgba(119, 182, 235, 0.5); */
-  box-shadow: 0px 1px 10px 0px #ccc;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none;
   width: calc(100% + 6rem);
   margin-left: -3rem;
   z-index: 997;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.drop {
+  border-bottom: none;
+  box-shadow: 0px 2px 6px 0px #ccc;
+  transition: box-shadow 0.4s ease-in-out;
 }
 
 a {
