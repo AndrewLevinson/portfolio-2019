@@ -80,7 +80,7 @@ export default {
       let header = document.getElementById('drop')
       if (window.scrollY > 0 && !header.className.includes('drop')) {
         header.classList.add('drop')
-      } else if (window.scrollY < 0) {
+      } else if (window.scrollY < 1) {
         header.classList.remove('drop')
       }
     }
@@ -123,7 +123,7 @@ nav {
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(245, 245, 245, 0.95);
+  background-color: rgba(251, 251, 251, 0.95);
   border-bottom: 1px solid var(--border-color);
   box-shadow: none;
   width: calc(100% + 6rem);

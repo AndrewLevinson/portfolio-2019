@@ -69,7 +69,8 @@ export default {
   position: absolute;
   height: 100vh;
   width: 90px;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--main-bg-color);
   border-right: 1px solid var(--border-color);
   z-index: 3;
   display: flex;
@@ -91,14 +92,13 @@ button:hover {
 }
 
 /* close x in top right of open panel */
-.close-btn {
+/* .close-btn {
   position: fixed;
   background-color: #fff;
   top: 20px;
   right: 2rem;
   transform: rotate(0deg);
   border-radius: 100px;
-  /* border-color: coral; */
   border: 1px solid var(--btn-color);
   padding: 0.75rem;
 }
@@ -106,7 +106,7 @@ button:hover {
   color: #fff;
   background-color: var(--btn-color);
   text-decoration: none;
-}
+} */
 
 .logo-holder {
   position: fixed;
@@ -118,19 +118,10 @@ button:hover {
   padding: 2rem;
 }
 nav {
-  /* background-color: #fff; */
   z-index: 999;
   position: fixed;
   width: 510px;
-  /* max-width: 510px; */
-  /* min-width: 510px; */
-  /* border-right: 1px solid #3d3d3d; */
 }
-
-/* .hidden {
-  transform: translateX(-90%);
-  transition: all 0.3s ease-in-out;
-} */
 
 .bounce {
   animation: bounce-in 0.5s;
@@ -166,7 +157,8 @@ section {
   height: 100vh;
   display: flex;
   text-align: left;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--main-bg-color);
   border-right: 1px solid var(--border-color);
   transform: translateX(calc(0% + 90px));
   box-shadow: 0px 1px 16px 0px #ccc;
@@ -206,7 +198,8 @@ li {
 footer {
   height: 10vh;
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--main-bg-color);
   position: fixed;
   bottom: 0;
   border-top: 1px solid var(--border-color);

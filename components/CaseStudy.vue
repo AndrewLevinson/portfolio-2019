@@ -111,7 +111,9 @@ export default {
   position: sticky;
   top: 0px;
   width: 100%;
-  background-color: #fff;
+  /* background-color: #fff; */
+  background-color: var(--main-bg-color);
+
   border-bottom: 1px solid var(--border-color);
   z-index: 990;
   /* height: 100px; */

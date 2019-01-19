@@ -35,7 +35,20 @@ module.exports = {
   },
   generate: {
     routes: function() {
-      return ['/work']
+      return [
+        '/work',
+        '/projects/ease-energy',
+        '/projects/arc',
+        '/projects/sensor',
+        '/projects/quakes',
+        '/projects/clock',
+        '/projects/africa',
+        '/projects/event-tech',
+        '/projects/unbreakable',
+        '/projects/pension',
+        '/projects/business',
+        '/projects/music'
+      ]
     }
   },
   /*

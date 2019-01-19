@@ -12,7 +12,7 @@
             <div class="tags-wrapper">
               <span>{{ blok.cat }}</span>
               <span v-if="blok.isPaid" class="paid">Paid $</span>
-              <span v-else class="unpaid">Unpaid</span>
+              <!-- <span v-else class="unpaid">Unpaid</span> -->
             </div>
             <div class="time-details">
               <span>{{ blok.release }}</span>
