@@ -6,7 +6,10 @@
           <img src="/favicon.svg" alt="andrew_l" width="100%">
         </div>
       </nuxt-link>
-      <button @click="show = !show">About Me</button>
+      <button @click="show = !show">About Me
+        <!-- <span v-if="show">x</span> -->
+        <!-- <span v-else>+</span> -->
+      </button>
     </div>
 
     <transition name="slide">
@@ -66,10 +69,6 @@ export default {
 </script>
 
 <style scoped>
-.custom-appear-class {
-  opacity: 0.2;
-  transition: all 1s ease;
-}
 .button-holder {
   position: absolute;
   height: 100vh;
@@ -77,14 +76,14 @@ export default {
   /* background-color: #fff; */
   background-color: var(--main-bg-color);
   border-right: 1px solid var(--border-color);
-  z-index: 3;
+  z-index: 10;
   display: flex;
 }
 
 button {
   align-self: center;
   background: transparent;
-  border: none;
+  border: var(--main-bg-color);
   color: var(--btn-color);
   padding: 0.5rem;
   transform: rotate(-90deg);
@@ -94,6 +93,7 @@ button:hover {
   text-decoration: underline;
   cursor: pointer;
   font-weight: 600;
+  padding: 0.5rem;
 }
 
 /* close x in top right of open panel */
@@ -167,8 +167,8 @@ nav {
   top: 0;
   width: 100vw; /* Full width */
   height: 100vh; /* Full height */
-  transition: all 1s ease-in-out;
 }
+
 section {
   height: 100vh;
   display: flex;
@@ -180,7 +180,7 @@ section {
   /* box-shadow: 0px 1px 16px 0px #ccc; */
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1;
 }
 
 section > div {
@@ -259,6 +259,18 @@ i {
   transform: translateX(-100%);
 }
 
+.slowFade-enter,
+.slowFade-leave-to {
+  opacity: 0;
+}
+.slowFade-enter-active {
+  transition: opacity 0.6s ease-in-out;
+  transition-delay: 0.1s;
+}
+.slowFade-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
 @media (min-width: 600px) {
   .slide-enter-active,
   .slide-leave-active {
@@ -277,11 +289,6 @@ i {
     opacity: 0.85;
     transform: translateX(-100%);
   }
-
-  .slowFade-enter,
-  .slowFade-leave-to {
-    opacity: 0;
-  }
 }
 
 @media (max-width: 600px) {
@@ -296,10 +303,16 @@ i {
     width: 100vw;
     border-bottom: 1px solid var(--border-color);
   }
+
   button {
     transform: rotate(0deg);
     padding-top: 1.5rem;
   }
+
+  button:hover {
+    padding-top: 1.5rem;
+  }
+
   .logo-holder {
     position: static;
   }
@@ -307,6 +320,7 @@ i {
   section {
     transform: translateX(0%);
   }
+
   section > div {
     padding-right: 2rem;
     padding-left: 2rem;
