@@ -41,6 +41,11 @@
         </footer>
       </section>
     </transition>
+    <div @click="show = !show">
+      <transition name="slowFade">
+        <div v-if="show" id="modal-holder"></div>
+      </transition>
+    </div>
   </nav>
 </template>
 
@@ -153,6 +158,17 @@ nav {
     }
   }
 }
+
+#modal-holder {
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  position: fixed; /* Stay in place */
+  /* z-index: -100; */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  transition: all 1s ease-in-out;
+}
 section {
   height: 100vh;
   display: flex;
@@ -161,9 +177,10 @@ section {
   background-color: var(--main-bg-color);
   border-right: 1px solid var(--border-color);
   transform: translateX(calc(0% + 90px));
-  box-shadow: 0px 1px 16px 0px #ccc;
+  /* box-shadow: 0px 1px 16px 0px #ccc; */
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 section > div {
@@ -259,6 +276,11 @@ i {
   .slide-leave-to {
     opacity: 0.85;
     transform: translateX(-100%);
+  }
+
+  .slowFade-enter,
+  .slowFade-leave-to {
+    opacity: 0;
   }
 }
 
