@@ -7,7 +7,7 @@
 }
 
 :root {
-  --main-bg-color: #fbfbfb;
+  --main-bg-color: #f7f7f7;
   --primary-color: #77b6eb;
   --accent-color: #222;
   --btn-color: #77b6eb;
@@ -71,6 +71,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  text-decoration-style: double;
   font-weight: bolder;
   opacity: 1;
 }

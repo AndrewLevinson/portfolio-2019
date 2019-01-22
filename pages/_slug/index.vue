@@ -123,7 +123,7 @@ nav {
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(251, 251, 251, 0.95);
+  background-color: rgba(247, 247, 247, 0.95);
   border-bottom: 1px solid var(--border-color);
   box-shadow: none;
   width: calc(100% + 6rem);

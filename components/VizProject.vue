@@ -1,5 +1,8 @@
 <template>
   <div v-editable="blok" class="viz-project">
+    <div id="image-holder">
+      <img id="main-image" :src="blok.image" alt="hero image" width="100%">
+    </div>
     <nav id="breadcrumb-wrap">
       <ul id="breadcrumbs">
         <li>
@@ -13,9 +16,6 @@
         <li id="current">{{ blok.name }}</li>
       </ul>
     </nav>
-    <div id="image-holder">
-      <img id="main-image" :src="blok.image" alt="hero image" width="100%">
-    </div>
     <div class="project-content">
       <div class="viz-content">
         <h5>{{ blok.name }}</h5>
