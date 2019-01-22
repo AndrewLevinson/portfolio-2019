@@ -1,4 +1,5 @@
 const pkg = require('./package')
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -101,7 +102,7 @@ module.exports = {
     [
       'storyblok-nuxt',
       {
-        accessToken: 'EncrplQK9R5bUJhdvuCvswtt',
+        accessToken: process.env.STORYBLOK_KEY,
         cacheProvider: 'memory'
       }
     ],
