@@ -162,9 +162,6 @@ a:hover {
   /* transform: translateX(calc(0% + 90px)); */
   opacity: 0;
 }
-.fuzzy-leave-active {
-  /* transform: translateX(-100%); */
-}
 
 .fuzzy-enter,
 .fuzzy-leave-to {
