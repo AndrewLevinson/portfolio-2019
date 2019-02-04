@@ -8,10 +8,11 @@
 
 :root {
   --main-bg-color: #f7f7f7;
-  --primary-color: #77b6eb;
+  /* --primary-color: #77b6eb; */
+  --primary-color: #de9f5f;
   --accent-color: #222;
-  --btn-color: #77b6eb;
-  --link-color: #77b6eb;
+  --btn-color: #de9f5f;
+  --link-color: #5f90de;
   --border-color: rgba(204, 204, 204, 0.5);
 }
 
@@ -78,7 +79,7 @@ a:hover {
 
 a:focus,
 button:focus {
-  outline-color: var(--link-color);
+  outline-color: var(--button-color);
 }
 
 a.span-active {
@@ -86,7 +87,7 @@ a.span-active {
 }
 
 blockquote {
-  background: #f7f7f7;
+  background: #f1f1f1;
   border-left: 10px solid #ccc;
   margin: 2.5em 40px;
   padding: 0.5em 10px;

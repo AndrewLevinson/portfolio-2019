@@ -143,7 +143,7 @@ img {
 }
 
 .paid {
-  background-color: #74e3af !important;
+  background-color: #5fde89 !important;
 }
 .unpaid {
   background-color: #979797 !important;
