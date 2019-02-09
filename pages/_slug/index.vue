@@ -134,7 +134,7 @@ nav {
 
 .drop {
   border-bottom: none;
-  box-shadow: 0px 2px 6px 0px #ccc;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.13);
   transition: box-shadow 0.4s ease-in-out;
 }
 
