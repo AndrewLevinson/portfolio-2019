@@ -34,7 +34,6 @@ export default {
 ___
 Full Name: **Andrew Levinson**
 Email: **[andrewlevins@gmail.com](mailto:andrewlevins@gmail.com)**
-Cell: **[224-622-1788](tel:+2246221788)**
 ___`
     }
   }
