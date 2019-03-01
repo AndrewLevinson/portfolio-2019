@@ -68,13 +68,16 @@ body {
 a {
   text-decoration: none;
   color: var(--link-color);
+  transition: all 0.25s ease-in-out;
 }
 
 a:hover {
-  text-decoration: underline;
-  text-decoration-style: double;
-  font-weight: bolder;
+  /* text-decoration: underline; */
+  /* text-decoration-style: double; */
+  /* font-weight: bolder; */
+  color: var(--primary-color);
   opacity: 1;
+  transition: all 0.25s ease-in-out;
 }
 
 a:focus,
