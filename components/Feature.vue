@@ -129,6 +129,7 @@ img {
   /* font-weight: bolder; */
   letter-spacing: 0.05rem;
   opacity: 1;
+  color: var(--primary-color);
   transition: all 0.3s ease-in;
 }
 

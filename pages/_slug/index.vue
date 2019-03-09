@@ -141,6 +141,7 @@ nav {
 a {
   display: inline-block;
   padding-bottom: 1.5rem;
+  border-bottom: 3px solid transparent;
 }
 
 ul {
@@ -171,7 +172,10 @@ a:hover {
   font-weight: bolder;
   border-bottom: 3px solid var(--link-color);
   z-index: 999;
-  /* transition: all 0.3s ease-in-out; */
+}
+
+.active:hover {
+  border-bottom: 3px solid var(--primary-color);
 }
 
 @media (max-width: 600px) {
