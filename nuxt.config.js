@@ -1,5 +1,6 @@
 const pkg = require('./package')
 require('dotenv').config()
+const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   mode: 'universal',
@@ -93,7 +94,19 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
 
-  plugins: ['~/plugins/components.js'],
+  plugins: [
+    '~/plugins/components.js',
+
+    new CompressionPlugin({
+      filename: '[path].br[query]',
+      algorithm: 'brotliCompress',
+      test: /\.(js|css|html|svg)$/,
+      compressionOptions: { level: 11 },
+      threshold: 10240,
+      minRatio: 0.8,
+      deleteOriginalAssets: false
+    })
+  ],
 
   /*
   ** Nuxt.js modules
