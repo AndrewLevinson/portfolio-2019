@@ -94,19 +94,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
 
-  plugins: [
-    '~/plugins/components.js',
-
-    new CompressionPlugin({
-      filename: '[path].br[query]',
-      algorithm: 'brotliCompress',
-      test: /\.(js|css|html|svg)$/,
-      compressionOptions: { level: 11 },
-      threshold: 10240,
-      minRatio: 0.8,
-      deleteOriginalAssets: false
-    })
-  ],
+  plugins: ['~/plugins/components.js'],
 
   /*
   ** Nuxt.js modules
@@ -145,6 +133,14 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    plugins: [
+      new CompressionPlugin({
+        filename: '[path].gz[query]',
+        test: /\.js$|\.css$|\.html$/,
+        threshold: 10240,
+        minRatio: 0.8
+      })
+    ]
   }
 }
