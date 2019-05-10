@@ -27,7 +27,9 @@
         </div>
       </div>
       <div id="image-holder">
-        <img id="main-image" :src="blok.image" alt="hero image" width="100%">
+        <a :href="blok.project_link.cached_url" target="_blank">
+          <img id="main-image" :src="blok.image" alt="hero image" width="100%">
+        </a>
       </div>
     </div>
 
