@@ -16,7 +16,7 @@
     <div class="intro">
       <div class="details">
         <div class="detail-content">
-          <p>2018</p>
+          <p>{{ blok.year ? blok.year : 2018}}</p>
           <h3>{{ blok.name }}</h3>
           <p id="sub">{{ blok.tagline }}</p>
           <div class="tags-wrapper">

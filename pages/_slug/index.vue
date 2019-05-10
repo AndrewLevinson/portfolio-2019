@@ -70,7 +70,7 @@ export default {
   //   window.addEventListener('scroll', this.handleSCroll)
   // },
   destroyed() {
-    window.removeEventListener('scroll', this.handleSCroll)
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
     activate: function(el) {
