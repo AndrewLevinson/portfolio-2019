@@ -1,7 +1,15 @@
 <template>
   <section id="main-content-area">
     <nav id="drop" @scroll="handleScroll">
-      <h1>My Work</h1>
+      <div id="heading">
+        <h1>My Work</h1>
+        <p>
+          My name is
+          <span class="datum">Andrew</span> and I like to
+          <span class="datum">visualize data</span> & design
+          <span class="datum">digital products</span>.
+        </p>
+      </div>
       <div id="sidebar">
         <ul>
           <li>
@@ -111,13 +119,43 @@ export default {
 </script>
 
 <style scoped>
-h1 {
+.datum {
+  font-weight: 700;
+  /* font-size: 115%; */
+  color: var(--primary-color);
+  /* text-decoration: underline; */
+}
+
+#heading {
+  /* margin-left: calc(3rem + 10px); */
+  /* margin-right: calc(3rem + 10px); */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: 1.5rem;
+}
+
+#heading p {
+  margin-left: calc(3rem + 10px);
+  margin-right: calc(3rem + 10px);
+}
+
+h1 {
+  margin-bottom: 0rem;
   /* margin-left: 10px; */
   margin-left: calc(3rem + 10px);
-
   /* line-height: 0; */
 }
+
+@media (max-width: 1000px) {
+  #heading {
+    display: block;
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+}
+
 nav {
   position: sticky;
   top: 0px;
@@ -186,6 +224,10 @@ a:hover {
   }
   ul {
     margin-left: calc(2rem);
+  }
+
+  #heading p {
+    display: none;
   }
 }
 </style>
