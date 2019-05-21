@@ -2,12 +2,18 @@
   <section id="main-content-area">
     <nav id="drop" @scroll="handleScroll">
       <div id="heading">
-        <h1>My Work</h1>
-        <p>
+        <!-- <h1>My Work</h1> -->
+        <h4 class="tagline tagline-big">
           My name is
           <span class="datum">Andrew</span> and I like to
-          <span class="datum">visualize data</span> & design
-          <span class="datum">digital products</span>.
+          <span class="datum">visualize data</span> &
+          <span class="datum">design digital products</span>.
+        </h4>
+        <p class="tagline tagline-small">
+          My name is
+          <span class="datum">Andrew</span> and I like to
+          <span class="datum">visualize data</span> &
+          <span class="datum">design digital products</span>.
         </p>
       </div>
       <div id="sidebar">
@@ -27,9 +33,9 @@
               @click="cat = 'Product Design 👨🏻‍💻', activate(3)"
             >Product Design</a>
           </li>
-          <li>
+          <!-- <li>
             <a :class="{ active : active_el == 4 }" @click="cat = `Other`, activate(4)">Other Work</a>
-          </li>
+          </li>-->
           <!-- <li>
             <input type="checkbox" name="onlyPaid" @click="onlyPaid = !onlyPaid">Only Show Paid Work
           </li>-->
@@ -119,25 +125,23 @@ export default {
 </script>
 
 <style scoped>
-.datum {
-  font-weight: 700;
-  /* font-size: 115%; */
-  color: var(--primary-color);
-  /* text-decoration: underline; */
-}
-
 #heading {
   /* margin-left: calc(3rem + 10px); */
   /* margin-right: calc(3rem + 10px); */
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: baseline; */
   margin-bottom: 1.5rem;
 }
 
-#heading p {
+.tagline {
   margin-left: calc(3rem + 10px);
   margin-right: calc(3rem + 10px);
+  margin-top: 1.5rem;
+}
+
+.tagline-small {
+  display: none;
 }
 
 h1 {
@@ -147,14 +151,14 @@ h1 {
   /* line-height: 0; */
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   #heading {
     display: block;
   }
   h1 {
     margin-bottom: 1.5rem;
   }
-}
+} */
 
 nav {
   position: sticky;
@@ -189,7 +193,7 @@ ul {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 430px;
 }
 
 li {
@@ -226,7 +230,18 @@ a:hover {
     margin-left: calc(2rem);
   }
 
-  #heading p {
+  .tagline {
+    margin-left: calc(2rem);
+    margin-top: 0;
+    /* display: none; */
+    /* font-size: 90%; */
+  }
+
+  .tagline-small {
+    display: block;
+  }
+
+  .tagline-big {
     display: none;
   }
 }

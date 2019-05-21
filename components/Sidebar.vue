@@ -6,7 +6,8 @@
           <img src="/favicon.svg" alt="andrew_l" width="100%">
         </div>
       </nuxt-link>
-      <button @click="show = !show">About Me
+      <button @click="show = !show">
+        About Me
         <!-- <span v-if="show">x</span> -->
         <!-- <span v-else>+</span> -->
       </button>
@@ -83,14 +84,15 @@ export default {
 button {
   align-self: center;
   background: transparent;
-  border: var(--main-bg-color);
-  color: var(--btn-color);
+  border: transparent;
+  /* color: var(--btn-color); */
+  /* color: var(--link-color); */
   padding: 0.5rem;
   transform: rotate(-90deg);
 }
 
 button:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   cursor: pointer;
   font-weight: 600;
   padding: 0.5rem;

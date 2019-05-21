@@ -3,11 +3,11 @@
     <!-- <h2 id="about">About Me</h2> -->
     <p class="my-name">
       My name is
-      <span>Andrew</span>
+      <span class="datum">Andrew</span>
       <br>and I like to
-      <span>visualize data</span>
+      <span class="datum">visualize data</span>
       <br>and
-      <span>design digital products</span>.
+      <span class="datum">design digital products</span>.
     </p>
     <div class="about-me-content">
       <div class="first">
@@ -68,7 +68,7 @@ span {
   font-weight: 700;
   font-size: 115%;
   /* color: var(--primary-color); */
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 .my-name {

@@ -65,13 +65,15 @@ body {
   }
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: var(--link-color);
   transition: all 0.25s ease-in-out;
 }
 
-a:hover {
+a:hover,
+button:hover {
   /* text-decoration: underline; */
   /* text-decoration-style: double; */
   /* font-weight: bolder; */
@@ -87,6 +89,13 @@ button:focus {
 
 a.span-active {
   font-weight: 800;
+}
+
+.datum {
+  font-weight: 700;
+  /* font-size: 115%; */
+  color: var(--primary-color);
+  /* text-decoration: underline; */
 }
 
 blockquote {
