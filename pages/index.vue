@@ -161,6 +161,7 @@ h1 {
 } */
 
 nav {
+  text-align: left;
   position: sticky;
   top: 0px;
   padding-top: 2rem;
@@ -194,6 +195,8 @@ ul {
   display: flex;
   justify-content: space-between;
   max-width: 430px;
+  /* margin-left: calc((100% - 430px) / 2); */
+  /* margin-left: calc(100% - 3rem + 10px - 430px); */
 }
 
 li {
@@ -225,6 +228,7 @@ a:hover {
     top: 80px;
     width: calc(100% + 4rem);
     margin-left: -2rem;
+    text-align: left;
   }
   ul {
     margin-left: calc(2rem);
