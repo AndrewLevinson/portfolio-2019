@@ -3,7 +3,7 @@
     <nav id="breadcrumb-wrap">
       <ul id="breadcrumbs">
         <li>
-          <nuxt-link to="/work">My Work</nuxt-link>
+          <nuxt-link to="/">Home</nuxt-link>
         </li>
         <li>⟶</li>
         <li id="current">{{ blok.name }}</li>

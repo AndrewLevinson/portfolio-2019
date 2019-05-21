@@ -1,157 +1,248 @@
 <template>
-  <div id="intro-holder">
-    <section :class="classyName" class="intro-section">
-      <h1>Hey, it's Andrew</h1>
-      <h4>
-        I like to visualize data
-        <sup>*</sup> and design digital products. But that doesn't really tell you who I am...
-      </h4>
-      <!-- <p>
-      First I was born. Fast forward a few years and I'm making music and
-      touring with my
-      <a
-        href="#other"
-      >
-        signed metal band, MONSTERS
-        <sup>↡</sup>
-      </a>. Fast forward some more and I'm a business consultant building
-      <a href="#other">
-        financial tools
-        <sup>↡</sup>
-      </a>
-      for startups in Chicago. Fast forward even more and I'm a digital
-      product designer for a software agency building
-      <a
-        href="#product"
-      >
-        enterprise products
-        <sup>↡</sup>
-      </a>. And now
-      <sup>*</sup> I'm specializing in
-      <a href="#data_viz">
-        data visualization & storytelling.
-        <sup>↡</sup>
-      </a>
-    </p>
-    <p>
-      A lot, I know. See how
-      <a href="#blog">
-        I think about things
-        <sup>↡</sup>
-      </a>.
-    </p>
-      <br>-->
-      <nuxt-link to="/work">
-        <button @click:submit.prevent="onSubmit">See my work →</button>
-      </nuxt-link>
-      <h6 id="current-life">
-        <sup>*</sup> Currently attending Parsons School of Design (2019) for
-        <a
-          href="https://www.newschool.edu/parsons/ms-data-visualization/"
-          target="_blank"
-        >
-          Data Visualization (MS)
-          <sup>⇗</sup>
-        </a>
-        and working freelance.
-      </h6>
-    </section>
-  </div>
+  <section id="main-content-area">
+    <nav id="drop" @scroll="handleScroll">
+      <div id="heading">
+        <!-- <h1>My Work</h1> -->
+        <h4 class="tagline tagline-big">
+          My name is
+          <span class="datum">Andrew</span> and I like to
+          <span class="datum">visualize data</span> &
+          <span class="datum">design digital products</span>.
+        </h4>
+        <p class="tagline tagline-small">
+          My name is
+          <span class="datum">Andrew</span> and I like to
+          <span class="datum">visualize data</span> &
+          <span class="datum">design digital products</span>.
+        </p>
+      </div>
+      <div id="sidebar">
+        <ul>
+          <li>
+            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">All Projects</a>
+          </li>
+          <li>
+            <a
+              :class="{ active : active_el == 2 }"
+              @click="cat = 'Data-Viz 📊', activate(2)"
+            >Data Visualization</a>
+          </li>
+          <li>
+            <a
+              :class="{ active : active_el == 3 }"
+              @click="cat = 'Product Design 👨🏻‍💻', activate(3)"
+            >Product Design</a>
+          </li>
+          <!-- <li>
+            <a :class="{ active : active_el == 4 }" @click="cat = `Other`, activate(4)">Other Work</a>
+          </li>-->
+          <!-- <li>
+            <input type="checkbox" name="onlyPaid" @click="onlyPaid = !onlyPaid">Only Show Paid Work
+          </li>-->
+        </ul>
+      </div>
+    </nav>
+    <div id="work">
+      <component
+        v-if="story.content.component"
+        :key="story.content._uid"
+        :blok="story.content"
+        :category="cat"
+        :paid="onlyPaid"
+        :is="story.content.component"
+      ></component>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
   layout: 'main',
   data() {
-    return { classyName: '' }
+    return {
+      story: { content: {} },
+      cat: 'all',
+      onlyPaid: false,
+      active_el: 1,
+      scrolled: false
+    }
   },
+
   mounted() {
-    this.classyName = 'appear'
+    this.$storybridge.on(['input', 'published', 'change'], event => {
+      if (event.action == 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else {
+        window.location.reload()
+      }
+    })
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  // created() {
+  //   window.addEventListener('scroll', this.handleSCroll)
+  // },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    activate: function(el) {
+      this.active_el = el
+    },
+    handleScroll() {
+      let header = document.getElementById('drop')
+      if (window.scrollY > 0 && !header.className.includes('drop')) {
+        header.classList.add('drop')
+      } else if (window.scrollY < 1) {
+        header.classList.remove('drop')
+      }
+    }
+  },
+
+  asyncData(context) {
+    // Check if we are in the editor mode
+    let version =
+      context.query._storyblok || context.isDev ? 'draft' : 'published'
+
+    // Load the JSON from the API
+    return context.app.$storyapi
+      .get(`cdn/stories/work`, {
+        version: version
+      })
+      .then(res => {
+        // console.log(res.data.story.content.body)
+        return res.data
+      })
+      .catch(res => {
+        context.error({
+          statusCode: res.response.status,
+          message: res.response.data
+        })
+      })
   }
 }
 </script>
 
 <style scoped>
-#intro-holder {
+#heading {
+  /* margin-left: calc(3rem + 10px); */
+  /* margin-right: calc(3rem + 10px); */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: baseline; */
+  margin-bottom: 1.5rem;
+}
+
+.tagline {
+  margin-left: calc(3rem + 10px);
+  margin-right: calc(3rem + 10px);
+  margin-top: 1.5rem;
+}
+
+.tagline-small {
+  display: none;
+}
+
+h1 {
+  margin-bottom: 0rem;
+  /* margin-left: 10px; */
+  margin-left: calc(3rem + 10px);
+  /* line-height: 0; */
+}
+
+/* @media (max-width: 1000px) {
+  #heading {
+    display: block;
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+} */
+
+nav {
+  position: sticky;
+  top: 0px;
+  padding-top: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(247, 247, 247, 0.95);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none;
+  width: calc(100% + 6rem);
+  margin-left: -3rem;
+  z-index: 997;
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+.drop {
+  border-bottom: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.13);
+  transition: box-shadow 0.4s ease-in-out;
+}
+
+a {
+  display: inline-block;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid transparent;
+}
+
+ul {
+  margin-left: calc(3rem + 10px);
+  list-style: none;
+  text-align: left;
+  margin-top: 0.75rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-between;
+  max-width: 430px;
 }
 
-.intro-section {
-  /* align-self: center; */
-  padding: 0rem 12rem 5rem 12rem;
-  /* width: 100%; */
-  max-width: 1000px;
-  margin: 0 auto;
-  /* opacity: 0; */
+li {
+  padding-right: 1.5rem;
 }
 
-/* button */
-button {
-  margin-top: 2rem;
-  padding: 0.75rem;
-  border-radius: 6px;
-  text-align: center;
-  background: transparent;
-  border-color: var(--btn-color);
-  color: var(--btn-color);
+li:last-child {
+  padding-right: 1rem;
+}
+
+a:hover {
   cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
-  line-height: 1;
-  /* opacity: 0; */
-}
-
-button:hover {
-  background: var(--btn-color);
-  border-color: #fff;
-  color: #fff;
-  transition: 0.3s all ease-in-out;
+  font-weight: bolder;
   text-decoration: none;
 }
 
-h1,
-h4,
-button,
-h6 {
-  opacity: 0;
+.active {
+  font-weight: bolder;
+  border-bottom: 3px solid var(--link-color);
+  z-index: 999;
 }
 
-.appear h1,
-.appear h4,
-.appear button,
-.appear h6 {
-  opacity: 1;
-  transition: opacity 1.5s ease-in-out;
-}
-
-.appear h1 {
-  transition-delay: 0s;
-}
-.appear h4 {
-  transition-delay: 1.5s;
-}
-.appear button {
-  transition-delay: 3s;
-}
-.appear h6 {
-  transition-delay: 3s;
-}
-
-#current-life {
-  position: fixed;
-  bottom: 30px;
-  padding-right: 2rem;
+.active:hover {
+  border-bottom: 3px solid var(--primary-color);
 }
 
 @media (max-width: 600px) {
-  .intro-section {
-    padding: 0 2rem 5rem 2rem;
-    width: 100%;
-    max-width: none;
+  nav {
+    top: 80px;
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+  ul {
+    margin-left: calc(2rem);
+  }
+
+  .tagline {
+    margin-left: calc(2rem);
+    margin-top: 0;
+    /* display: none; */
+    /* font-size: 90%; */
+  }
+
+  .tagline-small {
+    display: block;
+  }
+
+  .tagline-big {
+    display: none;
   }
 }
 </style>
