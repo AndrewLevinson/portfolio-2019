@@ -144,6 +144,24 @@ export default {
   display: none;
 }
 
+.datum {
+  animation: appear 2.5s ease-in-out;
+}
+
+#work,
+ul {
+  animation: appear 0.75s ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 h1 {
   margin-bottom: 0rem;
   /* margin-left: 10px; */
