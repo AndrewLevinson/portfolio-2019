@@ -3,7 +3,8 @@
     <div :class="classyName" class="button-holder">
       <nuxt-link to="/">
         <div class="logo-holder">
-          <img src="/favicon.svg" alt="andrew_l" width="100%">
+          <!-- <img src="/favicon.svg" alt="andrew_l" width="100%"> -->
+          <img src="/icon.svg" alt="andrew_l" width="100%">
         </div>
       </nuxt-link>
       <button @click="show = !show">
