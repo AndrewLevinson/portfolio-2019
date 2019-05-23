@@ -9,12 +9,6 @@
           <span class="datum">visualize data</span> &
           <span class="datum">design digital products</span>.
         </h4>
-        <p class="tagline tagline-small">
-          My name is
-          <span class="datum">Andrew</span> and I like to
-          <span class="datum">visualize data</span> &
-          <span class="datum">design digital products</span>.
-        </p>
       </div>
       <div id="sidebar">
         <ul>
@@ -140,10 +134,6 @@ export default {
   margin-top: 1.5rem;
 }
 
-.tagline-small {
-  display: none;
-}
-
 .datum {
   animation: appear 2.5s ease-in-out;
 }
@@ -257,10 +247,6 @@ a:hover {
     margin-top: 0;
     /* display: none; */
     /* font-size: 90%; */
-  }
-
-  .tagline-small {
-    display: block;
   }
 
   .tagline-big {

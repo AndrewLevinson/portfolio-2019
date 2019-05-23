@@ -7,8 +7,8 @@
           <img src="/icon.svg" alt="andrew_l" width="100%">
         </div>
       </nuxt-link>
-      <button @click="show = !show">
-        About Me
+      <button id="about-button" @click="show = !show">
+        About Andrew 👋
         <!-- <span v-if="show">x</span> -->
         <!-- <span v-else>+</span> -->
       </button>
@@ -80,9 +80,10 @@ export default {
   border-right: 1px solid var(--border-color);
   z-index: 10;
   display: flex;
+  justify-content: center;
 }
 
-button {
+#about-button {
   align-self: center;
   background: transparent;
   border: transparent;
@@ -90,9 +91,10 @@ button {
   /* color: var(--link-color); */
   padding: 0.5rem;
   transform: rotate(-90deg);
+  white-space: nowrap;
 }
 
-button:hover {
+#about-button:hover {
   /* text-decoration: underline; */
   cursor: pointer;
   font-weight: 600;
@@ -119,6 +121,7 @@ button:hover {
 .logo-holder {
   position: fixed;
   top: 10px;
+  left: 0px;
   width: 90px;
 }
 
@@ -304,15 +307,16 @@ i {
     position: sticky;
     height: 90px;
     width: 100vw;
+    justify-content: flex-start;
     border-bottom: 1px solid var(--border-color);
   }
 
-  button {
+  #about-button {
     transform: rotate(0deg);
     padding-top: 1.5rem;
   }
 
-  button:hover {
+  #about-button:hover {
     padding-top: 1.5rem;
   }
 

@@ -67,6 +67,10 @@ export default {
   cursor: pointer;
 }
 
+.feature:first-of-type {
+  /* grid-column-start: span 2; */
+}
+
 img {
   max-width: 100%;
   border-radius: 4px 4px 0 0;
