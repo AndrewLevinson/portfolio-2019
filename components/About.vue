@@ -1,14 +1,7 @@
 <template>
   <article class="about">
-    <!-- <h2 id="about">About Me</h2> -->
-    <p class="my-name">
-      My name is
-      <span class="datum">Andrew</span>
-      <br>and I like to
-      <span class="datum">visualize data</span>
-      <br>and
-      <span class="datum">design digital products</span>.
-    </p>
+    <h3 class="my-name">Hey, it's Andrew 👨🏻‍💻</h3>
+    <h6 class="subhead">A Data Visualization Designer & Developer</h6>
     <div class="about-me-content">
       <div class="first">
         <div class="img-holder">
@@ -27,7 +20,7 @@
 export default {
   data() {
     return {
-      aboutMD: `From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now **I'm telling data-driven stories with code**. There's clearly a war between [my left brain vs. my right brain](https://www.youtube.com/watch?v=0jBK4qDJ-OM). In my free time I like playing guitar, making weird music, and browsing [my favorite subreddit](https://www.reddit.com/r/dataisugly/) . I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea – so reach out and we can collaborate. ✌🏻 
+      aboutMD: `From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now **I'm telling data-driven stories with code**. There's clearly a war between [my left brain vs. my right brain](https://www.youtube.com/watch?v=0jBK4qDJ-OM). In my free time I like playing guitar, making weird music, and browsing [my favorite subreddit](https://www.reddit.com/r/dataisugly/). I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea – so reach out and we can collaborate. ✌🏻 
 ##### —`,
       reachoutMD: `
 #### Reach Out
@@ -42,7 +35,7 @@ ___`
 
 <style scoped>
 .about {
-  margin: 8rem 0 5% 0;
+  margin: 8rem 0 5rem 0;
 }
 
 .about-me-content {
@@ -50,12 +43,12 @@ ___`
   padding-bottom: 5rem;
   max-width: 100%;
   width: 100%;
-  font-size: 85%;
+  font-size: 90%;
 }
 
 .img-holder {
   float: left;
-  max-width: 30%;
+  max-width: 45%;
   margin-right: 2rem;
 }
 
@@ -73,7 +66,18 @@ span {
 
 .my-name {
   margin-bottom: 2.5rem;
-  text-align: right;
+  font-weight: 900;
+
+  /* text-align: right; */
+}
+
+.subhead {
+  margin-top: -2.5rem;
+  margin-bottom: 2.5rem;
+  font-size: 1.85rem;
+  /* text-transform: uppercase; */
+  opacity: 0.75;
+  /* color: var(--primary-color); */
 }
 
 @media (max-width: 600px) {
@@ -84,7 +88,7 @@ span {
     font-size: 95%;
   }
   .my-name {
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
   }
 }
 </style>
