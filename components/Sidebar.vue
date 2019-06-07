@@ -187,12 +187,13 @@ section {
   position: sticky;
   top: 0;
   z-index: 1;
+  /* overflow-y: scroll; */
 }
 
 section > div {
   padding-right: 3rem;
   padding-left: 3rem;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 section img {
   margin-top: 2rem;
@@ -331,6 +332,7 @@ i {
   section > div {
     padding-right: 2rem;
     padding-left: 2rem;
+    padding-bottom: 12vh;
   }
 
   footer {
