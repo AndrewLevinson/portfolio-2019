@@ -93,8 +93,9 @@ a.span-active {
 
 .datum {
   font-weight: 700;
+  opacity: 0.75;
   /* font-size: 115%; */
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
   /* text-decoration: underline; */
 }
 
