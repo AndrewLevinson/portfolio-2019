@@ -8,9 +8,15 @@
           <img src="../assets/guitarist@1x.png" width="100%" alt="pic of me playing guitar">
         </div>
         <div class="about-text" v-html="$md.render(aboutMD)"></div>
+        <div class="email">
+          <p>
+            <span id="say-hi">Say hi at</span>
+            <a href="mailto:andrewlevins@gmail.com">andrewlevins@gmail.com</a>
+          </p>
+        </div>
       </div>
       <!-- <div class="float"> -->
-      <div class="reach" v-html="$md.render(reachoutMD)"></div>
+      <!-- <div class="reach" v-html="$md.render(reachoutMD)"></div> -->
       <!-- </div> -->
     </div>
   </article>
@@ -43,7 +49,7 @@ ___`
   padding-bottom: 5rem;
   max-width: 100%;
   width: 100%;
-  font-size: 90%;
+  font-size: 95%;
 }
 
 .img-holder {
@@ -55,13 +61,6 @@ ___`
 img {
   border-radius: 4px;
   max-width: 100%;
-}
-
-span {
-  font-weight: 700;
-  font-size: 115%;
-  /* color: var(--primary-color); */
-  /* text-decoration: underline; */
 }
 
 .my-name {
@@ -80,15 +79,22 @@ span {
   /* color: var(--primary-color); */
 }
 
+.email {
+  margin-top: -2rem;
+}
+
+.email a {
+  font-weight: 600;
+}
+
+#say-hi {
+  opacity: 0.75;
+  font-weight: 600;
+}
+
 @media (max-width: 600px) {
   .about {
     margin-top: 1.5rem;
-  }
-  span {
-    font-size: 95%;
-  }
-  .my-name {
-    /* margin-bottom: 1.5rem; */
   }
 }
 </style>
