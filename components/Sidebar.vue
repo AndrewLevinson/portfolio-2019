@@ -332,7 +332,7 @@ i {
   section > div {
     padding-right: 2rem;
     padding-left: 2rem;
-    padding-bottom: 12vh;
+    padding-bottom: 14vh;
   }
 
   footer {
