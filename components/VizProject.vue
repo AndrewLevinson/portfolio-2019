@@ -47,17 +47,19 @@
             <div class="markdown" v-html="$md.render(blok.data_sources)"></div>
           </div>
         </div>
-        <article class="text">
+        <article>
           <div>
-            <h5>Summary</h5>
-            <p>{{ blok.summary }}</p>
+            <!-- <h5>Summary</h5> -->
+            <h5 id="summary">{{ blok.summary }}</h5>
           </div>
-          <div>
-            <h5>Description</h5>
+          <div class="description">
+            <!-- <h5>Description</h5> -->
             <div class="markdown" v-html="$md.render(blok.description)"></div>
           </div>
-          <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
-            <img :src="media.filename" :alt="media.name" width="100%">
+          <div class="assets">
+            <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
+              <img :src="media.filename" :alt="media.name" width="100%">
+            </div>
           </div>
         </article>
       </div>
@@ -175,6 +177,15 @@ export default {
   margin-bottom: 1rem;
 }
 
+.viz-project #summary {
+  text-transform: none;
+  opacity: 0.8;
+}
+.viz-project .description {
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 5rem;
+}
+
 .viz-project h6 {
   opacity: 0.8;
   text-transform: uppercase;
@@ -202,7 +213,7 @@ export default {
 }
 
 .viz-content .viz-media img {
-  margin-top: 8rem;
+  margin-bottom: 8rem;
   box-shadow: 0px 4px 17px 2px #ccc;
   border-radius: 4px;
 }
@@ -260,6 +271,10 @@ export default {
   .viz-project > .project-content {
     width: 90%;
     display: block;
+  }
+
+  .viz-content .viz-media img {
+    margin-bottom: 5rem;
   }
 }
 </style>
