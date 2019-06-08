@@ -8,7 +8,7 @@
         </div>
       </nuxt-link>
       <button id="about-button" @click="show = !show">
-        About Andrew 👋
+        About Andrew 👋🏻
         <!-- <span v-if="show">x</span> -->
         <!-- <span v-else>+</span> -->
       </button>
