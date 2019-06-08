@@ -56,6 +56,9 @@
             <h5>Description</h5>
             <div class="markdown" v-html="$md.render(blok.description)"></div>
           </div>
+          <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
+            <img :src="media.filename" :alt="media.name" width="100%">
+          </div>
         </article>
       </div>
     </div>
@@ -196,6 +199,12 @@ export default {
 
 .links > div:first-child {
   margin-top: 1rem;
+}
+
+.viz-content .viz-media img {
+  margin-top: 8rem;
+  box-shadow: 0px 4px 17px 2px #ccc;
+  border-radius: 4px;
 }
 
 @media (max-width: 1025px) {
