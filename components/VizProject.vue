@@ -83,6 +83,7 @@ export default {
 .viz-project > .project-content {
   padding-bottom: 2rem;
   padding-top: 3rem;
+  overflow-x: hidden;
   /* width: 90%; */
   /* margin: 0 auto; */
 }
