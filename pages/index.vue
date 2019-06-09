@@ -13,7 +13,10 @@
       <div id="sidebar">
         <ul>
           <li>
-            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">All Projects</a>
+            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">
+              All
+              <span class="mobile">Work</span>
+            </a>
           </li>
           <li>
             <a
@@ -212,7 +215,7 @@ li {
 }
 
 li:last-child {
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 
 a:hover {
@@ -229,6 +232,9 @@ a:hover {
 
 .active:hover {
   border-bottom: 3px solid var(--primary-color);
+}
+.mobile {
+  display: inline;
 }
 
 @media (max-width: 600px) {
@@ -250,6 +256,9 @@ a:hover {
   }
 
   .tagline-big {
+    display: none;
+  }
+  .mobile {
     display: none;
   }
 }
