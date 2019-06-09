@@ -269,12 +269,15 @@ export default {
   }
 
   .viz-project > .project-content {
-    width: 90%;
+    width: 100%;
     display: block;
   }
 
   .viz-content .viz-media img {
     margin-bottom: 5rem;
+  }
+  .viz-content {
+    padding-right: 0.6rem;
   }
 }
 </style>
