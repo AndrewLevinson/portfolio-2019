@@ -1,7 +1,10 @@
 
 <template>
   <div v-editable="blok" :id="blok.name" class="list">
-    <h3>hi im all posts</h3>
+    <!-- <h3>
+      These are my thoughts.
+      <span class="datum">Enjoy</span>.
+    </h3>-->
     <component v-for="blok in blok.preview" :blok="blok" :is="blok.component" :key="blok._uid"></component>
   </div>
 </template>
@@ -24,6 +27,8 @@ export default {
 
 .list {
   margin-left: 10px;
+  margin-top: 4rem;
+  margin-bottom: 0;
 }
 
 @media (max-width: 600px) {

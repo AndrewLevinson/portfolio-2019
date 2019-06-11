@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <h6>Oh nooo :(</h6>
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">You can go back home</nuxt-link>
-    <h6>or</h6>
-    <nuxt-link to="/work">You can go to my work</nuxt-link>
+    <h5>Oh nooo 😬</h5>
+    <h1 v-if="error.statusCode === 404">Page Not Found</h1>
+    <h1 v-else>An Error Occurred</h1>
+    <nuxt-link to="/">
+      <h4>Let's go back home</h4>
+    </nuxt-link>
   </div>
 </template>
 
@@ -20,7 +20,18 @@ export default {
 .container {
   width: 80%;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding-top: 5rem;
   text-align: center;
+}
+
+h5 {
+  opacity: 0.75;
+}
+h1 {
+  margin-top: -2rem;
+  margin-bottom: 10rem;
+  color: lightcoral;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.7);
 }
 </style>
