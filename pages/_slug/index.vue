@@ -20,15 +20,15 @@
           </li>-->
           <li>
             <a
-              :class="{ active : active_el == 1 }"
-              @click="$store.commit('setSection', 'work'), activate(1)"
-            >Projects</a>
+              :class="{ active : $store.getters.section === 'work' }"
+              @click="$store.commit('setSection', 'work'), changeSection()"
+            >My Work</a>
           </li>
           <li>
             <a
-              :class="{ active : active_el == 2 }"
-              @click="$store.commit('setSection', 'blog'), activate(2)"
-            >Blog</a>
+              :class="{ active : $store.getters.section === 'blog' }"
+              @click="$store.commit('setSection', 'blog'), changeSection()"
+            >My Thoughts</a>
           </li>
         </ul>
       </div>
@@ -48,7 +48,7 @@
 
 <script>
 function myFetchMethod(context) {
-  console.log(context)
+  // console.log(context)
   // Check if we are in the editor mode
   let version =
     context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -95,8 +95,7 @@ export default {
   },
   watch: {
     setStories() {
-      // trigger asyncData again   <-----------
-      console.log('setting section to ', this.$store.getters.stories)
+      // console.log('setting section to ', this.$store.getters.stories)
       this.story = this.$store.getters.stories.story
     }
   },
@@ -119,8 +118,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    activate: function(el) {
-      this.active_el = el
+    changeSection() {
       myFetchMethod(this.$root.$options.context)
     },
     handleScroll() {
@@ -134,7 +132,6 @@ export default {
   },
 
   asyncData(context) {
-    console.log(context)
     // Check if we are in the editor mode
     let version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -145,9 +142,6 @@ export default {
         version: version
       })
       .then(res => {
-        // console.log(res.data.stories)
-        // console.log(context.app.store.state.section)
-        // return $store.commit('setStories', res.data)
         return res.data
       })
       .catch(res => {
@@ -244,7 +238,7 @@ ul {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
-  max-width: 160px;
+  max-width: 220px;
   /* margin-left: calc((100% - 430px) / 2); */
   /* margin-left: calc(100% - 3rem + 10px - 430px); */
 }
