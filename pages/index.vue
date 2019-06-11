@@ -12,30 +12,24 @@
       </div>
       <div id="sidebar">
         <ul>
-          <li>
+          <!-- <li>
             <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">
               All
               <span class="mobile">Work</span>
             </a>
+          </li>-->
+          <li>
+            <a
+              :class="{ active : $store.getters.section === 'work' }"
+              @click="$store.commit('setSection', 'work'), changeSection()"
+            >My Work</a>
           </li>
           <li>
             <a
-              :class="{ active : active_el == 2 }"
-              @click="cat = 'Data-Viz 📊', activate(2)"
-            >Data Visualization</a>
+              :class="{ active : $store.getters.section === 'blog' }"
+              @click="$store.commit('setSection', 'blog'), changeSection()"
+            >My Thoughts</a>
           </li>
-          <li>
-            <a
-              :class="{ active : active_el == 3 }"
-              @click="cat = 'Product Design 👨🏻‍💻', activate(3)"
-            >Product Design</a>
-          </li>
-          <!-- <li>
-            <a :class="{ active : active_el == 4 }" @click="cat = `Other`, activate(4)">Other Work</a>
-          </li>-->
-          <!-- <li>
-            <input type="checkbox" name="onlyPaid" @click="onlyPaid = !onlyPaid">Only Show Paid Work
-          </li>-->
         </ul>
       </div>
     </nav>
@@ -53,6 +47,36 @@
 </template>
 
 <script>
+function myFetchMethod(context) {
+  // console.log(context)
+  // Check if we are in the editor mode
+  let version =
+    context.query._storyblok || context.isDev ? 'draft' : 'published'
+
+  // Load the JSON from the API
+  return (
+    context.app.$storyapi
+      .get(`cdn/stories/${context.app.store.state.section}`, {
+        version: version
+      })
+      // .then(res => {
+      //   // console.log(res.data.stories)
+      //   // console.log(context.app.store.state.section)
+      //   // return $store.commit('setStories', res.data)
+      //   return res.data
+      // })
+      .then(res => {
+        return context.app.store.commit('setStories', res.data)
+      })
+      .catch(res => {
+        context.error({
+          statusCode: res.response.status,
+          message: res.response.data
+        })
+      })
+  )
+}
+
 export default {
   layout: 'main',
   data() {
@@ -64,7 +88,17 @@ export default {
       scrolled: false
     }
   },
-
+  computed: {
+    setStories() {
+      return this.$store.getters.stories
+    }
+  },
+  watch: {
+    setStories() {
+      // console.log('setting section to ', this.$store.getters.stories)
+      this.story = this.$store.getters.stories.story
+    }
+  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
       if (event.action == 'input') {
@@ -84,8 +118,8 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    activate: function(el) {
-      this.active_el = el
+    changeSection() {
+      myFetchMethod(this.$root.$options.context)
     },
     handleScroll() {
       let header = document.getElementById('drop')
@@ -104,11 +138,10 @@ export default {
 
     // Load the JSON from the API
     return context.app.$storyapi
-      .get(`cdn/stories/work`, {
+      .get(`cdn/stories/${context.app.store.state.section}`, {
         version: version
       })
       .then(res => {
-        // console.log(res.data.story.content.body)
         return res.data
       })
       .catch(res => {
@@ -143,12 +176,12 @@ export default {
 
 #work,
 ul {
-  animation: appear 0.75s ease-in-out;
+  animation: appear 1s ease-in-out;
 }
 
 @keyframes appear {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -205,7 +238,7 @@ ul {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
-  max-width: 430px;
+  max-width: 220px;
   /* margin-left: calc((100% - 430px) / 2); */
   /* margin-left: calc(100% - 3rem + 10px - 430px); */
 }

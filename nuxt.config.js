@@ -39,6 +39,7 @@ module.exports = {
     routes: function() {
       return [
         '/work',
+        '/blog',
         '/projects/water',
         '/projects/cookies',
         '/projects/ease-energy',

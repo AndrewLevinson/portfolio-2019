@@ -9,36 +9,27 @@
           <span class="datum">visualize data</span> &
           <span class="datum">design digital products</span>.
         </h4>
-        <p class="tagline tagline-small">
-          My name is
-          <span class="datum">Andrew</span> and I like to
-          <span class="datum">visualize data</span> &
-          <span class="datum">design digital products</span>.
-        </p>
       </div>
       <div id="sidebar">
         <ul>
+          <!-- <li>
+            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">
+              All
+              <span class="mobile">Work</span>
+            </a>
+          </li>-->
           <li>
-            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">All Projects</a>
+            <a
+              :class="{ active : active_el == 1 }"
+              @click="$store.commit('setSection', 'work'), activate(1)"
+            >Projects</a>
           </li>
           <li>
             <a
               :class="{ active : active_el == 2 }"
-              @click="cat = 'Data-Viz 📊', activate(2)"
-            >Data Visualization</a>
+              @click="$store.commit('setSection', 'blog'), activate(2)"
+            >Blog</a>
           </li>
-          <li>
-            <a
-              :class="{ active : active_el == 3 }"
-              @click="cat = 'Product Design 👨🏻‍💻', activate(3)"
-            >Product Design</a>
-          </li>
-          <!-- <li>
-            <a :class="{ active : active_el == 4 }" @click="cat = `Other`, activate(4)">Other Work</a>
-          </li>-->
-          <!-- <li>
-            <input type="checkbox" name="onlyPaid" @click="onlyPaid = !onlyPaid">Only Show Paid Work
-          </li>-->
         </ul>
       </div>
     </nav>
@@ -56,6 +47,36 @@
 </template>
 
 <script>
+function myFetchMethod(context) {
+  console.log(context)
+  // Check if we are in the editor mode
+  let version =
+    context.query._storyblok || context.isDev ? 'draft' : 'published'
+
+  // Load the JSON from the API
+  return (
+    context.app.$storyapi
+      .get(`cdn/stories/${context.app.store.state.section}`, {
+        version: version
+      })
+      // .then(res => {
+      //   // console.log(res.data.stories)
+      //   // console.log(context.app.store.state.section)
+      //   // return $store.commit('setStories', res.data)
+      //   return res.data
+      // })
+      .then(res => {
+        return context.app.store.commit('setStories', res.data)
+      })
+      .catch(res => {
+        context.error({
+          statusCode: res.response.status,
+          message: res.response.data
+        })
+      })
+  )
+}
+
 export default {
   layout: 'main',
   data() {
@@ -67,7 +88,18 @@ export default {
       scrolled: false
     }
   },
-
+  computed: {
+    setStories() {
+      return this.$store.getters.stories
+    }
+  },
+  watch: {
+    setStories() {
+      // trigger asyncData again   <-----------
+      console.log('setting section to ', this.$store.getters.stories)
+      this.story = this.$store.getters.stories.story
+    }
+  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
       if (event.action == 'input') {
@@ -89,6 +121,7 @@ export default {
   methods: {
     activate: function(el) {
       this.active_el = el
+      myFetchMethod(this.$root.$options.context)
     },
     handleScroll() {
       let header = document.getElementById('drop')
@@ -101,17 +134,20 @@ export default {
   },
 
   asyncData(context) {
+    console.log(context)
     // Check if we are in the editor mode
     let version =
       context.query._storyblok || context.isDev ? 'draft' : 'published'
 
     // Load the JSON from the API
     return context.app.$storyapi
-      .get(`cdn/stories/work`, {
+      .get(`cdn/stories/${context.app.store.state.section}`, {
         version: version
       })
       .then(res => {
-        // console.log(res.data.story.content.body)
+        // console.log(res.data.stories)
+        // console.log(context.app.store.state.section)
+        // return $store.commit('setStories', res.data)
         return res.data
       })
       .catch(res => {
@@ -140,8 +176,22 @@ export default {
   margin-top: 1.5rem;
 }
 
-.tagline-small {
-  display: none;
+.datum {
+  animation: appear 2.5s ease-in-out;
+}
+
+#work,
+ul {
+  animation: appear 1s ease-in-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 h1 {
@@ -161,6 +211,7 @@ h1 {
 } */
 
 nav {
+  text-align: left;
   position: sticky;
   top: 0px;
   padding-top: 2rem;
@@ -193,7 +244,9 @@ ul {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
-  max-width: 430px;
+  max-width: 160px;
+  /* margin-left: calc((100% - 430px) / 2); */
+  /* margin-left: calc(100% - 3rem + 10px - 430px); */
 }
 
 li {
@@ -201,7 +254,7 @@ li {
 }
 
 li:last-child {
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 
 a:hover {
@@ -219,12 +272,16 @@ a:hover {
 .active:hover {
   border-bottom: 3px solid var(--primary-color);
 }
+.mobile {
+  display: inline;
+}
 
 @media (max-width: 600px) {
   nav {
     top: 80px;
     width: calc(100% + 4rem);
     margin-left: -2rem;
+    text-align: left;
   }
   ul {
     margin-left: calc(2rem);
@@ -237,11 +294,10 @@ a:hover {
     /* font-size: 90%; */
   }
 
-  .tagline-small {
-    display: block;
-  }
-
   .tagline-big {
+    display: none;
+  }
+  .mobile {
     display: none;
   }
 }
