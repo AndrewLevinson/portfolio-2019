@@ -6,9 +6,9 @@
       :blok="story.content"
       :is="story.content.component"
     ></component>
-    <nuxt-link to="#main-content-area">
+    <!-- <nuxt-link to="#main-content-area">
       <button>↟</button>
-    </nuxt-link>
+    </nuxt-link>-->
   </section>
 </template>
 

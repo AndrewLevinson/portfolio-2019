@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.blok)
+    // console.log(this.blok)
   },
   methods: {
     dateFormat(d) {
@@ -39,7 +39,7 @@ export default {
         'December'
       ]
 
-      let postDate = new Date(d)
+      const postDate = new Date(d)
       return `${
         monthNames[postDate.getMonth()]
       } ${postDate.getDate()}, ${postDate.getFullYear()}`
@@ -66,7 +66,7 @@ export default {
 
 .title {
   margin-bottom: 0;
-  margin-top: -0.5rem;
+  margin-top: -0.25rem;
 }
 
 .subtitle {

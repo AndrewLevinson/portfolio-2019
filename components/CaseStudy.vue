@@ -4,7 +4,7 @@
     <nav id="breadcrumb-wrap">
       <ul id="breadcrumbs">
         <li>
-          <nuxt-link to="/">Home</nuxt-link>
+          <nuxt-link to="/">My Work</nuxt-link>
         </li>
         <li>⟶</li>
         <li id="current">{{ blok.name }}</li>

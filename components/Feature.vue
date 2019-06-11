@@ -146,6 +146,15 @@ img {
   border-color: #fff;
   margin-right: 0.25rem;
 }
+/* 
+.tags-wrapper span {
+  background-color: none;
+  color: #3d3d3d;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem 0.2rem 0.5rem;
+  font-size: 80%;
+  border: 1px solid #cccccc;
+} */
 
 .paid {
   background-color: #5fde89 !important;
