@@ -17,6 +17,7 @@
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "markdown-it": "^8.4.2",
+    "moment": "^2.24.0",
     "nuxt": "^2.0.0",
     "raw-loader": "^1.0.0",
     "storyblok-nuxt": "^1.0.1",

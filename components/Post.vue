@@ -37,29 +37,13 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
   props: ['blok'],
   methods: {
     dateFormat(d) {
-      const monthNames = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-      ]
-
-      const postDate = new Date(d)
-      return `${
-        monthNames[postDate.getMonth()]
-      } ${postDate.getDate()}, ${postDate.getFullYear()}`
+      return moment(d).format('LL')
     }
   }
 }
