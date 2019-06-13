@@ -51,8 +51,9 @@ export default {
 
 <style>
 .blog-post {
-  width: calc(100% + 6rem);
-  margin-left: -3rem;
+  width: calc(100% + 3rem);
+  margin-left: -2rem;
+  /* margin-right: 3rem; */
   margin-bottom: 3rem;
 }
 
