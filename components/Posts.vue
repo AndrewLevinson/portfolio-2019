@@ -16,15 +16,6 @@ export default {
 </script>
 
 <style scoped>
-/* .grid {
-  text-align: center;
-  display: grid;
-  padding: 0.5rem 0 1rem 0;
-  margin: 0;
-  grid-row-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
-} */
-
 .list {
   margin-left: 10px;
   margin-top: 4rem;

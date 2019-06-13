@@ -30,7 +30,7 @@
         </div>
       </div>
       <article>
-        <div class="markdown" v-html="$md.render(blok.content)"></div>
+        <div id="blog-md" class="markdown" v-html="$md.render(blok.content)"></div>
       </article>
     </div>
   </div>
@@ -63,6 +63,7 @@ export default {
   margin: 0 auto;
   padding-bottom: 5rem;
   padding-top: 8rem;
+  overflow-x: hidden;
 }
 
 .blog-post .details {
@@ -102,6 +103,7 @@ export default {
 
   padding: 6rem 3rem 2rem 0.6rem;
   text-align: left;
+  overflow-x: hidden;
 }
 
 .blog-content hr {
@@ -127,6 +129,19 @@ export default {
 .blog-post #summary {
   text-transform: none;
   opacity: 0.8;
+}
+
+#blog-md:first-child:first-letter {
+  /* color: #903; */
+  color: #3d3d3d;
+  color: var(--primary-color);
+  float: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 75px;
+  line-height: 60px;
+  /* padding-top: 4px; */
+  padding-right: 8px;
+  padding-left: 3px;
 }
 
 .blog-content article {
