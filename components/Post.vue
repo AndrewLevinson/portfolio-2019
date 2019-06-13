@@ -100,7 +100,6 @@ export default {
 .blog-content {
   width: 90%;
   margin: 0 auto;
-
   padding: 6rem 3rem 2rem 0.6rem;
   text-align: left;
   overflow-x: hidden;
