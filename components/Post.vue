@@ -12,7 +12,7 @@
     <div class="intro">
       <div class="details">
         <div class="detail-content">
-          <p class="date">{{ dateFormat(blok.date)}}</p>
+          <p class="date">{{ blok.date | dateFormat}}</p>
           <h3 id="title">{{ blok.title }}</h3>
           <p id="sub">{{ blok.subtitle }}</p>
           <div class="tags-wrapper">
@@ -37,15 +37,8 @@
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
-  props: ['blok'],
-  methods: {
-    dateFormat(d) {
-      return moment(d).format('LL')
-    }
-  }
+  props: ['blok']
 }
 </script>
 

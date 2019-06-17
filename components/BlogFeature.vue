@@ -1,7 +1,7 @@
 <template>
   <transition name="fuzzy">
     <div v-editable="blok" class="blog-features">
-      <p class="date">{{ dateFormat(blok.date) }}</p>
+      <p class="date">{{ blok.date | dateFormat }}</p>
       <nuxt-link :to="blogPath">
         <h3 class="title">{{ blok.title }}</h3>
       </nuxt-link>
@@ -12,21 +12,11 @@
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
   props: ['blok'],
   computed: {
     blogPath: function() {
       return `/${this.blok.path.cached_url}`
-    }
-  },
-  mounted() {
-    // console.log(this.blok)
-  },
-  methods: {
-    dateFormat(d) {
-      return moment(d).format('LL')
     }
   }
 }
