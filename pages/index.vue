@@ -30,6 +30,9 @@
               @click="$store.commit('setSection', 'blog'), changeSection()"
             >My Thoughts</a>
           </li>
+          <li>
+            <a @click="show = !show">About Andrew</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -54,27 +57,19 @@ function myFetchMethod(context) {
     context.query._storyblok || context.isDev ? 'draft' : 'published'
 
   // Load the JSON from the API
-  return (
-    context.app.$storyapi
-      .get(`cdn/stories/${context.app.store.state.section}`, {
-        version: version
+  return context.app.$storyapi
+    .get(`cdn/stories/${context.app.store.state.section}`, {
+      version: version
+    })
+    .then(res => {
+      return context.app.store.commit('setStories', res.data)
+    })
+    .catch(res => {
+      context.error({
+        statusCode: res.response.status,
+        message: res.response.data
       })
-      // .then(res => {
-      //   // console.log(res.data.stories)
-      //   // console.log(context.app.store.state.section)
-      //   // return $store.commit('setStories', res.data)
-      //   return res.data
-      // })
-      .then(res => {
-        return context.app.store.commit('setStories', res.data)
-      })
-      .catch(res => {
-        context.error({
-          statusCode: res.response.status,
-          message: res.response.data
-        })
-      })
-  )
+    })
 }
 
 export default {
@@ -122,12 +117,12 @@ export default {
       myFetchMethod(this.$root.$options.context)
     },
     handleScroll() {
-      let header = document.getElementById('drop')
-      if (window.scrollY > 0 && !header.className.includes('drop')) {
-        header.classList.add('drop')
-      } else if (window.scrollY < 1) {
-        header.classList.remove('drop')
-      }
+      // let header = document.getElementById('drop')
+      // if (window.scrollY > 0 && !header.className.includes('drop')) {
+      //   header.classList.add('drop')
+      // } else if (window.scrollY < 1) {
+      //   header.classList.remove('drop')
+      // }
     }
   },
 
@@ -162,6 +157,7 @@ export default {
   /* justify-content: space-between; */
   /* align-items: baseline; */
   margin-bottom: 1.5rem;
+  display: none;
 }
 
 .tagline {
@@ -210,8 +206,9 @@ nav {
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  background-color: rgba(247, 247, 247, 0.95);
-  border-bottom: 1px solid var(--border-color);
+  /* background-color: rgba(247, 247, 247, 0.95); */
+  background-color: rgba(247, 247, 247, 1);
+  /* border-bottom: 1px solid var(--border-color); */
   box-shadow: none;
   width: calc(100% + 6rem);
   margin-left: -3rem;
@@ -233,18 +230,22 @@ a {
 
 ul {
   margin-left: calc(3rem + 10px);
+  margin-right: calc(3rem + 10px);
   list-style: none;
-  text-align: left;
-  margin-top: 0.75rem;
+  text-align: right;
+  /* margin-top: 0.75rem; */
+  margin-top: 1.5rem;
+  margin-bottom: 7rem;
   display: flex;
-  justify-content: space-between;
-  max-width: 220px;
+  justify-content: flex-end;
+  /* align-items: center; */
+  /* max-width: 220px; */
   /* margin-left: calc((100% - 430px) / 2); */
   /* margin-left: calc(100% - 3rem + 10px - 430px); */
 }
 
 li {
-  padding-right: 1.5rem;
+  padding-right: 3.5rem;
 }
 
 li:last-child {

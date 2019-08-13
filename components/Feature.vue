@@ -6,30 +6,34 @@
       class="feature"
     >
       <nuxt-link :to="projectPath">
-        <img :src="blok.image" :alt="blok.name">
-        <div class="feature-specs">
-          <div class="time-tags-wrapper">
-            <div class="tags-wrapper">
-              <span>{{ blok.cat }}</span>
-              <span v-if="blok.isPaid" class="paid">Paid $</span>
-              <!-- <span v-else class="unpaid">Unpaid</span> -->
-            </div>
-            <div class="time-details">
-              <span>{{ blok.release }}</span>
-              <span>{{ blok.duration }}</span>
-            </div>
+        <div id="relative">
+          <div class="image-holder">
+            <img :src="blok.image" :alt="blok.name" />
           </div>
-          <p class="name">{{ blok.name }}</p>
-          <p class="description">{{ blok.description }}</p>
+          <div class="feature-specs">
+            <div class="time-tags-wrapper">
+              <div class="tags-wrapper">
+                <span>{{ blok.cat }}</span>
+                <!-- <span v-if="blok.isPaid" class="paid">Paid $</span> -->
+                <!-- <span v-else class="unpaid">Unpaid</span> -->
+              </div>
+              <div class="time-details">
+                <span>{{ blok.release }}</span>
+                <!-- <span>{{ blok.duration }}</span> -->
+              </div>
+            </div>
+            <p class="name">{{ blok.name }}</p>
+            <p class="description">{{ blok.description }}</p>
+          </div>
         </div>
       </nuxt-link>
-      <nuxt-link :to="projectPath">
+      <!-- <nuxt-link :to="projectPath">
         <div class="view-project">
           <p v-if="blok.cat == 'Product Design 👨🏻‍💻'">View Case Study</p>
           <p v-else>View Project Overview</p>
           <p>→</p>
         </div>
-      </nuxt-link>
+      </nuxt-link>-->
     </div>
   </transition>
 </template>
@@ -46,42 +50,71 @@ export default {
 </script>
 
 <style scoped>
+#relative {
+  position: relative;
+}
 .feature {
   text-align: left;
-  box-shadow: 0px 1px 10px 0px #ccc;
-  border: 1px solid var(--border-color);
-  margin: 16px;
-  margin-left: 10px;
+  /* box-shadow: 0px 1px 10px 0px #ccc; */
+  /* border: 1px solid var(--border-color); */
+  /* margin: 16px; */
+  /* margin-left: 10px; */
   padding: 0rem;
-  border-radius: 4px;
-  transition: 0.3s all ease-in-out;
-  background-color: #fff;
-  position: relative;
-  top: 0;
+  /* border-radius: 4px; */
+  transition: 0.5s all ease-in-out;
+  background-color: transparent;
+  overflow: hidden;
 }
 
 .feature:hover {
-  box-shadow: 0px 4px 17px 2px #ccc;
-  top: -3px;
-  transition: 0.3s all ease-in-out;
+  /* box-shadow: 0px 4px 17px 2px #ccc; */
+  /* top: -3px; */
+  /* transition: 0.5s all ease-in-out; */
   cursor: pointer;
 }
 
 .feature:first-of-type {
-  /* grid-column-start: span 2; */
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-img {
-  max-width: 100%;
-  border-radius: 4px 4px 0 0;
-  border-bottom: 1px solid var(--border-color);
+.image-holder {
+  /* border-radius: 4px 4px 0 0; */
+  /* border-bottom: 1px solid var(--border-color); */
+  padding: 0;
+  background-color: var(--main-bg-color);
+
+  /* background-color: var(--primary-color); */
+}
+.image-holder img {
+  border: 1px solid rgba(204, 204, 204, 0.2);
+  width: 100%;
+
+  /* border-radius: 4px 4px 0 0; */
 }
 
 .feature-specs {
-  padding: 1.25rem 1.25rem 70px 1.25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--link-color);
+  /* padding: 1.25rem 1.25rem 70px 1.25rem; */
+  padding: 1.5rem;
   font-weight: 500;
-  color: #3b3b3d;
+  color: #fff;
   line-height: 1.25;
+  min-height: 100%;
+  /* transform: translateY(calc(100% - 50px)); */
+  transform: translateY(101%);
+  opacity: 0.25;
+  transition: 0.5s all ease-in-out;
+  /* height: 50px; */
+}
+
+.feature:hover .feature-specs {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.5s all ease-in-out;
 }
 
 .description {
@@ -138,12 +171,13 @@ img {
 }
 
 .tags-wrapper span {
-  background-color: var(--btn-color);
+  /* background-color: var(--btn-color); */
+  background-color: transparent;
   color: #fff;
   border-radius: 4px;
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
-  border-color: #fff;
+  border: 1px solid var(--border-color);
   margin-right: 0.25rem;
 }
 /* 

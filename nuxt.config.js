@@ -3,7 +3,7 @@ require('dotenv').config()
 const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
   router: {
     scrollBehavior: async (to, from, savedPosition) => {
       if (savedPosition) {
@@ -36,7 +36,7 @@ module.exports = {
     }
   },
   generate: {
-    routes: function() {
+    routes: () => {
       return [
         '/work',
         '/blog',
@@ -47,14 +47,13 @@ module.exports = {
         '/projects/sensor',
         '/projects/quakes',
         '/projects/clock',
-        '/projects/africa',
         '/projects/event-tech',
         '/projects/unbreakable',
         '/projects/pension',
-        '/projects/business',
-        '/projects/music'
+        '404'
       ]
-    }
+    },
+    fallback: true
   },
   /*
   ** Headers of the page

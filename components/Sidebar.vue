@@ -4,7 +4,7 @@
       <nuxt-link to="/">
         <div class="logo-holder">
           <!-- <img src="/favicon.svg" alt="andrew_l" width="100%"> -->
-          <img src="/icon.svg" alt="andrew_l" width="100%">
+          <img src="/icon.svg" alt="andrew_l" width="100%" />
         </div>
       </nuxt-link>
       <button id="about-button" @click="show = !show">
@@ -18,7 +18,7 @@
       <section v-if="show">
         <!-- <button class="close-btn" @click="show = !show">Close</button> -->
         <div>
-          <About/>
+          <About />
         </div>
         <footer class="icons">
           <ul>
@@ -74,10 +74,10 @@ export default {
 .button-holder {
   position: absolute;
   height: 100vh;
-  width: 90px;
+  width: 125px;
   /* background-color: #fff; */
   background-color: var(--main-bg-color);
-  border-right: 1px solid var(--border-color);
+  /* border-right: 1px solid var(--border-color); */
   z-index: 10;
   display: flex;
   justify-content: center;
@@ -121,7 +121,7 @@ export default {
 .logo-holder {
   position: fixed;
   top: 10px;
-  left: 0px;
+  left: 20px;
   width: 90px;
 }
 
@@ -141,26 +141,26 @@ nav {
 
 @keyframes bounce-in {
   0% {
-    width: 90px;
+    width: 125px;
   }
   50% {
     width: 104px;
   }
   100% {
-    width: 90px;
+    width: 125px;
   }
 }
 
 @media (max-width: 600px) {
   @keyframes bounce-in {
     0% {
-      height: 90px;
+      height: 125px;
     }
     50% {
       height: 104px;
     }
     100% {
-      height: 90px;
+      height: 125px;
     }
   }
 }
@@ -182,7 +182,7 @@ section {
   /* background-color: #fff; */
   background-color: var(--main-bg-color);
   border-right: 1px solid var(--border-color);
-  transform: translateX(calc(0% + 90px));
+  transform: translateX(calc(0% + 125px));
   /* box-shadow: 0px 1px 16px 0px #ccc; */
   position: sticky;
   top: 0;
@@ -285,7 +285,7 @@ i {
   }
 
   .slide-enter-active {
-    transform: translateX(calc(0% + 90px));
+    transform: translateX(calc(0% + 125px));
   }
   .slide-leave-active {
     transform: translateX(-100%);
@@ -306,7 +306,7 @@ i {
 
   .button-holder {
     position: sticky;
-    height: 90px;
+    height: 125px;
     width: 100vw;
     justify-content: flex-start;
     border-bottom: 1px solid var(--border-color);
