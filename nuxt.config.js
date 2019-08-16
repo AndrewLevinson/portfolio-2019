@@ -3,7 +3,7 @@ require('dotenv').config()
 const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
-  mode: 'spa',
+  mode: 'universal',
   router: {
     scrollBehavior: async (to, from, savedPosition) => {
       if (savedPosition) {
