@@ -81,6 +81,7 @@ export default {
   z-index: 10;
   display: flex;
   justify-content: center;
+  display: none;
 }
 
 #about-button {
@@ -123,6 +124,7 @@ export default {
   top: 10px;
   left: 20px;
   width: 90px;
+  display: none;
 }
 
 .logo-holder img {
@@ -182,7 +184,7 @@ section {
   /* background-color: #fff; */
   background-color: var(--main-bg-color);
   border-right: 1px solid var(--border-color);
-  transform: translateX(calc(0% + 125px));
+  transform: translateX(0);
   /* box-shadow: 0px 1px 16px 0px #ccc; */
   position: sticky;
   top: 0;

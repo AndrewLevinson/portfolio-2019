@@ -1,15 +1,6 @@
 <template>
   <section id="main-content-area">
     <nav id="drop" @scroll="handleScroll">
-      <div id="heading">
-        <!-- <h1>My Work</h1> -->
-        <h4 class="tagline tagline-big">
-          My name is
-          <span class="datum">Andrew</span> and I like to
-          <span class="datum">visualize data</span> &
-          <span class="datum">design digital products</span>.
-        </h4>
-      </div>
       <div id="sidebar">
         <ul>
           <!-- <li>
@@ -31,12 +22,29 @@
             >My Thoughts</a>
           </li>
           <li>
-            <a @click="show = !show">About Andrew</a>
+            <a @click="show = !show">About Andrew 👋🏻</a>
           </li>
         </ul>
       </div>
     </nav>
+    <div id="heading">
+      <!-- <h1>My Work</h1> -->
+      <h4 class="tagline tagline-big">
+        My name is
+        <span class="datum">Andrew</span> and I like to
+        <span class="datum">visualize data</span> &amp;
+        <span class="datum">design digital products</span>.
+      </h4>
+      <h5>
+        Currently, I design and code graphics and dev tools at
+        <a
+          href="https://graphics.wsj.com/"
+          target="_blank"
+        >The Wall Street Journal</a>.
+      </h5>
+    </div>
     <div id="work">
+      <h5 class="section-hed">Work</h5>
       <component
         v-if="story.content.component"
         :key="story.content._uid"
@@ -56,12 +64,15 @@ function myFetchMethod(context) {
   let version =
     context.query._storyblok || context.isDev ? 'draft' : 'published'
 
+  // to-do create service layer for ONE api call
+
   // Load the JSON from the API
   return context.app.$storyapi
     .get(`cdn/stories/${context.app.store.state.section}`, {
       version: version
     })
     .then(res => {
+      console.log(res)
       return context.app.store.commit('setStories', res.data)
     })
     .catch(res => {
@@ -137,6 +148,7 @@ export default {
         version: version
       })
       .then(res => {
+        console.log(res)
         return res.data
       })
       .catch(res => {
@@ -156,13 +168,26 @@ export default {
   /* display: flex; */
   /* justify-content: space-between; */
   /* align-items: baseline; */
-  margin-bottom: 1.5rem;
-  display: none;
+  margin-bottom: 8rem;
+  margin-right: 0;
+  text-align: left;
+  /* display: none; */
+}
+
+#heading h4 {
+  margin-bottom: 0.5rem;
+}
+
+#heading h5 {
+  opacity: 0.8;
+  font-size: 1.9rem;
+  line-height: 1.3;
+  letter-spacing: -0.08rem;
 }
 
 .tagline {
-  margin-left: calc(3rem + 10px);
-  margin-right: calc(3rem + 10px);
+  /* margin-left: calc(3rem + 10px); */
+  /* margin-right: calc(3rem + 10px); */
   margin-top: 1.5rem;
 }
 
@@ -175,12 +200,20 @@ ul {
   animation: appear 1s ease-in-out;
 }
 
+.section-hed {
+  text-transform: uppercase;
+  font-size: 100%;
+  font-weight: 500;
+  opacity: 0.7;
+  border-bottom: 2px solid var(--border-color);
+}
+
 @keyframes appear {
   0% {
-    opacity: 0.1;
+    opacity: 0.05;
   }
   100% {
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
@@ -225,7 +258,7 @@ nav {
 a {
   display: inline-block;
   padding-bottom: 1.5rem;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 ul {
@@ -254,18 +287,18 @@ li:last-child {
 
 a:hover {
   cursor: pointer;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   text-decoration: none;
 }
 
 .active {
-  font-weight: bolder;
-  border-bottom: 3px solid var(--link-color);
+  /* font-weight: bolder; */
+  border-bottom: 2px solid var(--link-color);
   z-index: 999;
 }
 
 .active:hover {
-  border-bottom: 3px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 .mobile {
   display: inline;

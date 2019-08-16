@@ -60,8 +60,8 @@ export default {
   /* margin: 16px; */
   /* margin-left: 10px; */
   padding: 0rem;
-  /* border-radius: 4px; */
-  transition: 0.5s all ease-in-out;
+  border-radius: 4px;
+  transition: 0.3s all ease-in-out;
   background-color: transparent;
   overflow: hidden;
 }
@@ -74,12 +74,14 @@ export default {
 }
 
 .feature:first-of-type {
-  grid-column: span 2;
-  grid-row: span 2;
+  /* grid-column: span 2; */
+  /* grid-row: span 2; */
 }
 
 .image-holder {
   /* border-radius: 4px 4px 0 0; */
+  border-radius: 4px;
+
   /* border-bottom: 1px solid var(--border-color); */
   padding: 0;
   background-color: var(--main-bg-color);
@@ -87,6 +89,8 @@ export default {
   /* background-color: var(--primary-color); */
 }
 .image-holder img {
+  border-radius: 4px;
+
   border: 1px solid rgba(204, 204, 204, 0.2);
   width: 100%;
 
@@ -103,18 +107,26 @@ export default {
   font-weight: 500;
   color: #fff;
   line-height: 1.25;
-  min-height: 100%;
+  min-height: calc(100% - 8px);
   /* transform: translateY(calc(100% - 50px)); */
-  transform: translateY(101%);
-  opacity: 0.25;
-  transition: 0.5s all ease-in-out;
+  /* transform: translateY(101%); */
+  opacity: 0;
+  transition: 0.3s all ease-in-out;
   /* height: 50px; */
 }
 
-.feature:hover .feature-specs {
+.feature-specs div,
+.feature-specs p {
+  transform: scale(0.9);
+  transition: 0.3s all ease-in-out;
+}
+
+.feature:hover .feature-specs,
+.feature:hover .feature-specs div,
+.feature:hover .feature-specs p {
   opacity: 1;
-  transform: translateY(0);
-  transition: 0.5s all ease-in-out;
+  transform: scale(1);
+  transition: 0.3s all ease-in-out;
 }
 
 .description {
@@ -203,7 +215,7 @@ a:hover {
 
 .fuzzy-enter-active,
 .fuzzy-leave-active {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .fuzzy-enter-active {

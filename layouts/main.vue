@@ -1,8 +1,8 @@
 <template>
   <transition name="page">
     <div class="main-layout">
-      <Sidebar/>
-      <nuxt/>
+      <Sidebar />
+      <nuxt />
     </div>
   </transition>
 </template>

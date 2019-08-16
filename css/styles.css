@@ -42,8 +42,9 @@ body {
 
 #main-content-area {
   /* width: calc(100vw - 90px); */
-  width: calc(100vw - 125px);
-  margin-left: 125px;
+  /* width: calc(100vw - 125px); */
+  width: 100vw;
+  /* margin-left: 125px; */
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 3rem;
@@ -70,7 +71,7 @@ a,
 button {
   text-decoration: none;
   color: var(--link-color);
-  transition: all 0.25s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover,
@@ -80,7 +81,7 @@ button:hover {
   /* font-weight: bolder; */
   color: var(--primary-color);
   opacity: 1;
-  transition: all 0.25s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 a:focus,

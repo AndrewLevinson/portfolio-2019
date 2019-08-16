@@ -22,9 +22,10 @@ export default {
   text-align: center;
   display: grid;
   padding: 0.5rem 0 1rem 0;
-  margin: 0 0 0 16px;
+  /* margin: 0 0 0 16px; */
+  margin: 0 auto;
   grid-row-gap: 1.5rem;
   grid-column-gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 </style>
