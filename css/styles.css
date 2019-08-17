@@ -7,12 +7,18 @@
 }
 
 :root {
-  --main-bg-color: #f7f7f7;
+  --main-bg-color: hsl(0, 0%, 96%);
   /* --primary-color: #77b6eb; */
-  --primary-color: #de9f5f;
-  --accent-color: #222;
-  --btn-color: #de9f5f;
-  --link-color: #5f90de;
+  /* --primary-color: #de9f5f; */
+  --primary-color: hsl(300, 60%, 25%);
+  /* --accent-color: #222; */
+  --accent-color: hsl(300, 35%, 25%);
+  /* --btn-color: #800080; */
+  --btn-color: hsl(300, 60%, 25%);
+
+  /* --link-color: #5f90d3; */
+  --purple: hsl(300, 100%, 25%);
+  --link-color: hsl(217, 100%, 45%);
   --border-color: rgba(204, 204, 204, 0.5);
 }
 

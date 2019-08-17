@@ -17,7 +17,7 @@ export default {
 
 <style scoped>
 .list {
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-top: 4rem;
   margin-bottom: 0;
 }

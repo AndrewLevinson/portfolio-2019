@@ -29,6 +29,11 @@ export default {
   border-bottom: 1px solid var(--border-color);
 }
 
+.blog-features:first-of-type {
+  border-top: 1px solid var(--border-color);
+  padding-top: 3rem;
+}
+
 .tag {
   background-color: none;
   color: #3d3d3d;
@@ -41,6 +46,14 @@ export default {
 .title {
   margin-bottom: 0;
   margin-top: -0.25rem;
+  color: var(--link-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.title:hover {
+  color: var(--primary-color);
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 .subtitle {

@@ -101,7 +101,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--link-color);
+  /* background-color: var(--link-color); */
+  background-color: var(--accent-color);
   /* padding: 1.25rem 1.25rem 70px 1.25rem; */
   padding: 1.5rem;
   font-weight: 500;

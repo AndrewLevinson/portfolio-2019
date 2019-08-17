@@ -13,27 +13,27 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/markdownit": "^1.2.3",
+    "@nuxtjs/markdownit": "^1.2.6",
     "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "markdown-it": "^8.4.2",
     "moment": "^2.24.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.8.1",
     "raw-loader": "^1.0.0",
     "storyblok-nuxt": "^1.0.1",
-    "webpack": "^4.28.3"
+    "webpack": "^4.39.2"
   },
   "devDependencies": {
     "@nuxtjs/markdownit-loader": "^1.1.1",
     "babel-eslint": "^8.2.1",
     "compression-webpack-plugin": "^2.0.0",
-    "eslint": "^5.0.1",
-    "eslint-config-prettier": "^3.1.0",
-    "eslint-loader": "^2.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-loader": "^2.2.1",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-vue": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.19.1",
     "prettier": "1.14.3"
   }
 }

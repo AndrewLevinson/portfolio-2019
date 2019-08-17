@@ -1,13 +1,19 @@
 <template>
-  <div v-editable="blok" :id="blok.name" class="grid">
-    <component
-      v-for="blok in blok.preview"
-      :blok="blok"
-      :category="category"
-      :paid="paid"
-      :is="blok.component"
-      :key="blok._uid"
-    ></component>
+  <div v-editable="blok" :id="blok.name">
+    <!-- <h3>
+      This is my work.
+      <span class="datum">Enjoy</span>.
+    </h3>-->
+    <div class="grid">
+      <component
+        v-for="blok in blok.preview"
+        :blok="blok"
+        :category="category"
+        :paid="paid"
+        :is="blok.component"
+        :key="blok._uid"
+      ></component>
+    </div>
   </div>
 </template>
 

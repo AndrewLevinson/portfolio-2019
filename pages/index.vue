@@ -21,30 +21,42 @@
               @click="$store.commit('setSection', 'blog'), changeSection()"
             >My Thoughts</a>
           </li>
+
           <li>
-            <a @click="show = !show">About Andrew 👋🏻</a>
+            <a
+              :class="{ active : $store.getters.section === 'all' }"
+              @click="$store.commit('setSection', 'all'), changeSection()"
+            >About Andrew 👋🏻</a>
           </li>
         </ul>
       </div>
     </nav>
     <div id="heading">
-      <!-- <h1>My Work</h1> -->
-      <h4 class="tagline tagline-big">
+      <h4 v-show="$store.getters.section === 'all'" class="tagline tagline-big">
         My name is
         <span class="datum">Andrew</span> and I like to
         <span class="datum">visualize data</span> &amp;
         <span class="datum">design digital products</span>.
       </h4>
-      <h5>
+      <h4 v-show="$store.getters.section === 'work'" class="tagline tagline-big">
+        This is my
+        <span class="datum">work</span>.
+      </h4>
+      <h4 v-show="$store.getters.section === 'blog'" class="tagline tagline-big">
+        These are my
+        <span class="datum">thoughts</span>.
+      </h4>
+
+      <h5 v-if="$store.getters.section === 'all'">
         Currently, I design and code graphics and dev tools at
         <a
           href="https://graphics.wsj.com/"
           target="_blank"
         >The Wall Street Journal</a>.
       </h5>
+      <h5 v-else>Enjoy.</h5>
     </div>
     <div id="work">
-      <h5 class="section-hed">Work</h5>
       <component
         v-if="story.content.component"
         :key="story.content._uid"
@@ -144,7 +156,7 @@ export default {
 
     // Load the JSON from the API
     return context.app.$storyapi
-      .get(`cdn/stories/${context.app.store.state.section}`, {
+      .get(`cdn/stories/work`, {
         version: version
       })
       .then(res => {
@@ -239,8 +251,8 @@ nav {
   top: 0px;
   padding-top: 2rem;
   margin-bottom: 1.5rem;
-  /* background-color: rgba(247, 247, 247, 0.95); */
-  background-color: rgba(247, 247, 247, 1);
+  background-color: rgba(247, 247, 247, 0.95);
+  background-color: var(--main-bg-color);
   /* border-bottom: 1px solid var(--border-color); */
   box-shadow: none;
   width: calc(100% + 6rem);
