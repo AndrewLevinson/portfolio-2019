@@ -7,19 +7,22 @@
 }
 
 :root {
-  --main-bg-color: hsl(0, 0%, 96%);
+  --main-bg-color: hsl(0, 0%, 97%);
   /* --primary-color: #77b6eb; */
   /* --primary-color: #de9f5f; */
   --primary-color: hsl(300, 60%, 25%);
   /* --accent-color: #222; */
   --accent-color: hsl(300, 35%, 25%);
+  /* --accent-color: hsl(217, 60%, 25%); */
+
   /* --btn-color: #800080; */
   --btn-color: hsl(300, 60%, 25%);
 
   /* --link-color: #5f90d3; */
-  --purple: hsl(300, 100%, 25%);
-  --link-color: hsl(217, 100%, 45%);
+  --link-color: hsl(217, 60%, 45%);
   --border-color: rgba(204, 204, 204, 0.5);
+
+  --purple: hsl(300, 100%, 25%);
 }
 
 html {
@@ -102,7 +105,7 @@ a.span-active {
 .datum {
   font-weight: 700;
   opacity: 0.75;
-  /* color: var(--primary-color); */
+  color: var(--primary-color);
   /* text-decoration: underline; */
 }
 
@@ -142,4 +145,15 @@ blockquote p {
 .page-leave-to {
   opacity: 0;
   transform: translateX(100%);
+}
+
+/* dynamic component transition */
+.component-enter-active,
+.component-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.component-enter, .component-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  /* transform: translateX(100%); */
 }

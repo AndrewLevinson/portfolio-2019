@@ -1,11 +1,11 @@
 <template>
   <article class="about">
-    <h3 class="my-name">Hey, it's Andrew 👨🏻‍💻</h3>
-    <h6 class="subhead">A Data Visualization Designer & Developer</h6>
+    <!-- <h3 class="my-name">Hey, it's Andrew 👨🏻‍💻</h3> -->
+    <!-- <h6 class="subhead">A Data Visualization Designer & Developer</h6> -->
     <div class="about-me-content">
       <div class="first">
         <div class="img-holder">
-          <img src="../assets/guitarist@1x.png" width="100%" alt="pic of me playing guitar">
+          <img src="../assets/guitarist@1x.png" width="100%" alt="pic of me playing guitar" />
         </div>
         <div class="about-text" v-html="$md.render(aboutMD)"></div>
         <div class="email">
@@ -41,11 +41,11 @@ ___`
 
 <style scoped>
 .about {
-  margin: 8rem 0 5rem 0;
+  margin: 0rem 0 5rem 0;
 }
 
 .about-me-content {
-  padding-top: 1rem;
+  padding-top: 0rem;
   padding-bottom: 5rem;
   max-width: 100%;
   width: 100%;

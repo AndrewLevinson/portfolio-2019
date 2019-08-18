@@ -1,102 +1,108 @@
 <template>
   <section id="main-content-area">
-    <nav id="drop" @scroll="handleScroll">
+    <nav id="drop">
       <div id="sidebar">
         <ul>
-          <!-- <li>
-            <a :class="{ active : active_el == 1 }" @click="cat = 'all' , activate(1)">
-              All
-              <span class="mobile">Work</span>
-            </a>
-          </li>-->
+          <li>
+            <a
+              :class="{ active : $store.getters.section === 'all' }"
+              @click="$store.commit('setSection', 'all')"
+            >Home</a>
+          </li>
           <li>
             <a
               :class="{ active : $store.getters.section === 'work' }"
-              @click="$store.commit('setSection', 'work'), changeSection()"
-            >My Work</a>
+              @click="$store.commit('setSection', 'work')"
+            >Work</a>
           </li>
           <li>
             <a
               :class="{ active : $store.getters.section === 'blog' }"
-              @click="$store.commit('setSection', 'blog'), changeSection()"
-            >My Thoughts</a>
+              @click="$store.commit('setSection', 'blog')"
+            >Thoughts</a>
           </li>
 
           <li>
             <a
-              :class="{ active : $store.getters.section === 'all' }"
-              @click="$store.commit('setSection', 'all'), changeSection()"
+              :class="{ active : $store.getters.section === 'about' }"
+              @click="$store.commit('setSection', 'about')"
             >About Andrew 👋🏻</a>
           </li>
         </ul>
       </div>
     </nav>
-    <div id="heading">
-      <h4 v-show="$store.getters.section === 'all'" class="tagline tagline-big">
-        My name is
-        <span class="datum">Andrew</span> and I like to
-        <span class="datum">visualize data</span> &amp;
-        <span class="datum">design digital products</span>.
-      </h4>
-      <h4 v-show="$store.getters.section === 'work'" class="tagline tagline-big">
-        This is my
-        <span class="datum">work</span>.
-      </h4>
-      <h4 v-show="$store.getters.section === 'blog'" class="tagline tagline-big">
-        These are my
-        <span class="datum">thoughts</span>.
-      </h4>
+    <transition name="component" mode="out-in">
+      <div id="heading">
+        <h4
+          v-show="$store.getters.section === 'all' || $store.getters.section ==='about'"
+          class="tagline tagline-big"
+        >
+          My name is
+          <span class="datum">Andrew</span> and I like to
+          <span class="datum">visualize data</span> &amp;
+          <span class="datum">design digital products</span>.
+        </h4>
+        <h4 v-show="$store.getters.section === 'work'" class="tagline tagline-big">
+          This is my
+          <span class="datum">work</span>.
+        </h4>
+        <h4 v-show="$store.getters.section === 'blog'" class="tagline tagline-big">
+          These are my
+          <span class="datum">thoughts</span>.
+        </h4>
+        <!-- <h4
+          v-show="$store.getters.section === 'about'"
+          class="tagline tagline-big"
+        >Hey, it's Andrew 👋🏻</h4>-->
 
-      <h5 v-if="$store.getters.section === 'all'">
-        Currently, I design and code graphics and dev tools at
-        <a
-          href="https://graphics.wsj.com/"
-          target="_blank"
-        >The Wall Street Journal</a>.
-      </h5>
-      <h5 v-else>Enjoy.</h5>
-    </div>
+        <h5 v-if="$store.getters.section === 'all' || $store.getters.section === 'about'">
+          Currently, I design and code graphics and dev tools at
+          <a
+            href="https://graphics.wsj.com/"
+            target="_blank"
+          >The Wall Street Journal</a>.
+        </h5>
+        <h5 v-else>Enjoy.</h5>
+      </div>
+    </transition>
     <div id="work">
-      <component
-        v-if="story.content.component"
-        :key="story.content._uid"
-        :blok="story.content"
-        :category="cat"
-        :paid="onlyPaid"
-        :is="story.content.component"
-      ></component>
+      <transition name="component" mode="out-in">
+        <keep-alive>
+          <div v-if="$store.getters.section === 'all'" key="all">This is the homepage</div>
+          <!-- <div v-else-if="$store.getters.section === 'about'" key="about">
+          <About />
+          </div>-->
+
+          <component
+            v-else-if="$store.getters.section === 'about'"
+            key="About"
+            :is="$store.getters.section"
+          ></component>
+
+
+          <!-- :is is passing "page" to render down props... -->
+          <component
+            v-else
+            :key="story.content._uid"
+            :blok="story.content"
+            :category="cat"
+            :paid="onlyPaid"
+            :is="story.content.component"
+          ></component>
+        </keep-alive>
+      </transition>
     </div>
   </section>
 </template>
 
 <script>
-function myFetchMethod(context) {
-  // console.log(context)
-  // Check if we are in the editor mode
-  let version =
-    context.query._storyblok || context.isDev ? 'draft' : 'published'
-
-  // to-do create service layer for ONE api call
-
-  // Load the JSON from the API
-  return context.app.$storyapi
-    .get(`cdn/stories/${context.app.store.state.section}`, {
-      version: version
-    })
-    .then(res => {
-      console.log(res)
-      return context.app.store.commit('setStories', res.data)
-    })
-    .catch(res => {
-      context.error({
-        statusCode: res.response.status,
-        message: res.response.data
-      })
-    })
-}
+import About from '@/components/About.vue'
 
 export default {
   layout: 'main',
+  components: {
+    About
+  },
   data() {
     return {
       story: { content: {} },
@@ -107,15 +113,17 @@ export default {
     }
   },
   computed: {
-    setStories() {
-      return this.$store.getters.stories
+    setSection() {
+      return this.$store.getters[this.$store.getters.section]
     }
   },
   watch: {
-    setStories() {
-      // console.log('setting section to ', this.$store.getters.stories)
-      this.story = this.$store.getters.stories.story
+    setSection() {
+      this.assignContent()
     }
+  },
+  created() {
+    this.assignContent()
   },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
@@ -127,28 +135,17 @@ export default {
         window.location.reload()
       }
     })
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  // created() {
-  //   window.addEventListener('scroll', this.handleSCroll)
-  // },
-  destroyed() {
-    window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    changeSection() {
-      myFetchMethod(this.$root.$options.context)
-    },
-    handleScroll() {
-      // let header = document.getElementById('drop')
-      // if (window.scrollY > 0 && !header.className.includes('drop')) {
-      //   header.classList.add('drop')
-      // } else if (window.scrollY < 1) {
-      //   header.classList.remove('drop')
-      // }
+    assignContent() {
+      console.log('setting section to', this.$store.getters.section)
+      this.story =
+        this.$store.getters.section === 'all' ||
+        this.$store.getters.section === 'about'
+          ? null
+          : this.setSection.story
     }
   },
-
   asyncData(context) {
     // Check if we are in the editor mode
     let version =
@@ -160,8 +157,23 @@ export default {
         version: version
       })
       .then(res => {
-        console.log(res)
-        return res.data
+        // console.log(res.data)
+        console.log('api call, work')
+
+        return context.app.store.commit('setWork', res.data)
+        // return res.data
+      })
+      .then(() => {
+        return context.app.$storyapi
+          .get(`cdn/stories/blog`, {
+            version: version
+          })
+          .then(res => {
+            // console.log(res.data)
+            console.log('api call, blog')
+            return context.app.store.commit('setBlog', res.data)
+            // return res.data
+          })
       })
       .catch(res => {
         context.error({
@@ -191,10 +203,11 @@ export default {
 }
 
 #heading h5 {
-  opacity: 0.8;
+  opacity: 0.7;
   font-size: 1.9rem;
   line-height: 1.3;
   letter-spacing: -0.08rem;
+  font-weight: 300;
 }
 
 .tagline {

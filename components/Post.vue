@@ -25,8 +25,8 @@
     <div class="blog-content">
       <div class="links">
         <div>
-          <hr>
-          <hr>
+          <hr />
+          <hr />
         </div>
       </div>
       <article>
@@ -71,10 +71,11 @@ export default {
 .blog-post .tags-wrapper span {
   background-color: none;
   color: #3d3d3d;
+  color: var(--primary-color);
   border-radius: 4px;
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--primary-color);
 }
 
 .blog-post .date {

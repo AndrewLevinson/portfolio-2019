@@ -17,14 +17,20 @@
           <p id="sub">{{ blok.tagline }}</p>
           <div class="tags-wrapper">
             <span>Data-Viz 📊</span>
-            <br>
+            <br />
             <span v-for="tag in blok.tech_used" :key="tag">{{ tag }}</span>
+          </div>
+          <div
+            style="display:flex; margin-top: 3rem; width: 350px; justify-content: space-between;"
+          >
+            <a href>Project Link ⟶</a>
+            <a href>Github Repository ⟶</a>
           </div>
         </div>
       </div>
       <div id="image-holder">
         <a :href="blok.project_link.cached_url" target="_blank">
-          <img id="main-image" :src="blok.image" alt="hero image" width="100%">
+          <img id="main-image" :src="blok.image" alt="hero image" width="100%" />
         </a>
       </div>
     </div>
@@ -33,8 +39,8 @@
       <div class="viz-content">
         <div class="links">
           <div>
-            <hr>
-            <hr>
+            <hr />
+            <hr />
           </div>
           <div>
             <a :href="blok.project_link.cached_url">Project Link ⟶</a>
@@ -58,7 +64,7 @@
           </div>
           <div class="assets">
             <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
-              <img :src="media.filename" :alt="media.name" width="100%">
+              <img :src="media.filename" :alt="media.name" width="100%" />
             </div>
           </div>
         </article>
@@ -114,21 +120,21 @@ export default {
 
 .viz-project .tags-wrapper span {
   background-color: none;
-  color: #3d3d3d;
+  color: var(--primary-color);
   border-radius: 4px;
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--primary-color);
   margin-right: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
 }
 
 .viz-project .tags-wrapper span:first-child {
-  background-color: var(--btn-color);
+  background-color: var(--primary-color);
   color: #fff;
   margin-top: 0rem;
-  border: 1px solid var(--btn-color);
+  border: 1px solid var(--primary-color);
 }
 
 .viz-project #sub {
@@ -179,8 +185,8 @@ export default {
 }
 
 .viz-project #summary {
-  text-transform: none;
-  opacity: 0.8;
+  text-transform: capitalize;
+  /* opacity: 0.8; */
 }
 .viz-project .description {
   border-bottom: 2px solid var(--border-color);

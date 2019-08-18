@@ -1,8 +1,8 @@
 {
   "name": "portfolio-2019",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "My Portfolio Website",
-  "author": "andrew_l",
+  "author": "Andrew Levinson",
   "private": true,
   "scripts": {
     "dev": "nuxt",

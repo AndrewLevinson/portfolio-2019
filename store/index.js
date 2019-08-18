@@ -4,19 +4,24 @@ const createStore = () => {
   return new Vuex.Store({
     state: () => ({
       section: 'all',
-      stories: null
+      work: null,
+      blog: null
     }),
     mutations: {
       setSection(state, section) {
         state.section = section
       },
-      setStories(state, data) {
-        state.stories = data
+      setWork(state, data) {
+        state.work = data
+      },
+      setBlog(state, data) {
+        state.blog = data
       }
     },
     getters: {
       section: state => state.section,
-      stories: state => state.stories
+      work: state => state.work,
+      blog: state => state.blog
     }
   })
 }

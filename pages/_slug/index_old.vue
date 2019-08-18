@@ -6,26 +6,28 @@
           <li>
             <a
               :class="{ active : $store.getters.section === 'all' }"
-              @click="$store.commit('setSection', 'all'), what = 'all'"
+              @click="$store.commit('setSection', 'work'), changeSection()"
             >Home</a>
           </li>
           <li>
-            <a
-              :class="{ active : $store.getters.section === 'work' }"
-              @click="$store.commit('setSection', 'work'), what = 'work'"
-            >My Work</a>
+            <nuxt-link to="/work">
+              <a
+                :class="{ active : $store.getters.section === 'work' }"
+                @click="$store.commit('setSection', 'work'), changeSection()"
+              >My Work</a>
+            </nuxt-link>
           </li>
           <li>
             <a
               :class="{ active : $store.getters.section === 'blog' }"
-              @click="$store.commit('setSection', 'blog'), what = 'blog'"
+              @click="$store.commit('setSection', 'blog'), changeSection()"
             >My Thoughts</a>
           </li>
 
           <li>
             <a
               :class="{ active : $store.getters.section === 'about' }"
-              @click="$store.commit('setSection', 'about')"
+              @click="$store.commit('setSection', 'work'), changeSection()"
             >About Andrew 👋🏻</a>
           </li>
         </ul>
@@ -57,9 +59,8 @@
       <h5 v-else>Enjoy.</h5>
     </div>
     <div id="work">
-      <div v-if="$store.getters.section === 'all'">This is the homepage</div>
       <component
-        v-else
+        v-if="story.content.component"
         :key="story.content._uid"
         :blok="story.content"
         :category="cat"
@@ -79,21 +80,19 @@ export default {
       cat: 'all',
       onlyPaid: false,
       active_el: 1,
-      scrolled: false,
-      what: 'stories'
+      scrolled: false
     }
   },
-  computed: {
-    setSection() {
-      return this.$store.getters[this.$store.getters.section]
-    }
-  },
-  watch: {
-    setSection() {
-      console.log('setting section to', this.$store.getters.section)
-      this.story = this.$store.getters[this.$store.getters.section].story
-    }
-  },
+  // computed: {
+  //   setStories() {
+  //     return this.$store.getters.stories
+  //   }
+  // },
+  // watch: {
+  //   setStories() {
+  //     this.story = this.$store.getters.stories.story
+  //   }
+  // },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], event => {
       if (event.action == 'input') {
@@ -112,24 +111,12 @@ export default {
 
     // Load the JSON from the API
     return context.app.$storyapi
-      .get(`cdn/stories/work`, {
+      .get(`cdn/stories/`, {
         version: version
       })
       .then(res => {
-        // console.log(res.data)
-        return context.app.store.commit('setWork', res.data)
-        // return res.data
-      })
-      .then(() => {
-        return context.app.$storyapi
-          .get(`cdn/stories/blog`, {
-            version: version
-          })
-          .then(res => {
-            // console.log(res.data)
-            return context.app.store.commit('setBlog', res.data)
-            // return res.data
-          })
+        // console.log(res.data.stories)
+        return context.app.store.commit('setStories', res.data)
       })
       .catch(res => {
         context.error({

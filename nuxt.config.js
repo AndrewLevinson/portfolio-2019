@@ -67,15 +67,15 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      // {
+      //   rel: 'stylesheet',
+      //   href:
+      //     'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,600,700|Playfair+Display:400,400i,700,900'
+      // },
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,600,700|Playfair+Display:400,400i,700,900'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:300,400,500,700,900&display=swap'
+          'https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:300,400,500,700&display=swap'
       },
       {
         rel: 'stylesheet',
@@ -90,7 +90,11 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#DE9F5F' },
+  loading: {
+    color: 'hsl(300, 60%, 25%)',
+    continuous: true,
+    height: '3px'
+  },
 
   /*
   ** Global CSS

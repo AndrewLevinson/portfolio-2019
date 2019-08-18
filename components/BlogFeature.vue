@@ -1,14 +1,14 @@
 <template>
-  <transition name="fuzzy">
-    <div v-editable="blok" class="blog-features">
-      <p class="date">{{ blok.date | dateFormat }}</p>
-      <nuxt-link :to="blogPath">
-        <h3 class="title">{{ blok.title }}</h3>
-      </nuxt-link>
-      <p class="subtitle">{{ blok.subtitle }}</p>
-      <span class="tag">{{ blok.tag }}</span>
-    </div>
-  </transition>
+  <!-- <transition name="fuzzy"> -->
+  <div v-editable="blok" class="blog-features">
+    <p class="date">{{ blok.date | dateFormat }}</p>
+    <nuxt-link :to="blogPath">
+      <h3 class="title">{{ blok.title }}</h3>
+    </nuxt-link>
+    <p class="subtitle">{{ blok.subtitle }}</p>
+    <span class="tag">{{ blok.tag }}</span>
+  </div>
+  <!-- </transition> -->
 </template>
 
 <script>
@@ -36,11 +36,12 @@ export default {
 
 .tag {
   background-color: none;
-  color: #3d3d3d;
+  /* color: #3d3d3d; */
+  color: var(--primary-color);
   border-radius: 4px;
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 80%;
-  border: 1px solid #3d3d3d;
+  border: 1px solid var(--primary-color);
 }
 
 .title {
