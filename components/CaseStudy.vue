@@ -171,7 +171,7 @@ export default {
 }
 
 .iframe-holder {
-  border-radius: 4px;
+  border-radius: var(--radius);
   height: 100%;
   width: 80%;
   margin: 0 auto;

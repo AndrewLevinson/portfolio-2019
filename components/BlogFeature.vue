@@ -35,7 +35,7 @@ export default {
 .tag {
   background-color: none;
   color: var(--primary-color);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 80%;
   border: 1px solid var(--primary-color);

@@ -1,10 +1,10 @@
 <template>
-  <div class="main-layout">
-    <Navbar />
-    <transition name="page">
+  <transition name="page" mode="out-in">
+    <div class="main-layout">
+      <Navbar />
       <nuxt />
-    </transition>
-  </div>
+    </div>
+  </transition>
 </template>
 
 <script>

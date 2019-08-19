@@ -40,7 +40,7 @@ export default {
 .feature {
   text-align: left;
   padding: 0rem;
-  border-radius: 4px;
+  border-radius: var(--radius);
   transition: 0.3s all ease-in-out;
   background-color: transparent;
   overflow: hidden;
@@ -56,13 +56,13 @@ export default {
 }
 
 .image-holder {
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 0;
   background-color: var(--main-bg-color);
 }
 
 .image-holder img {
-  border-radius: 4px;
+  border-radius: var(--radius);
   border: 1px solid rgba(204, 204, 204, 0.2);
   width: 100%;
 }
@@ -147,7 +147,7 @@ export default {
 .tags-wrapper span {
   background-color: transparent;
   color: #fff;
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
   border: 1px solid var(--border-color);

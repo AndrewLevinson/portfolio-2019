@@ -29,7 +29,7 @@
             :class="{ active : $store.getters.section === 'about' }"
             class="desktop"
             @click="$store.commit('setSection', 'about')"
-          >About &nbsp;</a> 👋🏻
+          >About &nbsp;</a> 👋
           <a
             :class="{ active : $store.getters.section === 'about' }"
             class="mobile"
@@ -83,8 +83,7 @@ nav {
   padding-bottom: 0;
   background-color: hsla(0, 0%, 97%, 97.5%);
   z-index: 997;
-
-  /* border-bottom: 1px solid red; */
+  border-bottom: 1px solid transparent;
 }
 
 .border {

@@ -62,7 +62,7 @@ export default {
   background-color: none;
   color: #3d3d3d;
   color: var(--primary-color);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
   border: 1px solid var(--primary-color);
@@ -94,9 +94,9 @@ export default {
   height: 5px;
   color: none;
   border: none;
-  background-color: #3d3d3d;
+  background-color: var(--accent-color);
   margin-top: 0.5rem;
-  border-radius: 6px;
+  border-radius: var(--radius);
 }
 
 .blog-content div {

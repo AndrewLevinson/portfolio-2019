@@ -13,7 +13,7 @@
       </p>
       <div class="email">
         <p>
-          Say hi at
+          Say 👋 at
           <a href="mailto:andrewlevins@gmail.com">andrewlevins@gmail.com</a>
         </p>
       </div>
@@ -38,6 +38,14 @@
         </ul>
       </footer>
     </div>
+    <div class="dev">
+      <p>
+        I built this site with
+        <a href="https://nuxtjs.org/" target="_blank">Nuxt.js</a> and
+        <a href="https://www.storyblok.com/" target="_blank">Storyblok</a>. Hosted on
+        <a href="https://www.netlify.com/">Netlify</a>.
+      </p>
+    </div>
   </article>
 </template>
 
@@ -47,17 +55,11 @@
 }
 
 .about-text {
-  margin-bottom: 8rem;
-}
-
-@media (max-width: 600px) {
-  .about-text {
-    margin-bottom: 6rem;
-  }
+  margin-bottom: 5rem;
 }
 
 footer {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .icons li {
@@ -66,10 +68,9 @@ footer {
   padding-right: 3rem;
 }
 
-footer a {
-  opacity: 0.75;
-}
-footer a:hover {
-  opacity: 1;
+.dev {
+  margin-top: 5rem;
+  opacity: 0.6;
+  /* font-weight: 500; */
 }
 </style>

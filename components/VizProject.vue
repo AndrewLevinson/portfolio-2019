@@ -112,7 +112,7 @@ export default {
 .viz-project .tags-wrapper span {
   background-color: none;
   color: var(--primary-color);
-  border-radius: 4px;
+  border-radius: var(--radius);
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
   border: 1px solid var(--primary-color);
@@ -143,7 +143,7 @@ export default {
 
 .viz-project #main-image {
   box-shadow: 0px 4px 17px 2px #ccc;
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 .viz-content {
@@ -160,10 +160,10 @@ export default {
   height: 5px;
   color: none;
   border: none;
-  /* background-color: var(--link-color); */
-  background-color: #3d3d3d;
+  background-color: var(--accent-color);
+  /* background-color: #3d3d3d; */
   margin-top: 0.5rem;
-  border-radius: 6px;
+  border-radius: var(--radius);
 }
 
 .viz-content div {
@@ -213,7 +213,7 @@ export default {
 .viz-content .viz-media img {
   margin-bottom: 8rem;
   /* box-shadow: 0px 4px 17px 2px #ccc; */
-  border-radius: 4px;
+  border-radius: var(--radius);
 }
 
 @media (max-width: 1025px) {
