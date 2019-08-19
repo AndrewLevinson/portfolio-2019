@@ -2,7 +2,7 @@
   <nav :class="{ border : $nuxt.$route.name != 'slug' && $nuxt.$route.name != 'index'}">
     <transition name="nav" mode="out-in">
       <ul
-        v-if="$nuxt.$route.name === 'slug' || $nuxt.$route.path === '/'"
+        v-if="$nuxt.$route.name === 'slug' || $nuxt.$route.name === 'index'"
         id="main-nav"
         key="main-nav"
       >
@@ -41,7 +41,7 @@
       <ul v-else id="breadcrumb-nav" key="breadcrumb-nav">
         <li>
           <nuxt-link
-            to="/"
+            to="/slug"
             class="active-trans"
           >{{ $store.getters.section === 'blog' ? 'Thoughts' : $store.getters.section === 'work' ? 'Work' : 'Home' }}</nuxt-link>
         </li>
