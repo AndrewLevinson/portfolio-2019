@@ -26,42 +26,42 @@
       </div>
     </div>
 
-    <div class="project-content">
-      <div class="viz-content">
-        <div class="links">
-          <div>
-            <hr />
-            <hr />
-          </div>
-          <div>
-            <a :href="blok.project_link.cached_url">Project Link ⟶</a>
-          </div>
-          <div>
-            <a :href="blok.github_link.cached_url">Github Repository ⟶</a>
-          </div>
-          <div>
-            <h6>Data Sources</h6>
-            <div class="markdown" v-html="$md.render(blok.data_sources)"></div>
+    <!-- <div class="project-content"> -->
+    <div class="viz-content">
+      <article>
+        <div>
+          <hr />
+          <hr />
+        </div>
+        <div>
+          <!-- <h5>Summary</h5> -->
+          <h5 id="summary">{{ blok.summary }}</h5>
+        </div>
+        <div class="description">
+          <!-- <h5>Description</h5> -->
+          <div class="markdown" v-html="$md.render(blok.description)"></div>
+        </div>
+        <div class="assets">
+          <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
+            <img :src="media.filename" :alt="media.name" width="100%" />
           </div>
         </div>
-        <article>
-          <div>
-            <!-- <h5>Summary</h5> -->
-            <h5 id="summary">{{ blok.summary }}</h5>
-          </div>
-          <div class="description">
-            <!-- <h5>Description</h5> -->
-            <div class="markdown" v-html="$md.render(blok.description)"></div>
-          </div>
-          <div class="assets">
-            <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
-              <img :src="media.filename" :alt="media.name" width="100%" />
-            </div>
-          </div>
-        </article>
+      </article>
+      <div class="links">
+        <div>
+          <a :href="blok.project_link.cached_url">Project Link ⟶</a>
+        </div>
+        <div>
+          <a :href="blok.github_link.cached_url">Github Repository ⟶</a>
+        </div>
+        <div>
+          <h6>Data Sources</h6>
+          <div class="markdown list" v-html="$md.render(blok.data_sources)"></div>
+        </div>
       </div>
     </div>
   </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -149,9 +149,8 @@ export default {
 .viz-content {
   width: 90%;
   margin: 0 auto;
-  padding-top: 3rem;
-  padding-left: 0.6rem;
-  padding-right: 3rem;
+  padding: 6rem 3rem 2rem 0.6rem;
+  overflow-x: hidden;
   text-align: left;
 }
 
@@ -164,6 +163,7 @@ export default {
   /* background-color: #3d3d3d; */
   margin-top: 0.5rem;
   border-radius: var(--radius);
+  width: 17.5%;
 }
 
 .viz-content div {
@@ -191,16 +191,17 @@ export default {
 }
 
 .viz-content article {
-  max-width: 70%;
-  margin-left: 22.5%;
-  /* margin: 0 auto; */
+  width: 90%;
+  max-width: 800px;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 5rem;
 }
 
-.viz-content > .links {
+/* .viz-content > .links {
   width: 17.5%;
   padding-right: 5rem;
   position: absolute;
-}
+} */
 
 .links > div {
   padding-bottom: 0.5rem;
@@ -208,6 +209,18 @@ export default {
 
 .links > div:first-child {
   margin-top: 1rem;
+}
+
+.viz-content .list a {
+  display: list-item;
+  margin-bottom: 0.5rem;
+  margin-left: 1em;
+  padding-left: 0px;
+  list-style: circle outside;
+}
+
+.list br {
+  display: none;
 }
 
 .viz-content .viz-media img {
@@ -222,10 +235,6 @@ export default {
     display: block;
   }
 
-  .viz-content {
-    display: flex;
-    flex-flow: column-reverse;
-  }
   .viz-project > .intro {
     display: flex;
     flex-flow: column-reverse;
@@ -264,11 +273,6 @@ export default {
   .links > div {
     width: 100%;
     padding: 0;
-  }
-
-  .viz-project > .project-content {
-    width: 100%;
-    display: block;
   }
 
   .viz-content .viz-media img {
