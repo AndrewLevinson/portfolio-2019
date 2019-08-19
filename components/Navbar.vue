@@ -20,15 +20,15 @@
             @click="$store.commit('setSection', 'blog')"
           >Thoughts</a>
         </li>
-        <li>
+        <li class="desktop">
           <a
             :class="{ active : $store.getters.section === 'about' }"
-            class="desktop"
             @click="$store.commit('setSection', 'about')"
           >About &nbsp;</a> 👋
+        </li>
+        <li class="mobile">
           <a
             :class="{ active : $store.getters.section === 'about' }"
-            class="mobile"
             @click="$store.commit('setSection', 'about')"
           >Andrew</a>
         </li>
@@ -75,6 +75,7 @@ nav {
   text-align: left;
   position: sticky;
   top: 0px;
+  width: 100vw;
   padding: 2rem;
   padding-bottom: 0;
   background-color: hsla(0, 0%, 97%, 97.5%);
@@ -144,7 +145,7 @@ a:hover {
 }
 
 .desktop {
-  display: inline-block;
+  display: list-item;
 }
 .mobile {
   display: none;
@@ -159,7 +160,7 @@ a:hover {
     display: none;
   }
   .mobile {
-    display: inline-block;
+    display: list-item;
   }
 }
 </style>

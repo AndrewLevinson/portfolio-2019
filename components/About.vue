@@ -32,17 +32,17 @@
           </li>-->
           <li>
             <a href="https://github.com/AndrewLevinson" target="_blank">
-              <i class="fab fa-github" alt="my github site"></i> &nbsp;Github
+              <i class="fab fa-github" alt="https://github.com/AndrewLevinson"></i> &nbsp;Github
             </a>
           </li>
           <li>
             <a href="https://twitter.com/andrew_levinson" target="_blank">
-              <i class="fab fa-twitter" alt="my twitter"></i> &nbsp;Twitter
+              <i class="fab fa-twitter" alt="https://twitter.com/andrew_levinson"></i> &nbsp;Twitter
             </a>
           </li>
           <li>
             <a href="/AndrewLevinson_Resume.pdf" target="_blank">
-              <i class="fas fa-file-download" alt="my resume link"></i> &nbsp;Resumé
+              <i class="fas fa-file-download" alt="/AndrewLevinson_Resume.pdf"></i> &nbsp;Resumé
             </a>
           </li>
         </ul>
@@ -76,7 +76,7 @@ footer {
   list-style: none;
   display: inline-block;
   padding-right: 3rem;
-  /* margin-top: 1rem; */
+  margin-bottom: 1.5rem;
 }
 
 .dev {

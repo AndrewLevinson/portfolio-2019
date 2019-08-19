@@ -223,6 +223,10 @@ export default {
   display: none;
 }
 
+.list p {
+  margin: 0;
+}
+
 .viz-content .viz-media img {
   margin-bottom: 8rem;
   /* box-shadow: 0px 4px 17px 2px #ccc; */
