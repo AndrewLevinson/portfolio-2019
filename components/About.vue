@@ -11,20 +11,25 @@
           href="https://www.reddit.com/r/dataisugly/"
         >my favorite subreddit</a>. I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea &#8212; so reach out and we can collaborate. ✌🏻
       </p>
-      <div class="email">
-        <p>
-          Say 👋 at
-          <a href="mailto:andrewlevins@gmail.com">andrewlevins@gmail.com</a>
-        </p>
-      </div>
+
+      <p class="datum">Say 👋</p>
 
       <footer class="icons">
+        <!-- <p>
+          Email:
+          <a href="mailto:andrewlevins@gmail.com">andrewlevins@gmail.com</a>
+        </p>-->
         <ul>
           <li>
-            <a href="/AndrewLevinson_Resume.pdf" target="_blank">
-              <i class="far fa-file-alt" alt="my resume link"></i> &nbsp;Resume
+            <a href="mailto:andrewlevins@gmail.com" target="_blank">
+              <i class="fas fa-envelope" alt="my email"></i> &nbsp;Email
             </a>
           </li>
+          <!-- <li>
+            <a href="/AndrewLevinson_Resume.pdf" target="_blank">
+              <i class="fas fa-file-download" alt="my resume link"></i> &nbsp;Resume
+            </a>
+          </li>-->
           <li>
             <a href="https://github.com/AndrewLevinson" target="_blank">
               <i class="fab fa-github" alt="my github site"></i> &nbsp;Github
@@ -33,6 +38,11 @@
           <li>
             <a href="https://twitter.com/andrew_levinson" target="_blank">
               <i class="fab fa-twitter" alt="my twitter"></i> &nbsp;Twitter
+            </a>
+          </li>
+          <li>
+            <a href="/AndrewLevinson_Resume.pdf" target="_blank">
+              <i class="fas fa-file-download" alt="my resume link"></i> &nbsp;Resumé
             </a>
           </li>
         </ul>
@@ -66,6 +76,7 @@ footer {
   list-style: none;
   display: inline-block;
   padding-right: 3rem;
+  /* margin-top: 1rem; */
 }
 
 .dev {
