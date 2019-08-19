@@ -40,6 +40,7 @@ module.exports = {
   generate: {
     routes: () => {
       return [
+        '/',
         '/work',
         '/blog',
         '/projects/water',
