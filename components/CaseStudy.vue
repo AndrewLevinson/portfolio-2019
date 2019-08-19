@@ -118,7 +118,7 @@ export default {
   text-align: center;
   color: var(--primary-color);
   padding: 3rem 0 3rem 0;
-  font-weight: 500;
+  /* font-weight: 400; */
 }
 
 /* peek image */

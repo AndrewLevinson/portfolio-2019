@@ -71,6 +71,5 @@ footer {
 .dev {
   margin-top: 5rem;
   opacity: 0.6;
-  /* font-weight: 500; */
 }
 </style>

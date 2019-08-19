@@ -79,10 +79,6 @@ button:focus {
   outline-color: var(--button-color);
 }
 
-a.span-active {
-  font-weight: 800;
-}
-
 .datum {
   font-weight: 700;
   opacity: 0.8;
@@ -115,6 +111,15 @@ blockquote p {
   display: inline;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
 /* page transition */
 .page-enter-active,
 .page-leave-active {
@@ -124,8 +129,19 @@ blockquote p {
 .page-enter,
 .page-leave-to {
   opacity: 0;
-  /* transform: translateX(50%); */
   transform: translateY(50%);
+}
+
+/* nav transition */
+.nav-enter-active,
+.nav-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-enter,
+.nav-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 /* dynamic component transition */
@@ -137,13 +153,4 @@ blockquote p {
 .component-leave-to {
   opacity: 0;
   /* transform: translateX(50%); */
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 0.8;
-  }
 }

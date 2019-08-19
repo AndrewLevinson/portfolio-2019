@@ -103,8 +103,8 @@ export default {
 }
 
 .viz-project .detail-content > p:first-child {
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 500;
   opacity: 0.9;
   /* color: var(--primary-color); */
 }

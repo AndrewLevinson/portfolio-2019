@@ -77,7 +77,7 @@ module.exports = {
       {
         rel: 'stylesheet',
         href:
-          'https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin:300,400,500,700&display=swap'
+          'https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,500,700&display=swap'
       },
       {
         rel: 'stylesheet',
