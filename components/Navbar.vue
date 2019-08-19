@@ -2,7 +2,7 @@
   <nav :class="{ border : $nuxt.$route.name != 'slug' && $nuxt.$route.name != 'index'}">
     <transition name="nav" mode="out-in">
       <ul
-        v-if="$nuxt.$route.name === 'slug' || $nuxt.$route.name === 'index'"
+        v-if="$nuxt.$route.name === 'slug' || $nuxt.$route.path === '/'"
         id="main-nav"
         key="main-nav"
       >
