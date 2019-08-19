@@ -1,14 +1,5 @@
 <template>
   <div v-editable="blok" class="viz-project">
-    <nav id="breadcrumb-wrap">
-      <ul id="breadcrumbs">
-        <li>
-          <nuxt-link to="/">My Work</nuxt-link>
-        </li>
-        <li>⟶</li>
-        <li id="current">{{ blok.name }}</li>
-      </ul>
-    </nav>
     <div class="intro">
       <div class="details">
         <div class="detail-content">
@@ -23,8 +14,8 @@
           <div
             style="display:flex; margin-top: 3rem; width: 350px; justify-content: space-between;"
           >
-            <a href>Project Link ⟶</a>
-            <a href>Github Repository ⟶</a>
+            <a :href="blok.project_link.cached_url">Project Link ⟶</a>
+            <a :href="blok.github_link.cached_url">Github Repository ⟶</a>
           </div>
         </div>
       </div>
@@ -221,7 +212,7 @@ export default {
 
 .viz-content .viz-media img {
   margin-bottom: 8rem;
-  box-shadow: 0px 4px 17px 2px #ccc;
+  /* box-shadow: 0px 4px 17px 2px #ccc; */
   border-radius: 4px;
 }
 

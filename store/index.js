@@ -5,7 +5,8 @@ const createStore = () => {
     state: () => ({
       section: 'all',
       work: null,
-      blog: null
+      blog: null,
+      name: 'initial'
     }),
     mutations: {
       setSection(state, section) {
@@ -16,12 +17,16 @@ const createStore = () => {
       },
       setBlog(state, data) {
         state.blog = data
+      },
+      setName(state, data) {
+        state.name = data
       }
     },
     getters: {
       section: state => state.section,
       work: state => state.work,
-      blog: state => state.blog
+      blog: state => state.blog,
+      name: state => state.name
     }
   })
 }

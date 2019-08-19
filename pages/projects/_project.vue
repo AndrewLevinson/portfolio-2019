@@ -6,9 +6,9 @@
       :blok="story.content"
       :is="story.content.component"
     ></component>
-    <nuxt-link to="#main-content-area">
+    <a href="#main-content-area">
       <button>↟</button>
-    </nuxt-link>
+    </a>
   </section>
 </template>
 
@@ -27,7 +27,8 @@ export default {
       } else {
         window.location.reload()
       }
-    })
+    }),
+      this.$store.commit('setName', this.story.content.maincontent[0].name)
   },
   asyncData(context) {
     // Check if we are in the editor mode

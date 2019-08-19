@@ -1,100 +1,75 @@
 <template>
   <article class="about">
-    <!-- <h3 class="my-name">Hey, it's Andrew 👨🏻‍💻</h3> -->
-    <!-- <h6 class="subhead">A Data Visualization Designer & Developer</h6> -->
     <div class="about-me-content">
-      <div class="first">
-        <div class="img-holder">
-          <img src="../assets/guitarist@1x.png" width="100%" alt="pic of me playing guitar" />
-        </div>
-        <div class="about-text" v-html="$md.render(aboutMD)"></div>
-        <div class="email">
-          <p>
-            <span id="say-hi">Say hi at</span>
-            <a href="mailto:andrewlevins@gmail.com">andrewlevins@gmail.com</a>
-          </p>
-        </div>
+      <p class="about-text">
+        From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now
+        <strong>I'm telling data-driven stories with code</strong>. There's clearly a war between
+        <a
+          href="https://www.youtube.com/watch?v=0jBK4qDJ-OM"
+        >my left brain vs. my right brain</a>. In my free time I like playing guitar, making weird music, and browsing
+        <a
+          href="https://www.reddit.com/r/dataisugly/"
+        >my favorite subreddit</a>. I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea &#8212; so reach out and we can collaborate. ✌🏻
+      </p>
+      <div class="email">
+        <p>
+          Say hi at
+          <a href="mailto:andrewlevins@gmail.com">andrewlevins@gmail.com</a>
+        </p>
       </div>
-      <!-- <div class="float"> -->
-      <!-- <div class="reach" v-html="$md.render(reachoutMD)"></div> -->
-      <!-- </div> -->
+
+      <footer class="icons">
+        <ul>
+          <li>
+            <a href="/AndrewLevinson_Resume.pdf" target="_blank">
+              <i class="far fa-file-alt" alt="my resume link"></i> &nbsp;Resume
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/AndrewLevinson" target="_blank">
+              <i class="fab fa-github" alt="my github site"></i> &nbsp;Github
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/andrew_levinson" target="_blank">
+              <i class="fab fa-twitter" alt="my twitter"></i> &nbsp;Twitter
+            </a>
+          </li>
+        </ul>
+      </footer>
     </div>
   </article>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      aboutMD: `From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now **I'm telling data-driven stories with code**. There's clearly a war between [my left brain vs. my right brain](https://www.youtube.com/watch?v=0jBK4qDJ-OM). In my free time I like playing guitar, making weird music, and browsing [my favorite subreddit](https://www.reddit.com/r/dataisugly/). I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea – so reach out and we can collaborate. ✌🏻 
-##### —`,
-      reachoutMD: `
-#### Reach Out
-___
-Full Name: **Andrew Levinson**
-Email: **[andrewlevins@gmail.com](mailto:andrewlevins@gmail.com)**
-___`
-    }
-  }
-}
-</script>
-
 <style scoped>
-.about {
-  margin: 0rem 0 5rem 0;
-}
-
 .about-me-content {
-  padding-top: 0rem;
-  padding-bottom: 5rem;
-  max-width: 100%;
-  width: 100%;
-  font-size: 95%;
+  max-width: 700px;
 }
 
-.img-holder {
-  float: left;
-  max-width: 45%;
-  margin-right: 2rem;
-}
-
-img {
-  border-radius: 4px;
-  max-width: 100%;
-}
-
-.my-name {
-  margin-bottom: 2.5rem;
-  font-weight: 900;
-
-  /* text-align: right; */
-}
-
-.subhead {
-  margin-top: -2.5rem;
-  margin-bottom: 2.5rem;
-  font-size: 1.85rem;
-  /* text-transform: uppercase; */
-  opacity: 0.75;
-  /* color: var(--primary-color); */
-}
-
-.email {
-  margin-top: -2rem;
-}
-
-.email a {
-  font-weight: 600;
-}
-
-#say-hi {
-  opacity: 0.75;
-  font-weight: 600;
+.about-text {
+  margin-bottom: 8rem;
 }
 
 @media (max-width: 600px) {
-  .about {
-    margin-top: 1.5rem;
+  .about-text {
+    margin-bottom: 6rem;
   }
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+.icons li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 3rem;
+}
+
+footer a {
+  opacity: 0.75;
+}
+footer a:hover {
+  opacity: 1;
 }
 </style>

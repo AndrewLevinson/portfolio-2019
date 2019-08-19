@@ -1,5 +1,4 @@
 <template>
-  <!-- <transition name="fuzzy"> -->
   <div v-editable="blok" class="blog-features">
     <p class="date">{{ blok.date | dateFormat }}</p>
     <nuxt-link :to="blogPath">
@@ -8,14 +7,13 @@
     <p class="subtitle">{{ blok.subtitle }}</p>
     <span class="tag">{{ blok.tag }}</span>
   </div>
-  <!-- </transition> -->
 </template>
 
 <script>
 export default {
   props: ['blok'],
   computed: {
-    blogPath: function() {
+    blogPath() {
       return `/${this.blok.path.cached_url}`
     }
   }
@@ -36,7 +34,6 @@ export default {
 
 .tag {
   background-color: none;
-  /* color: #3d3d3d; */
   color: var(--primary-color);
   border-radius: 4px;
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
@@ -65,22 +62,5 @@ export default {
 .date {
   font-size: 85%;
   opacity: 0.75;
-  /* font-weight: 600; */
-}
-
-.fuzzy-enter-active,
-.fuzzy-leave-active {
-  transition: all 0.4s ease-in-out;
-}
-
-.fuzzy-enter-active {
-  /* transform: translateX(calc(0% + 90px)); */
-  opacity: 0;
-}
-
-.fuzzy-enter,
-.fuzzy-leave-to {
-  opacity: 0;
-  /* transform: translateX(-100%); */
 }
 </style>

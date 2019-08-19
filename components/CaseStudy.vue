@@ -1,16 +1,6 @@
 <template>
   <div v-editable="blok" :class="blok.name" class="case-study">
-    <img id="hero-image" :src="blok.hero_img" alt="hero image" width="100%">
-    <nav id="breadcrumb-wrap">
-      <ul id="breadcrumbs">
-        <li>
-          <nuxt-link to="/">My Work</nuxt-link>
-        </li>
-        <li>⟶</li>
-        <li id="current">{{ blok.name }}</li>
-      </ul>
-      <!-- <nuxt-link :to="blok.name">Next⟶</nuxt-link> -->
-    </nav>
+    <img id="hero-image" :src="blok.hero_img" alt="hero image" width="100%" />
     <div class="content">
       <h5>{{ blok.summary }}</h5>
       <div class="markdown" v-html="$md.render(blok.content_intro)"></div>
@@ -18,35 +8,35 @@
       <div v-else class="solution-peek">
         <div class="peek">
           <div>
-            <h5 class="blue">01</h5>
+            <h5 class="highlight">01</h5>
             <div class="item">
               <p v-html="$md.render(blok.peek_1)"></p>
             </div>
           </div>
           <div class="image-holder">
-            <img :src="blok.solution_peek[0].filename" alt="preview gif" width="100%">
+            <img :src="blok.solution_peek[0].filename" alt="preview gif" width="100%" />
           </div>
         </div>
         <div class="peek">
           <div>
-            <h5 class="blue">02</h5>
+            <h5 class="highlight">02</h5>
             <div class="item">
               <p v-html="$md.render(blok.peek_2)"></p>
             </div>
           </div>
           <div class="image-holder">
-            <img :src="blok.solution_peek[1].filename" alt="preview gif" width="100%">
+            <img :src="blok.solution_peek[1].filename" alt="preview gif" width="100%" />
           </div>
         </div>
         <div class="peek">
           <div>
-            <h5 class="blue">03</h5>
+            <h5 class="highlight">03</h5>
             <div class="item">
               <p v-html="$md.render(blok.peek_3)"></p>
             </div>
           </div>
           <div class="image-holder">
-            <img :src="blok.solution_peek[2].filename" alt="preview gif" width="100%">
+            <img :src="blok.solution_peek[2].filename" alt="preview gif" width="100%" />
           </div>
         </div>
       </div>
@@ -81,7 +71,7 @@
             :src="pic.filename"
             :alt="pic.name"
             width="100%"
-          >
+          />
         </div>
       </div>
     </div>
@@ -90,12 +80,12 @@
 
 <script>
 export default {
-  props: ['blok', 'category', 'paid']
+  props: ['blok']
 }
 </script>
 
 <style>
-.blue {
+.highlight {
   color: var(--primary-color);
 }
 .case-study {
@@ -103,31 +93,7 @@ export default {
   margin-left: -3rem;
   margin-bottom: 10rem;
 }
-#breadcrumb-wrap {
-  position: sticky;
-  top: 0px;
-  width: 100%;
-  /* background-color: #fff; */
-  background-color: var(--main-bg-color);
 
-  border-bottom: 1px solid var(--border-color);
-  z-index: 990;
-  /* height: 100px; */
-}
-#breadcrumbs {
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-top: -5px;
-  padding: 2rem 0 2rem 0;
-}
-#breadcrumbs li {
-  list-style: none;
-  display: inline;
-}
-
-#current {
-  opacity: 0.5;
-}
 .content {
   width: 60%;
   margin: 0 auto;
@@ -251,12 +217,6 @@ export default {
     width: calc(100% + 4rem);
     margin-left: -2rem;
   }
-  #breadcrumbs {
-    margin-left: 2rem;
-  }
-  #breadcrumb-wrap {
-    top: 90px;
-  }
   .content {
     width: 85%;
     margin-left: 7.5%;
@@ -264,7 +224,6 @@ export default {
   .content > h5:first-child {
     text-align: left;
   }
-
   .item {
     /* padding-right: 0; */
     width: 100%;

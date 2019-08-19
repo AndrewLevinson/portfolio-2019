@@ -1,14 +1,5 @@
 <template>
   <div v-editable="blok" class="blog-post">
-    <nav id="breadcrumb-wrap">
-      <ul id="breadcrumbs">
-        <li>
-          <nuxt-link to="/">My Thoughts</nuxt-link>
-        </li>
-        <li>⟶</li>
-        <li id="current">{{ blok.title }}</li>
-      </ul>
-    </nav>
     <div class="intro">
       <div class="details">
         <div class="detail-content">
@@ -46,7 +37,6 @@ export default {
 .blog-post {
   width: calc(100% + 3rem);
   margin-left: -2rem;
-  /* margin-right: 3rem; */
   margin-bottom: 3rem;
 }
 
@@ -87,7 +77,7 @@ export default {
   margin-top: -0.25rem;
 }
 .blog-post #sub {
-  margin-top: -1.5rem;
+  margin-top: -1.75rem;
   margin-bottom: 1rem;
   opacity: 0.7;
 }
@@ -101,11 +91,9 @@ export default {
 }
 
 .blog-content hr {
-  /* width: 80%; */
   height: 5px;
   color: none;
   border: none;
-  /* background-color: var(--link-color); */
   background-color: #3d3d3d;
   margin-top: 0.5rem;
   border-radius: 6px;
@@ -126,14 +114,11 @@ export default {
 }
 
 #blog-md:first-child:first-letter {
-  /* color: #903; */
-  color: #3d3d3d;
   color: var(--primary-color);
   float: left;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 75px;
   line-height: 60px;
-  /* padding-top: 4px; */
   padding-right: 8px;
   padding-left: 3px;
 }
@@ -148,7 +133,6 @@ export default {
 .blog-content > .links {
   width: 17.5%;
   padding-right: 5rem;
-  /* position: absolute; */
 }
 
 .blog-content .links > div {
@@ -182,7 +166,6 @@ export default {
   .blog-content article {
     max-width: 100%;
     margin-left: 0%;
-    /* margin: 0 auto; */
   }
   .links > div {
     width: 100%;

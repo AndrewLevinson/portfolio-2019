@@ -27,7 +27,8 @@ export default {
       } else {
         window.location.reload()
       }
-    })
+    }),
+      this.$store.commit('setName', this.story.content.maincontent[0].title)
   },
   asyncData(context) {
     // Check if we are in the editor mode
@@ -39,7 +40,6 @@ export default {
         version: version
       })
       .then(res => {
-        // console.log(res.data.story.content)
         return res.data
       })
       .catch(res => {

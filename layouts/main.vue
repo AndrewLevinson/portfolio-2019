@@ -1,20 +1,18 @@
 <template>
-  <transition name="page">
-    <div class="main-layout">
-      <Sidebar />
+  <div class="main-layout">
+    <Navbar />
+    <transition name="page">
       <nuxt />
-    </div>
-  </transition>
+    </transition>
+  </div>
 </template>
 
-
-
 <script>
-import Sidebar from '@/components/Sidebar.vue'
+import Navbar from '@/components/Navbar.vue'
 
 export default {
   components: {
-    Sidebar
+    Navbar
   }
 }
 </script>

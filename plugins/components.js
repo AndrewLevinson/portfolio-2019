@@ -9,6 +9,8 @@ import VizProject from '@/components/VizProject.vue'
 import Posts from '@/components/Posts.vue'
 import BlogFeature from '@/components/BlogFeature.vue'
 import Post from '@/components/Post.vue'
+import Navbar from '@/components/Navbar.vue'
+import Headline from '@/components/Headline.vue'
 
 Vue.component('project', Project)
 Vue.component('page', Page)
@@ -20,3 +22,5 @@ Vue.component('vizproject', VizProject)
 Vue.component('posts', Posts)
 Vue.component('blogfeature', BlogFeature)
 Vue.component('post', Post)
+Vue.component('navbar', Navbar)
+Vue.component('headline', Headline)
