@@ -40,7 +40,6 @@ module.exports = {
   generate: {
     routes: () => {
       return [
-        '',
         '/',
         '/work',
         '/blog',
@@ -71,11 +70,6 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
-      // {
-      //   rel: 'stylesheet',
-      //   href:
-      //     'https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,500,600,700|Playfair+Display:400,400i,700,900'
-      // },
       {
         rel: 'stylesheet',
         href:

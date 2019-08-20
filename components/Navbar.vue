@@ -4,8 +4,8 @@
       <ul v-if="$route.name === 'slug' || $route.name === 'index'" id="main-nav" key="main-nav">
         <li>
           <a
-            :class="{ active : $store.getters.section === 'all' }"
-            @click="$store.commit('setSection', 'all')"
+            :class="{ active : $store.getters.section === 'home' }"
+            @click="$store.commit('setSection', 'home')"
           >Home</a>
         </li>
         <li>
@@ -42,7 +42,7 @@
           >{{ $store.getters.section === 'blog' ? 'Thoughts' : $store.getters.section === 'work' ? 'Work' : 'Home' }}</nuxt-link>
         </li>
         <li>⟶</li>
-        <li id="current">{{ name }}</li>
+        <li id="current">{{ setName }}</li>
         <!-- <nuxt-link :to="blok.name">Next⟶</nuxt-link> -->
       </ul>
     </transition>
@@ -52,19 +52,9 @@
 <script>
 export default {
   name: 'Navbar',
-  data() {
-    return {
-      name: null
-    }
-  },
   computed: {
     setName() {
       return this.$store.getters.name
-    }
-  },
-  watch: {
-    setName() {
-      this.name = this.$store.getters.name
     }
   }
 }
@@ -77,15 +67,16 @@ nav {
   top: 0px;
   width: 100vw;
   padding: 2rem;
-  padding-bottom: 0;
+  padding-bottom: 0rem;
   background-color: hsla(0, 0%, 97%, 97.5%);
   z-index: 997;
   border-bottom: 1px solid transparent;
+  transition: all 1s ease;
 }
 
 .border {
   border-bottom: 1px solid var(--border-color);
-  transition: all 2s ease;
+  transition: all 1s ease;
 }
 
 a {

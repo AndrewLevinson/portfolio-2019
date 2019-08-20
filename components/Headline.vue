@@ -2,7 +2,7 @@
   <transition name="component" mode="out-in">
     <div id="heading">
       <h4
-        v-show="$store.getters.section === 'all' || $store.getters.section ==='about'"
+        v-show="$store.getters.section === 'home' || $store.getters.section ==='about'"
         class="tagline tagline-big"
       >
         My name is
@@ -18,7 +18,7 @@
         These are some of my
         <span class="datum">thoughts</span>.
       </h4>
-      <h5 v-if="$store.getters.section === 'all' || $store.getters.section === 'about'">
+      <h5 v-if="$store.getters.section === 'home' || $store.getters.section === 'about'">
         Currently, I design and code graphics and dev tools at
         <a
           href="https://graphics.wsj.com/"

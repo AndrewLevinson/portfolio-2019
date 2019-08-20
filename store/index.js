@@ -3,10 +3,10 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: () => ({
-      section: 'all',
+      section: 'home',
       work: null,
       blog: null,
-      name: 'initial'
+      name: null
     }),
     mutations: {
       setSection(state, section) {

@@ -11,6 +11,7 @@ import BlogFeature from '@/components/BlogFeature.vue'
 import Post from '@/components/Post.vue'
 import Navbar from '@/components/Navbar.vue'
 import Headline from '@/components/Headline.vue'
+import Home from '@/components/Home.vue'
 
 Vue.component('project', Project)
 Vue.component('page', Page)
@@ -24,3 +25,4 @@ Vue.component('blogfeature', BlogFeature)
 Vue.component('post', Post)
 Vue.component('navbar', Navbar)
 Vue.component('headline', Headline)
+Vue.component('home', Home)

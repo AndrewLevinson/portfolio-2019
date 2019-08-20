@@ -4,14 +4,11 @@
     <div id="work">
       <transition name="component" mode="out-in">
         <keep-alive>
-          <div v-if="$store.getters.section === 'all'" key="all">This is the homepage</div>
           <component
-            v-else-if="$store.getters.section === 'about'"
-            key="About"
+            v-if="$store.getters.section === 'home' || $store.getters.section === 'about'"
+            :key="$store.getters.section"
             :is="$store.getters.section"
           ></component>
-
-          <!-- :is is passing "page" to render down props... -->
           <component
             v-else
             :key="story.content._uid"
@@ -25,13 +22,11 @@
 </template>
 
 <script>
-import About from '@/components/About.vue'
 import Headline from '@/components/Headline.vue'
 
 export default {
   layout: 'main',
   components: {
-    About,
     Headline
   },
   data() {
@@ -66,7 +61,7 @@ export default {
   methods: {
     assignContent() {
       this.story =
-        this.$store.getters.section === 'all' ||
+        this.$store.getters.section === 'home' ||
         this.$store.getters.section === 'about'
           ? null
           : this.setSection.story

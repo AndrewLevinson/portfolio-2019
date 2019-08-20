@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" class="blog-features">
+  <div v-editable="blok" :class="{'coming-soon': !blok.isPubbed}" class="blog-features">
     <p class="date">{{ blok.date | dateFormat }}</p>
     <nuxt-link :to="blogPath">
       <h3 class="title">{{ blok.title }}</h3>
@@ -62,5 +62,14 @@ export default {
 .date {
   font-size: 85%;
   opacity: 0.75;
+}
+
+.coming-soon {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.coming-soon h3 {
+  color: grey;
 }
 </style>

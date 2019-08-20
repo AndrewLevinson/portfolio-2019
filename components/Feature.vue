@@ -1,25 +1,21 @@
 <template>
-  <div v-editable="blok" v-show="!blok.isHidden" class="feature">
-    <nuxt-link :to="projectPath">
-      <div id="relative">
-        <div class="image-holder">
-          <img :src="blok.image" :alt="blok.name" />
+  <nuxt-link v-editable="blok" v-show="!blok.isHidden" :to="projectPath" class="feature" tag="div">
+    <!-- <div class="image-holder"> -->
+    <img :src="blok.image" :alt="blok.name" />
+    <!-- </div> -->
+    <div class="feature-specs">
+      <div class="time-tags-wrapper">
+        <div class="tags-wrapper">
+          <span>{{ blok.cat }}</span>
         </div>
-        <div class="feature-specs">
-          <div class="time-tags-wrapper">
-            <div class="tags-wrapper">
-              <span>{{ blok.cat }}</span>
-            </div>
-            <div class="time-details">
-              <span>{{ blok.release }}</span>
-            </div>
-          </div>
-          <p class="name">{{ blok.name }}</p>
-          <p class="description">{{ blok.description }}</p>
+        <div class="time-details">
+          <span>{{ blok.release }}</span>
         </div>
       </div>
-    </nuxt-link>
-  </div>
+      <p class="name">{{ blok.name }}</p>
+      <p class="description">{{ blok.description }}</p>
+    </div>
+  </nuxt-link>
 </template>
 
 <script>
@@ -34,16 +30,15 @@ export default {
 </script>
 
 <style scoped>
-#relative {
-  position: relative;
-}
 .feature {
+  position: relative;
   text-align: left;
-  padding: 0rem;
+  padding: 0;
   border-radius: var(--radius);
-  transition: 0.3s all ease-in-out;
   background-color: transparent;
   overflow: hidden;
+  transition: 0.3s all ease-in-out;
+  /* box-shadow: 0px -3px var(--accent-color); */
 }
 
 .feature:hover {
@@ -55,15 +50,20 @@ export default {
   /* grid-row: span 2; */
 }
 
-.image-holder {
+/* .image-holder {
   border-radius: var(--radius);
   padding: 0;
   background-color: var(--main-bg-color);
-}
+} */
 
-.image-holder img {
+/* .image-holder img {
   border-radius: var(--radius);
   border: 1px solid rgba(204, 204, 204, 0.2);
+  width: 100%;
+} */
+img {
+  border-radius: var(--radius);
+  border: 1px solid rgba(204, 204, 204, 0.35);
   width: 100%;
 }
 
@@ -77,6 +77,7 @@ export default {
   color: #fff;
   line-height: 1.25;
   min-height: calc(100% - 8px);
+  /* height: 100%; */
   opacity: 0;
   transition: 0.3s all ease-in-out;
 }
