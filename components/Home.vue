@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .preview-group {
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .flex {
