@@ -65,5 +65,7 @@ export default {
 
 #featured {
   margin-bottom: 0.5rem;
+  opacity: 0.8;
+  font-weight: 300;
 }
 </style>
