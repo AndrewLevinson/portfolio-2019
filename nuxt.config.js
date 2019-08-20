@@ -53,6 +53,7 @@ module.exports = {
         '/projects/event-tech',
         '/projects/unbreakable',
         '/projects/pension',
+        '/posts/extreme-curiosity-data-viz',
         '404'
       ]
     },
