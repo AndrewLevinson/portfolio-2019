@@ -41,10 +41,6 @@ export default {
   /* box-shadow: 0px -3px var(--accent-color); */
 }
 
-.feature:hover {
-  cursor: pointer;
-}
-
 .feature:first-of-type {
   /* grid-column: span 2; */
   /* grid-row: span 2; */
@@ -85,14 +81,6 @@ img {
 .feature-specs div,
 .feature-specs p {
   transform: scale(0.9);
-  transition: 0.3s all ease-in-out;
-}
-
-.feature:hover .feature-specs,
-.feature:hover .feature-specs div,
-.feature:hover .feature-specs p {
-  opacity: 1;
-  transform: scale(1);
   transition: 0.3s all ease-in-out;
 }
 
@@ -138,13 +126,6 @@ img {
   width: 100%;
 }
 
-.view-project:hover {
-  letter-spacing: 0.05rem;
-  opacity: 1;
-  color: var(--primary-color);
-  transition: all 0.3s ease-in;
-}
-
 .tags-wrapper span {
   background-color: transparent;
   color: #fff;
@@ -153,5 +134,24 @@ img {
   font-size: 75%;
   border: 1px solid var(--border-color);
   margin-right: 0.25rem;
+}
+
+@media not all and (pointer: coarse) {
+  .feature:hover {
+    cursor: pointer;
+  }
+  .feature:hover .feature-specs,
+  .feature:hover .feature-specs div,
+  .feature:hover .feature-specs p {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.3s all ease-in-out;
+  }
+  .view-project:hover {
+    letter-spacing: 0.05rem;
+    opacity: 1;
+    color: var(--primary-color);
+    transition: all 0.3s ease-in;
+  }
 }
 </style>
