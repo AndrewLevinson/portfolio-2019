@@ -184,7 +184,7 @@ export default {
 }
 
 .viz-content article {
-  width: 95%;
+  /* width: 95%; */
   max-width: 800px;
   border-bottom: 2px solid var(--border-color);
   margin-bottom: 5rem;
