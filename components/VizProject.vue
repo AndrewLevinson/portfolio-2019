@@ -11,9 +11,7 @@
             <br />
             <span v-for="tag in blok.tech_used" :key="tag">{{ tag }}</span>
           </div>
-          <div
-            style="display:flex; margin-top: 3rem; width: 350px; justify-content: space-between;"
-          >
+          <div class="go-to">
             <a :href="blok.project_link.cached_url">Project Link ⟶</a>
             <a :href="blok.github_link.cached_url">Github Repository ⟶</a>
           </div>
@@ -26,7 +24,6 @@
       </div>
     </div>
 
-    <!-- <div class="project-content"> -->
     <div class="viz-content">
       <article>
         <div>
@@ -34,11 +31,9 @@
           <hr />
         </div>
         <div>
-          <!-- <h5>Summary</h5> -->
           <h5 id="summary">{{ blok.summary }}</h5>
         </div>
         <div class="description">
-          <!-- <h5>Description</h5> -->
           <div class="markdown" v-html="$md.render(blok.description)"></div>
         </div>
         <div class="assets">
@@ -61,7 +56,6 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <script>
@@ -71,18 +65,10 @@ export default {
 </script>
 
 <style>
-.viz-project {
+.viz-project #main-image {
   width: calc(100% + 6rem);
   margin-left: -3rem;
   margin-bottom: 3rem;
-}
-
-.viz-project > .project-content {
-  padding-bottom: 2rem;
-  padding-top: 3rem;
-  overflow-x: hidden;
-  /* width: 90%; */
-  /* margin: 0 auto; */
 }
 
 .viz-project .intro {
@@ -128,6 +114,13 @@ export default {
   border: 1px solid var(--primary-color);
 }
 
+.viz-project .go-to {
+  display: flex;
+  margin-top: 3rem;
+  max-width: 350px;
+  justify-content: space-between;
+}
+
 .viz-project #sub {
   margin-top: -1.5rem;
   margin-bottom: 1rem;
@@ -136,7 +129,7 @@ export default {
 
 .viz-project #image-holder {
   width: 100%;
-  max-width: 60%;
+  max-width: 55%;
   z-index: 100;
   padding-bottom: unset;
 }
@@ -191,7 +184,7 @@ export default {
 }
 
 .viz-content article {
-  width: 90%;
+  width: 95%;
   max-width: 800px;
   border-bottom: 2px solid var(--border-color);
   margin-bottom: 5rem;
@@ -258,9 +251,10 @@ export default {
   }
 
   .viz-project .details {
-    width: 90%;
+    width: 95%;
     height: auto;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    padding-right: 0;
   }
 
   .viz-content > .links {
@@ -283,7 +277,27 @@ export default {
     margin-bottom: 5rem;
   }
   .viz-content {
+    width: 95%;
     padding-right: 0.6rem;
+    margin: 0;
   }
+}
+
+@media (max-width: 600px) {
+  .viz-project #main-image {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+  }
+  /* .viz-project .details,
+  .viz-project .detail-content,
+  .viz-project .viz-content {
+    width: 87.5%;
+    margin-left: 7.5%;
+  } */
+
+  /* .viz-project .go-to {
+    display: block;
+    max-width: 100%;
+  } */
 }
 </style>

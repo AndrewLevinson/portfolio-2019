@@ -24,13 +24,13 @@
           <a
             :class="{ active : $store.getters.section === 'about' }"
             @click="$store.commit('setSection', 'about')"
-          >About &nbsp;</a> 👋
+          >About Andrew&nbsp;</a> 👋
         </li>
         <li class="mobile">
           <a
             :class="{ active : $store.getters.section === 'about' }"
             @click="$store.commit('setSection', 'about')"
-          >Andrew</a>
+          >About</a>
         </li>
       </ul>
 

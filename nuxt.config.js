@@ -32,10 +32,9 @@ module.exports = {
     //   }
     //   return { x: 0, y: 0 }
     // }
-
-    scrollBehavior: function(to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    }
+    // scrollBehavior: function(to, from, savedPosition) {
+    //   return { x: 0, y: 0 }
+    // }
   },
   generate: {
     routes: () => {

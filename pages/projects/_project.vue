@@ -6,7 +6,7 @@
       :blok="story.content"
       :is="story.content.component"
     ></component>
-    <a href="#main-content-area">
+    <a href="#main-layout">
       <button>↟</button>
     </a>
   </section>
