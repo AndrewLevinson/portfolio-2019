@@ -124,7 +124,7 @@ export default {
 }
 
 .blog-content article {
-  width: 90%;
+  width: 95%;
   max-width: 800px;
   border-bottom: 2px solid var(--border-color);
   margin-bottom: 5rem;
@@ -164,6 +164,8 @@ export default {
   }
 
   .blog-content article {
+    width: 100%;
+
     max-width: 100%;
     margin-left: 0%;
   }
