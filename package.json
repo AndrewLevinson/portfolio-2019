@@ -15,9 +15,9 @@
   "dependencies": {
     "@nuxtjs/markdownit": "^1.2.6",
     "cross-env": "^5.2.0",
+    "date-fns": "^2.0.1",
     "dotenv": "^6.2.0",
     "markdown-it": "^8.4.2",
-    "moment": "^2.24.0",
     "nuxt": "^2.8.1",
     "raw-loader": "^1.0.0",
     "storyblok-nuxt": "^1.0.1",

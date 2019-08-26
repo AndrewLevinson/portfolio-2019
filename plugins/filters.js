@@ -1,6 +1,8 @@
 import Vue from 'vue'
-import moment from 'moment'
+import { format } from 'date-fns'
 
 Vue.filter('capitalize', val => val.toUpperCase())
 
-Vue.filter('dateFormat', val => moment(val).format('LL'))
+Vue.filter('dateFormat', val =>
+  format(new Date(val.replace(/-/g, '/')), 'LLLL dd, yyyy')
+)
