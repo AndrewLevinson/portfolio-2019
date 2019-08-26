@@ -6,9 +6,9 @@
       :blok="story.content"
       :is="story.content.component"
     ></component>
-    <a href="#main-layout">
+    <!-- <a href="#main-layout">
       <button>↟</button>
-    </a>
+    </a>-->
   </section>
 </template>
 
