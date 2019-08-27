@@ -65,6 +65,9 @@ export default {
 </script>
 
 <style>
+.viz-project {
+  max-width: 3000px;
+}
 .viz-project #main-image {
   width: calc(100% + 6rem);
   margin-left: -3rem;
@@ -74,6 +77,7 @@ export default {
 .viz-project .intro {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
   margin: 0 auto;
   padding-bottom: 5rem;

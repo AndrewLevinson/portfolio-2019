@@ -1,7 +1,7 @@
 {
   "name": "portfolio-2019",
   "version": "2.0.0",
-  "description": "My Portfolio Website",
+  "description": "The portfolio for Andrew Levinson showcasing design and data visualization projects",
   "author": "Andrew Levinson",
   "private": true,
   "scripts": {

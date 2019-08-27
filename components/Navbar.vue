@@ -125,11 +125,16 @@ a:hover {
 #breadcrumb-nav {
   margin-right: 3rem;
   margin-top: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 #breadcrumb-nav li {
   list-style: none;
   display: inline;
 }
+
 #current {
   opacity: 0.5;
   text-transform: capitalize;
