@@ -21,6 +21,12 @@
         <a :href="blok.project_link.cached_url" target="_blank">
           <img id="main-image" :src="blok.image" alt="hero image" width="100%" />
         </a>
+        <img
+          v-if="isAward"
+          src="https://infobawards.s3.amazonaws.com/2019/badges/sl-2019.png"
+          alt="Kantar: Information is Beautiful Awards Shortlist Badge"
+          class="award-badge badge-desktop"
+        />
       </div>
     </div>
 
@@ -53,6 +59,12 @@
           <h6>Data Sources</h6>
           <div class="markdown list" v-html="$md.render(blok.data_sources)"></div>
         </div>
+        <img
+          v-if="isAward"
+          src="https://infobawards.s3.amazonaws.com/2019/badges/sl-2019.png"
+          alt="Kantar: Information is Beautiful Awards Shortlist Badge"
+          class="award-badge badge-mobile"
+        />
       </div>
     </div>
   </div>
@@ -60,7 +72,12 @@
 
 <script>
 export default {
-  props: ['blok']
+  props: ['blok'],
+  computed: {
+    isAward() {
+      return this.blok.name === 'The United States Water Crisis'
+    }
+  }
 }
 </script>
 
@@ -74,6 +91,20 @@ export default {
   margin-bottom: 3rem;
 }
 
+.viz-project .award-badge {
+  width: 30%;
+  max-width: 110px;
+}
+.viz-project .badge-desktop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(80%, -25%);
+}
+
+.viz-project .badge-mobile {
+  display: none;
+}
 .viz-project .intro {
   display: flex;
   justify-content: space-between;
@@ -136,6 +167,7 @@ export default {
   max-width: 55%;
   z-index: 100;
   padding-bottom: unset;
+  position: relative;
 }
 
 .viz-project #main-image {
@@ -284,6 +316,12 @@ export default {
     width: 95%;
     padding-right: 0.6rem;
     margin: 0;
+  }
+  .viz-project .badge-desktop {
+    display: none;
+  }
+  .viz-project .badge-mobile {
+    display: block;
   }
 }
 
