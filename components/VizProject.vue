@@ -171,7 +171,7 @@ export default {
 }
 
 .viz-project #main-image {
-  box-shadow: 0px 4px 17px 2px #ccc;
+  box-shadow: 0px 4px 17px 2px var(--image-shadow);
   border-radius: var(--radius);
 }
 

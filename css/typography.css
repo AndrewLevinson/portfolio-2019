@@ -7,13 +7,18 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --body-text-color: hsl(0, 0%, 20%);
+  --headline-text-color: hsl(0, 0%, 15%);
+}
+
 body {
   /* currently ems cause chrome bug misinterpreting rems on body element */
   font-size: 1.7em;
   line-height: 1.5;
   font-weight: 400;
   font-family: 'Libre Franklin', sans-serif;
-  color: hsl(0, 0%, 20%);
+  color: var(--body-text-color);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -34,7 +39,7 @@ h6 {
   margin-bottom: 2.2rem;
   font-weight: 300;
   /* font-family: 'Libre Franklin', sans-serif; */
-  color: hsl(0, 0%, 15%);
+  color: var(--body-text-color);
 }
 
 h1 {
@@ -105,4 +110,11 @@ h6 {
     font-size: 2rem;
     line-height: 1.6;
   } */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-text-color: #fff;
+    --headline-text-color: #fff;
+  }
 }

@@ -16,6 +16,11 @@
 
   --link-color: hsl(217, 60%, 45%);
   --border-color: hsla(300, 0%, 80%, 0.5);
+  --background-nav: hsla(0, 0%, 97%, 97.5%);
+
+  --block-quote-background: #f1f1f1;
+
+  --image-shadow: #ccc;
 
   /* --purple: hsl(300, 100%, 25%); */
 
@@ -86,7 +91,7 @@ button:focus {
 }
 
 blockquote {
-  background: #f1f1f1;
+  background: var(--block-quote-background);
   border-left: 10px solid #ccc;
   margin: 2.5em 40px;
   padding: 0.5em 10px;
@@ -153,4 +158,24 @@ blockquote p {
 .component-leave-to {
   opacity: 0;
   /* transform: translateX(50%); */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-bg-color: hsl(0, 0%, 10%);
+
+    --primary-color: hsl(300, 70%, 45%);
+
+    --btn-color: hsl(300, 70%, 25%);
+
+    --accent-color: hsl(300, 55%, 25%);
+
+    --link-color: hsl(217, 80%, 65%);
+
+    --border-color: hsla(300, 0%, 30%, 0.5);
+    --background-nav: hsla(0, 0%, 10%, 95%);
+
+    --block-quote-background: hsla(0, 0%, 20%, 0.95);
+    --image-shadow: hsl(300, 10%, 30%);
+  }
 }

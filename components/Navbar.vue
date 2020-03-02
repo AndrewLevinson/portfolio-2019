@@ -68,7 +68,8 @@ nav {
   width: 100vw;
   padding: 2rem;
   padding-bottom: 0rem;
-  background-color: hsla(0, 0%, 97%, 97.5%);
+  /* background-color: hsla(0, 0%, 97%, 97.5%); */
+  background-color: var(--background-nav);
   z-index: 997;
   border-bottom: 1px solid transparent;
   transition: all 1s ease;
