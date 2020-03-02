@@ -1,6 +1,8 @@
 <template>
   <transition name="component" mode="out-in">
     <div id="heading">
+      <div class="dark-tag">dark mode detected 🌒</div>
+      <div class="dark-tag-mobile">🌒</div>
       <h4
         v-show="$store.getters.section === 'home' || $store.getters.section ==='about'"
         class="tagline tagline-big"
@@ -61,6 +63,18 @@
 .datum {
   animation: appear 2.5s ease-in-out;
 }
+.dark-tag,
+.dark-tag-mobile {
+  display: none;
+  opacity: 0;
+  letter-spacing: 3px;
+  position: fixed;
+  text-transform: uppercase;
+  z-index: 998;
+  top: 4rem;
+  left: 3rem;
+  font-size: 80%;
+}
 
 @media (max-width: 600px) {
   .tagline {
@@ -68,6 +82,48 @@
   }
   #heading {
     margin-bottom: 6rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dark-tag-mobile {
+    display: block;
+    top: 1rem;
+    left: unset;
+    right: 1.5rem;
+    animation: detector 1s ease-in-out forwards;
+    animation-delay: 2s;
+  }
+  @media (min-width: 767px) {
+    .dark-tag {
+      display: block;
+      /* opacity: 0.75; */
+      animation: detector 1s ease-in-out forwards;
+      animation-delay: 2s;
+    }
+    .dark-tag-mobile {
+      display: none;
+    }
+  }
+
+  @keyframes detector {
+    0% {
+      opacity: 0;
+    }
+
+    30%,
+    70% {
+      opacity: 0.75;
+    }
+
+    60%,
+    80% {
+      opacity: 0.3;
+    }
+
+    100% {
+      opacity: 0.75;
+    }
   }
 }
 </style>
