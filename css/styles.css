@@ -164,7 +164,7 @@ blockquote p {
   :root {
     --main-bg-color: hsl(0, 0%, 10%);
 
-    --primary-color: hsl(300, 70%, 45%);
+    --primary-color: hsl(300, 65%, 55%);
 
     --btn-color: hsl(300, 70%, 25%);
 
@@ -176,6 +176,6 @@ blockquote p {
     --background-nav: hsla(0, 0%, 10%, 95%);
 
     --block-quote-background: hsla(0, 0%, 20%, 0.95);
-    --image-shadow: hsl(300, 10%, 30%);
+    --image-shadow: hsl(300, 5%, 15%);
   }
 }
