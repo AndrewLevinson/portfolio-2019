@@ -3,10 +3,7 @@
     <div class="about-me-content">
       <p class="about-text">
         From New York to Chicago and back to New York again, I've been a touring musician in a metal band, a financial consultant for start ups, and a digital product designer at a software agency. Now
-        I'm telling stories with data and code. There's clearly a war between
-        <a
-          href="https://www.youtube.com/watch?v=0jBK4qDJ-OM"
-        >my left brain vs. my right brain</a>. In my free time I like playing guitar, making weird music, and browsing
+        I'm telling stories with data and code. There's clearly a war between my left brain vs. my right brain. In my free time I like playing guitar, making weird music, and browsing
         <a
           href="https://www.reddit.com/r/dataisugly/"
         >my favorite subreddit</a>. I'm probably sitting in a coffee shop in Brooklyn right now working through a strange idea &#8212; so reach out and we can collaborate. ✌🏻
