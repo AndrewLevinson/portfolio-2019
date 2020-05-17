@@ -15,7 +15,7 @@ html {
 body {
   /* currently ems cause chrome bug misinterpreting rems on body element */
   font-size: 1.7em;
-  line-height: 1.5;
+  line-height: 1.6;
   font-weight: 400;
   font-family: 'Libre Franklin', sans-serif;
   color: var(--body-text-color);

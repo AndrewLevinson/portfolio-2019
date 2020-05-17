@@ -22,6 +22,7 @@ module.exports = {
         '/projects/unbreakable',
         '/projects/pension',
         '/posts/extreme-curiosity-data-viz',
+        '/posts/advice-to-intermediate-devs',
         '404'
       ]
     },
@@ -48,13 +49,6 @@ module.exports = {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,500,700&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
-        integrity:
-          'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU',
-        crossorigin: 'anonymous'
       }
     ]
   },

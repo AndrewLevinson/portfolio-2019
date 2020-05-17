@@ -35,8 +35,10 @@ export default {
   text-align: left;
   padding: 0;
   border-radius: var(--radius);
-  background-color: transparent;
-  overflow: hidden;
+  border: 1px solid rgba(204, 204, 204, 0.35);
+
+  /* background-color: transparent; */
+  /* overflow: hidden; */
   transition: 0.3s all ease-in-out;
   /* box-shadow: 0px -3px var(--accent-color); */
 }
@@ -46,41 +48,32 @@ export default {
   /* grid-row: span 2; */
 }
 
-/* .image-holder {
-  border-radius: var(--radius);
-  padding: 0;
-  background-color: var(--main-bg-color);
-} */
-
-/* .image-holder img {
-  border-radius: var(--radius);
-  border: 1px solid rgba(204, 204, 204, 0.2);
-  width: 100%;
-} */
 img {
   border-radius: var(--radius);
-  border: 1px solid rgba(204, 204, 204, 0.35);
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .feature-specs {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--accent-color);
+  background-color: var(--main-bg-color);
+  box-shadow: 6px 5px 0 0 var(--primary-color);
+  border: 1px solid hsla(300, 61%, 25%, 0.75);
   padding: 1.5rem;
   font-weight: 500;
-  color: #fff;
+  color: #333;
   line-height: 1.25;
-  min-height: calc(100% - 8px);
-  /* height: 100%; */
+  height: 100%;
   opacity: 0;
   transition: 0.3s all ease-in-out;
 }
 
 .feature-specs div,
 .feature-specs p {
-  transform: scale(0.9);
+  /* transform: scale(0.99); */
   transition: 0.3s all ease-in-out;
 }
 
@@ -128,7 +121,7 @@ img {
 
 .tags-wrapper span {
   background-color: transparent;
-  color: #fff;
+  /* color: #fff; */
   border-radius: var(--radius);
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
@@ -144,7 +137,7 @@ img {
   .feature:hover .feature-specs div,
   .feature:hover .feature-specs p {
     opacity: 1;
-    transform: scale(1);
+    /* transform: scale(1); */
     transition: 0.3s all ease-in-out;
   }
   .view-project:hover {

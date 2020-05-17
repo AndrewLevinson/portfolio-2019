@@ -56,7 +56,6 @@ export default {
 
 .subtitle {
   opacity: 0.75;
-  font-weight: 500;
   margin-bottom: 0.75rem;
 }
 .date {

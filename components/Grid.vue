@@ -18,8 +18,8 @@ export default {
   display: grid;
   padding: 0.5rem 0 1rem 0;
   margin: 0 auto;
-  grid-row-gap: 1.5rem;
-  grid-column-gap: 1.5rem;
+  grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-auto-rows: 260px;
 }
 </style>

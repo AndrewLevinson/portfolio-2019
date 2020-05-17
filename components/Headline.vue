@@ -10,7 +10,7 @@
         My name is
         <span class="datum">Andrew</span> and I like to
         <span class="datum">visualize data</span> &amp;
-        <span class="datum">design digital products</span>.
+        <span class="datum">design digital products</span>
       </h4>
       <h4 v-show="$store.getters.section === 'work'" class="tagline tagline-big">
         This is some of my
@@ -21,11 +21,15 @@
         <span class="datum">thoughts</span>.
       </h4>
       <h5 v-if="$store.getters.section === 'home' || $store.getters.section === 'about'">
-        Currently, I design and code graphics and dev tools at
+        Currently, I design & code visuals at
         <a
           href="https://graphics.wsj.com/"
           target="_blank"
-        >The Wall Street Journal</a>.
+        >The Wall Street Journal</a> and teach
+        <a
+          href="https://courses.newschool.edu/courses/PUCD2126/6770/"
+          target="_blank"
+        >Core Lab Interaction</a> at Parsons School of Design.
       </h5>
       <h5 v-else>Enjoy.</h5>
     </div>
