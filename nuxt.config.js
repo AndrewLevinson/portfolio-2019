@@ -1,6 +1,6 @@
 const pkg = require('./package')
 require('dotenv').config()
-const CompressionPlugin = require('compression-webpack-plugin')
+// const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
   mode: 'universal',
@@ -15,7 +15,7 @@ module.exports = {
         '/projects/cookies',
         '/projects/ease-energy',
         '/projects/arc',
-        '/projects/sensor',
+        // '/projects/sensor',
         '/projects/quakes',
         '/projects/clock',
         '/projects/event-tech',
@@ -32,12 +32,36 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Andrew Levinson | Design & Data',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description },
       {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Andrew Levinson | Design & Data'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: pkg.description
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://andrewlevinson.me/'
+      },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'Andrew Levinson | Design & Data'
+      },
+      {
+        hid: 'og:image',
         property: 'og:image',
         content:
           'https://raw.githubusercontent.com/AndrewLevinson/portfolio-2019/master/static/promo.png'
@@ -110,14 +134,14 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    },
-    plugins: [
-      new CompressionPlugin({
-        filename: '[path].gz[query]',
-        test: /\.js$|\.css$|\.html$/,
-        threshold: 10240,
-        minRatio: 0.8
-      })
-    ]
+    }
+    // plugins: [
+    //   new CompressionPlugin({
+    //     filename: '[path].gz[query]',
+    //     test: /\.js$|\.css$|\.html$/,
+    //     threshold: 10240,
+    //     minRatio: 0.8
+    //   })
+    // ]
   }
 }

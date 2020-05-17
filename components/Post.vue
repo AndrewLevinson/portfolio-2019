@@ -23,13 +23,50 @@
       <article>
         <div id="blog-md" class="markdown" v-html="$md.render(blok.content)"></div>
       </article>
+      <footer>
+        <nuxt-link to="/">
+          <a @click="$store.commit('setSection', 'blog')">See all Thoughts ⟶</a>
+        </nuxt-link>
+      </footer>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['blok']
+  props: ['blok'],
+  head() {
+    return {
+      title: `Andrew Levinson — ${this.blok.title}`,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `Andrew Levinson — ${this.blok.title}`
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: `Andrew Levinson — ${this.blok.title}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.blok.subtitle
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.blok.subtitle
+        }
+        // {
+        //   hid: 'og:image',
+        //   property: 'og:image',
+        //   content: this.blok.image
+        // }
+      ]
+    }
+  }
 }
 </script>
 

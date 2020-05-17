@@ -80,7 +80,39 @@
 
 <script>
 export default {
-  props: ['blok']
+  props: ['blok'],
+  head() {
+    return {
+      title: `Andrew Levinson — ${this.blok.name}`,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `Andrew Levinson — ${this.blok.name}`
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: `Andrew Levinson — ${this.blok.name}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: `${this.blok.name}: ${this.blok.summary}`
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.blok.name}: ${this.blok.summary}`
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.blok.hero_img
+        }
+      ]
+    }
+  }
 }
 </script>
 

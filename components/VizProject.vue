@@ -77,6 +77,38 @@ export default {
     isAward() {
       return this.blok.name === 'The United States Water Crisis'
     }
+  },
+  head() {
+    return {
+      title: `Andrew Levinson — ${this.blok.name}`,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `Andrew Levinson — ${this.blok.name}`
+        },
+        {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: `Andrew Levinson — ${this.blok.name}`
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.blok.summary
+        },
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.blok.summary
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.blok.image
+        }
+      ]
+    }
   }
 }
 </script>
@@ -283,7 +315,7 @@ export default {
 
   .viz-project #main-image {
     box-shadow: none;
-    border-radius: none;
+    border-radius: 0;
   }
 
   .viz-project .details {
