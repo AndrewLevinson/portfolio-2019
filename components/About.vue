@@ -14,7 +14,7 @@
       <footer class="icons">
         <ul>
           <li>
-            <a href="mailto:andrewlevins@gmail.com" target="_blank">
+            <a href="mailto:andrewlevins@gmail.com" target="_blank" rel="noopener">
               <!-- <i class="fas fa-envelope" alt="my email"></i> -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@
             </a>
           </li>
           <li>
-            <a href="https://github.com/AndrewLevinson" target="_blank">
+            <a href="https://github.com/AndrewLevinson" target="_blank" rel="noopener">
               <svg
                 width="18px"
                 height="18px"
@@ -55,7 +55,7 @@
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/andrew_levinson" target="_blank">
+            <a href="https://twitter.com/andrew_levinson" target="_blank" rel="noopener">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -73,7 +73,7 @@
             </a>
           </li>
           <li>
-            <a href="/AndrewLevinson_Resume.pdf" target="_blank">
+            <a href="/AndrewLevinson_Resume.pdf" target="_blank" rel="noopener">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -95,9 +95,9 @@
     <div class="dev">
       <p>
         I built this site with
-        <a href="https://nuxtjs.org/" target="_blank">Nuxt.js</a> and
-        <a href="https://www.storyblok.com/" target="_blank">Storyblok</a>. Hosted on
-        <a href="https://www.netlify.com/">Netlify</a>.
+        <a href="https://nuxtjs.org/" target="_blank" rel="noopener">Nuxt.js</a> and
+        <a href="https://www.storyblok.com/" target="_blank" rel="noopener">Storyblok</a>. Hosted on
+        <a href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a>.
       </p>
     </div>
   </article>

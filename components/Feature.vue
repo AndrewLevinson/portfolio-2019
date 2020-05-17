@@ -1,8 +1,6 @@
 <template>
   <nuxt-link v-editable="blok" v-show="!blok.isHidden" :to="projectPath" class="feature" tag="div">
-    <!-- <div class="image-holder"> -->
     <img :src="blok.image" :alt="blok.name" />
-    <!-- </div> -->
     <div class="feature-specs">
       <div class="time-tags-wrapper">
         <div class="tags-wrapper">

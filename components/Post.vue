@@ -179,7 +179,7 @@ export default {
 @media (max-width: 1025px) {
   .blog-content {
     display: flex;
-    flex-flow: column-reverse;
+    flex-flow: column;
   }
   .blog-post > .intro {
     display: flex;

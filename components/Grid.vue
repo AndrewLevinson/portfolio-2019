@@ -20,6 +20,6 @@ export default {
   margin: 0 auto;
   grid-gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-  grid-auto-rows: 260px;
+  grid-auto-rows: 250px;
 }
 </style>
