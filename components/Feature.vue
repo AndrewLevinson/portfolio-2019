@@ -1,6 +1,10 @@
 <template>
   <nuxt-link v-editable="blok" v-show="!blok.isHidden" :to="projectPath" class="feature" tag="div">
-    <img :src="blok.image" :alt="blok.name" />
+    <video v-if="blok.video" autoplay loop muted playsinline>
+      <source :src="blok.video[0].filename" type="video/webm">
+      <source :src="blok.video[1].filename" type="video/mp4">
+    </video>
+    <img v-else :src="blok.image" :alt="blok.name" />
     <div class="feature-specs">
       <div class="time-tags-wrapper">
         <div class="tags-wrapper">
@@ -34,11 +38,7 @@ export default {
   padding: 0;
   border-radius: var(--radius);
   border: 1px solid rgba(204, 204, 204, 0.35);
-
-  /* background-color: transparent; */
-  /* overflow: hidden; */
   transition: 0.3s all ease-in-out;
-  /* box-shadow: 0px -3px var(--accent-color); */
 }
 
 .feature:first-of-type {
@@ -46,7 +46,8 @@ export default {
   /* grid-row: span 2; */
 }
 
-img {
+img,
+video {
   border-radius: var(--radius);
   width: 100%;
   height: 100%;
