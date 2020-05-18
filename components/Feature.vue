@@ -1,6 +1,6 @@
 <template>
   <nuxt-link v-editable="blok" v-show="!blok.isHidden" :to="projectPath" class="feature" tag="div">
-    <video v-if="blok.video" autoplay loop muted playsinline>
+    <video v-if="blok.video" :poster="blok.video[2].filename" autoplay loop muted playsinline>
       <source :src="blok.video[0].filename" type="video/webm">
       <source :src="blok.video[1].filename" type="video/mp4">
     </video>
@@ -25,6 +25,7 @@ export default {
   props: ['blok'],
   computed: {
     projectPath() {
+      console.log(this.blok)
       return `/projects/${this.blok.path}`
     }
   }
