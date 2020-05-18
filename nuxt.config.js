@@ -122,14 +122,17 @@ module.exports = {
         cacheProvider: 'memory'
       }
     ],
-    ['@nuxtjs/markdownit']
+    [
+      '@nuxtjs/markdownit',
+      {
+        preset: 'default',
+        linkify: true,
+        breaks: true,
+        injected: true
+      }
+    ],
+    ['nuxt-lazy-load']
   ],
-  markdownit: {
-    preset: 'default',
-    linkify: true,
-    breaks: true,
-    injected: true
-  },
 
   /*
   ** Build configuration

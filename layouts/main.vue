@@ -18,4 +18,9 @@ export default {
 </script>
 
 <style>
+.main-layout {
+  width: 100vw;
+  max-width: 2000px;
+  margin: 0 auto;
+}
 </style>

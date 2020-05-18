@@ -23,9 +23,10 @@
       <article>
         <div id="blog-md" class="markdown" v-html="$md.render(blok.content)"></div>
       </article>
-      <footer>
+      <footer class="blog-footer">
         <nuxt-link to="/">
-          <a @click="$store.commit('setSection', 'blog')">See all Thoughts ⟶</a>
+          <a @click="$store.commit('setSection', 'blog')">All Thoughts ⟶</a>
+          <a @click="$store.commit('setSection', 'home')">Home ⟶</a>
         </nuxt-link>
       </footer>
     </div>
@@ -174,6 +175,11 @@ export default {
 
 .blog-content .links > div {
   padding-bottom: 0;
+}
+
+.blog-footer a {
+  display: block;
+  margin: 2rem 0;
 }
 
 @media (max-width: 1025px) {

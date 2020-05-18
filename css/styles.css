@@ -7,7 +7,7 @@
 }
 
 :root {
-  --main-bg-color: hsl(0, 0%, 97%);
+  --main-bg-color: hsl(0, 0%, 98%);
 
   --primary-color: hsl(300, 61%, 25%);
   --btn-color: hsl(300, 60%, 25%);
@@ -16,7 +16,7 @@
 
   --link-color: hsl(217, 60%, 45%);
   --border-color: hsla(300, 0%, 80%, 0.5);
-  --background-nav: hsla(0, 0%, 97%, 97.5%);
+  --background-nav: hsla(0, 0%, 98%, 97.5%);
 
   --block-quote-background: #f1f1f1;
 
@@ -24,7 +24,7 @@
 
   /* --purple: hsl(300, 100%, 25%); */
 
-  --radius: 0px;
+  --radius: 1px;
 }
 
 html {
@@ -40,7 +40,7 @@ body {
 }
 
 #main-content-area {
-  width: 100vw;
+  width: 100%;
   padding-left: 3rem;
   padding-right: 3rem;
   padding-bottom: 3rem;

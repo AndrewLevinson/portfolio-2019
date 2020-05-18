@@ -19,7 +19,7 @@
       </div>
       <div id="image-holder">
         <a :href="blok.project_link.cached_url" target="_blank" rel="noopener">
-          <img id="main-image" :src="blok.image" alt="hero image" width="100%" />
+          <img id="main-image" :src="blok.image | transformImage('1200x0')" alt="hero image" width="100%" />
         </a>
         <img
           v-if="isAward"
@@ -40,11 +40,11 @@
           <h5 id="summary">{{ blok.summary }}</h5>
         </div>
         <div class="description">
-          <div class="markdown" v-html="$md.render(blok.description)"></div>
+          <div v-lazy-load="$md.render(blok.description)" class="markdown"></div>
         </div>
         <div class="assets">
           <div v-for="media in blok.viz_media" :key="media.filename" class="viz-media">
-            <img :src="media.filename" :alt="media.name" width="100%" />
+            <img :src="media.filename | transformImage('1200x0')" :alt="media.name" width="100%" />
           </div>
         </div>
       </article>
@@ -57,7 +57,7 @@
         </div>
         <div>
           <h6>Data Sources</h6>
-          <div class="markdown list" v-html="$md.render(blok.data_sources)"></div>
+          <div v-lazy-load="$md.render(blok.data_sources)" class="markdown list"></div>
         </div>
         <img
           v-if="isAward"

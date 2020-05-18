@@ -19,6 +19,7 @@
     "dotenv": "^6.2.0",
     "markdown-it": "^8.4.2",
     "nuxt": "^2.8.1",
+    "nuxt-lazy-load": "^1.2.4",
     "raw-loader": "^1.0.0",
     "storyblok-nuxt": "^1.0.1",
     "webpack": "^4.39.2"

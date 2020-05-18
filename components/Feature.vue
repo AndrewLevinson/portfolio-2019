@@ -1,10 +1,11 @@
 <template>
-  <nuxt-link v-editable="blok" v-show="!blok.isHidden" :to="projectPath" class="feature" tag="div">
-    <video v-if="blok.video && isDesktop" :poster="blok.image" autoplay loop muted playsinline>
+  <nuxt-link v-editable="blok" v-if="!blok.isHidden" :to="projectPath" class="feature" tag="div">
+    <video v-if="blok.video && isDesktop" :poster="blok.image | transformImage('600x0')" autoplay loop muted playsinline>
       <source :src="blok.video[0].filename" type="video/webm">
       <source :src="blok.video[1].filename" type="video/mp4">
+      Video Preview: {{blok.name}}
     </video>
-    <img v-else :src="blok.image" :alt="blok.name" />
+    <img v-else :src="blok.image | transformImage('600x0')" :alt="blok.name" />
     <div class="feature-specs">
       <div class="time-tags-wrapper">
         <div class="tags-wrapper">
@@ -45,7 +46,7 @@ export default {
   text-align: left;
   padding: 0;
   border-radius: var(--radius);
-  border: 1px solid rgba(204, 204, 204, 0.35);
+  box-shadow: 0px 0px 8px -5px var(--image-shadow);
   transition: 0.3s all ease-in-out;
 }
 
@@ -69,6 +70,7 @@ video {
   background-color: var(--main-bg-color);
   box-shadow: 6px 5px 0 0 var(--primary-color);
   border: 1px solid hsla(300, 61%, 25%, 0.75);
+  border-radius: var(--radius);
   padding: 1.5rem;
   font-weight: 500;
   color: #333;
@@ -80,7 +82,6 @@ video {
 
 .feature-specs div,
 .feature-specs p {
-  /* transform: scale(0.99); */
   transition: 0.3s all ease-in-out;
 }
 
@@ -128,7 +129,6 @@ video {
 
 .tags-wrapper span {
   background-color: transparent;
-  /* color: #fff; */
   border-radius: var(--radius);
   padding: 0.25rem 0.5rem 0.2rem 0.5rem;
   font-size: 75%;
@@ -144,7 +144,6 @@ video {
   .feature:hover .feature-specs div,
   .feature:hover .feature-specs p {
     opacity: 1;
-    /* transform: scale(1); */
     transition: 0.3s all ease-in-out;
   }
   .view-project:hover {

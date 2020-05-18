@@ -65,7 +65,7 @@ nav {
   text-align: left;
   position: sticky;
   top: 0px;
-  width: 100vw;
+  width: 100%;
   padding: 2rem;
   padding-bottom: 0rem;
   /* background-color: hsla(0, 0%, 97%, 97.5%); */
