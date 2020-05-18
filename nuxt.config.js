@@ -51,7 +51,7 @@ module.exports = {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Andrew Levinson | Design & Data'
+        content: 'Andrew Levinson: Design & Data'
       },
       {
         hid: 'og:description',
@@ -66,11 +66,17 @@ module.exports = {
       {
         hid: 'og:site_name',
         property: 'og:site_name',
-        content: 'Andrew Levinson | Design & Data'
+        content: 'Andrew Levinson: Design & Data'
       },
       {
         hid: 'og:image',
         property: 'og:image',
+        content:
+          'https://raw.githubusercontent.com/AndrewLevinson/portfolio-2019/master/static/promo.png'
+      },
+      {
+        hid: 'twitter',
+        property: 'twitter:card',
         content:
           'https://raw.githubusercontent.com/AndrewLevinson/portfolio-2019/master/static/promo.png'
       }
