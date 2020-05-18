@@ -25,7 +25,6 @@ export default {
   props: ['blok'],
   computed: {
     projectPath() {
-      console.log(this.blok)
       return `/projects/${this.blok.path}`
     }
   }
