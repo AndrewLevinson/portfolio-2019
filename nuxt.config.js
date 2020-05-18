@@ -40,6 +40,14 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'author', name: 'author', content: 'Andrew Levinson' },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content:
+          'Data Visualization, JavaScript, CSS, WSJ, Design, Data, Developer'
+      },
+
       {
         hid: 'og:title',
         property: 'og:title',
