@@ -92,6 +92,14 @@ button:focus {
   color: var(--primary-color);
 }
 
+.isLoading {
+  opacity: 0;
+}
+.isLoaded {
+  opacity: 1;
+  transition: 0.5s ease-in-out opacity;
+}
+
 blockquote {
   background: var(--block-quote-background);
   border-left: 10px solid #ccc;

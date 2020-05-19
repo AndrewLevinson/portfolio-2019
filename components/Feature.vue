@@ -1,8 +1,15 @@
 <template>
   <nuxt-link v-editable="blok" v-if="!blok.isHidden" :to="projectPath" class="feature" tag="div">
-    <video v-if="blok.video && isDesktop" :poster="blok.image | transformImage('600x0')" autoplay loop muted playsinline>
-      <source :src="blok.video[0].filename" type="video/webm">
-      <source :src="blok.video[1].filename" type="video/mp4">
+    <video
+      v-if="blok.video && isDesktop"
+      :poster="blok.image | transformImage('600x0')"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      <source :src="blok.video[0].filename" type="video/webm" />
+      <source :src="blok.video[1].filename" type="video/mp4" />
       Video Preview: {{blok.name}}
     </video>
     <img v-else :src="blok.image | transformImage('600x0')" :alt="blok.name" />
@@ -73,7 +80,7 @@ video {
   border-radius: var(--radius);
   padding: 1.5rem;
   font-weight: 500;
-  color: #333;
+  color: var(--body-text-color);
   line-height: 1.25;
   height: 100%;
   opacity: 0;

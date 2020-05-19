@@ -131,7 +131,12 @@ module.exports = {
         injected: true
       }
     ],
-    ['nuxt-lazy-load']
+    [
+      'nuxt-lazy-load',
+      {
+        defaultImage: '/default.svg'
+      }
+    ]
   ],
 
   /*

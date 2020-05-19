@@ -14,7 +14,11 @@
             </div>
           </div>
           <div class="image-holder">
-            <img :src="blok.solution_peek[0].filename | transformImage('500x0')" alt="preview gif" width="100%" />
+            <img
+              :src="blok.solution_peek[0].filename | transformImage('500x0')"
+              alt="preview gif"
+              width="100%"
+            />
           </div>
         </div>
         <div class="peek">
@@ -25,7 +29,11 @@
             </div>
           </div>
           <div class="image-holder">
-            <img :src="blok.solution_peek[1].filename | transformImage('500x0')" alt="preview gif" width="100%" />
+            <img
+              :src="blok.solution_peek[1].filename | transformImage('500x0')"
+              alt="preview gif"
+              width="100%"
+            />
           </div>
         </div>
         <div class="peek">
@@ -36,11 +44,15 @@
             </div>
           </div>
           <div class="image-holder">
-            <img :src="blok.solution_peek[2].filename | transformImage('500x0')" alt="preview gif" width="100%" />
+            <img
+              :src="blok.solution_peek[2].filename | transformImage('500x0')"
+              alt="preview gif"
+              width="100%"
+            />
           </div>
         </div>
       </div>
-      <div v-lazy-load="$md.render(blok.content_2)" class="markdown"></div>
+      <div class="markdown" v-html="$md.render(blok.content_2)"></div>
       <div v-if="blok.name == 'Music'" class="iframe-holder">
         <iframe
           src="https://embed.spotify.com/?uri=spotify%3Aalbum%3A5BYcVtabMy7tNii9fHcklK"
